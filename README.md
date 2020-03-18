@@ -1,3 +1,3 @@
 # coronavirus
 
-Coronavirus data, with facilities to manipulate data in J
+Coronavirus data analysis in J. For Illinois only at the moment.
