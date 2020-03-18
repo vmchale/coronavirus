@@ -1,3 +1,5 @@
 # coronavirus
 
-Coronavirus data analysis in J. For Illinois only at the moment.
+Coronavirus data analysis in J.
+
+I only bothered with predictions for NY and IL.
