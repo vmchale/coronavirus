@@ -1,10 +1,6 @@
 load 'tables/csv'
 
-corona_data =: readcsv 'time_series_19-covid-Confirmed.csv'
-
-headers =: {. corona_data
-
-cols =: $ {. corona_data
+corona_data =: readcsv 'time_series_2019-ncov-Confirmed.csv'
 
 new_york =: 100 { corona_data
 
