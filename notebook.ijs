@@ -28,3 +28,10 @@ model_ny =: xs linear_regress ny_log
 
 prediction =: ^ model p. (i.15)
 prediction_ny =: ^ model_ny p. (i.15)
+
+corona_cols =: }. $ corona_data
+col_span =: 4 }. (i.corona_cols)
+col =: (< (< a:), (< col_span)) { corona_data
+
+col_nums =: > numerize }. col
+progression =: (+/ " 1) |: col_nums
