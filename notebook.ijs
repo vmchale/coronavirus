@@ -62,5 +62,5 @@ NB. all cases in the world
 world_new_cases =: succ_diff progression
 world_plot =: (i. $progression) ; progression ,: (0 , world_new_cases)
 
-vietnam_cases =: > numerize 2 }. 192 { corona_data
-vn_plot =: (i. $vietnam_cases) ; vietnam_cases
+vn_data =: > numerize 5 }. 192 { corona_data
+vn_plot =: (i. $vn_data) ; vn_data
