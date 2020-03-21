@@ -64,3 +64,6 @@ world_plot =: (i. $progression) ; progression ,: (0 , world_new_cases)
 
 vn_data =: > numerize 5 }. 192 { corona_data
 vn_plot =: (i. $vn_data) ; vn_data
+
+sk_data =: > numerize 4 }. 157 { corona_data
+iran_data =: > numerize 32 }. 156 { corona_data
