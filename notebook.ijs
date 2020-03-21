@@ -4,8 +4,8 @@ sap =: 1 : '2 u ~/\ ]'
 
 succ_diff =: - sap
 
-corona_data =: readcsv '~/dev/j/coronavirus/time_series_2019-ncov-Confirmed.csv'
-deaths =: readcsv '~/dev/j/coronavirus/time_series_2019-ncov-Deaths.csv'
+corona_data =: readcsv 'time_series_2019-ncov-Confirmed.csv'
+deaths =: readcsv 'time_series_2019-ncov-Deaths.csv'
 
 new_york =: 100 { corona_data
 
