@@ -1,4 +1,5 @@
 load 'tables/csv'
+load 'plot'
 
 sap =: 1 : '2 u ~/\ ]'
 
