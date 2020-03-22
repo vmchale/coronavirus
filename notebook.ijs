@@ -16,6 +16,8 @@ numerize =: makenum each
 
 area_numbers =: 13 : '> numerize (4 }. y)'
 
+get_row =: 3 : '> numerize 4 }. y { corona_data'
+
 illinois_numbers =: area_numbers illinois
 ny_numbers =: area_numbers new_york
 
@@ -60,11 +62,21 @@ illinois_plot =: xs ; illinois_relevant ,: (xs { prediction)
 ny_death_plot =: xs_deaths ; ny_deaths ,: (xs_deaths { death_prediction)
 
 NB. all cases in the world
-world_new_cases =: succ_diff progression
-world_plot =: (i. $progression) ; progression ,: (0 , world_new_cases)
+world_new =: succ_diff progression
+world_plot =: (i. $progression) ; progression ,: (0 , world_new)
 
-vn_data =: > numerize 5 }. 192 { corona_data
+iran_all =: get_row 156
+sk_all =: get_row 157
+italy_all =: get_row 17
+vn_all =: get_row 192
+macau_all =: get_row 195
+taiwan_all =: get_row 191
+hk_all =: get_row 184
+singapore_all =: get_row 3
+jp_all =: get_row 2
+
+vn_data =: 1 }. vn_all
 vn_plot =: (i. $vn_data) ; vn_data
 
-sk_data =: > numerize 4 }. 157 { corona_data
-iran_data =: > numerize 32 }. 156 { corona_data
+sk_data =: sk_all
+iran_data =: 28 }. iran_all 
