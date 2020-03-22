@@ -65,18 +65,24 @@ NB. all cases in the world
 world_new =: succ_diff progression
 world_plot =: (i. $progression) ; progression ,: (0 , world_new)
 
-iran_all =: get_row 156
-sk_all =: get_row 157
-italy_all =: get_row 17
-vn_all =: get_row 192
-macau_all =: get_row 195
-taiwan_all =: get_row 191
-hk_all =: get_row 184
-singapore_all =: get_row 3
-jp_all =: get_row 2
+splog =: (^. ` ([ & 0) @. (= & 0)) " 0
+
+iran_all =: splog get_row 156
+sk_all =: splog get_row 157
+italy_all =: splog get_row 17
+vn_all =: splog get_row 192
+macau_all =: splog get_row 195
+taiwan_all =: splog get_row 191
+hk_all =: splog get_row 184
+singapore_all =: splog get_row 3
+jp_all =: splog get_row 2
 
 vn_data =: 1 }. vn_all
 vn_plot =: (i. $vn_data) ; vn_data
 
 sk_data =: sk_all
-iran_data =: 28 }. iran_all 
+iran_data =: 28 }. iran_all
+
+NB. more than one ,:
+plot_opt =: 'title Observed Cases;xcaption Days;ycaption log(Cases);key Iran,SK,Italy,Vietname,Macau,Taiwan,HK,Signapore,Japan'
+comparison_plot =: (i. $iran_all) ; (iran_all , sk_all , italy_all , vn_all , macau_all , taiwan_all , hk_all , singapore_all ,: jp_all)
