@@ -5,6 +5,7 @@ load 'tables/csv'
 illinois_table =: readcsv 'illinois.csv'
 
 numerize =: makenum each
+splog =: (^. ` ([ & 0) @. (= & 0)) " 0
 
 array =: > numerize }. " 1 (1 }. illinois_table)
 
