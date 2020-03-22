@@ -84,5 +84,5 @@ sk_data =: sk_all
 iran_data =: 28 }. iran_all
 
 NB. more than one ,:
-plot_opt =: 'title Observed Cases;xcaption Days;ycaption log(Cases);key Iran,SK,Italy,Vietname,Macau,Taiwan,HK,Signapore,Japan'
+plot_opt =: 'title Observed Cases;xcaption Days;ycaption log(Cases);key Iran,SK,Italy,Vietnam,Macau,Taiwan,HK,Signapore,Japan'
 comparison_plot =: (i. $iran_all) ; (iran_all , sk_all , italy_all , vn_all , macau_all , taiwan_all , hk_all , singapore_all ,: jp_all)
