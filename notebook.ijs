@@ -80,9 +80,9 @@ hk_all =: prep 184
 singapore_all =: prep 3
 jp_all =: prep 2
 de_all =: prep 12
+uk_all =: prep 404
 
 NB. just want the data
-uk_all =: get_row 404
 NB. thailand_all =: get_row 1
 malaysia_all =: get_row 5
 NB. fr_all =: get_row 158
@@ -96,5 +96,5 @@ sk_data =: sk_all
 iran_data =: 28 }. iran_all
 
 NB. more than one ,:
-plot_opt =: 'title Observed Cases;xcaption Days;ycaption log(Cases);key Iran,SK,Italy,Vietnam,Macau,Taiwan,HK,Singapore,Germany,Japan'
-comparison_plot =: (i. $iran_all) ; (iran_all , sk_all , italy_all , vn_all , macau_all , taiwan_all , hk_all , singapore_all , de_all , ,: jp_all)
+plot_opt =: 'title Observed Cases;xcaption Days;ycaption log(Cases);key Iran,SK,Italy,Vietnam,Macau,Taiwan,HK,Singapore,Germany,UK,Japan'
+comparison_plot =: (i. $iran_all) ; (iran_all , sk_all , italy_all , vn_all , macau_all , taiwan_all , hk_all , singapore_all , de_all , uk_all , ,: jp_all)
