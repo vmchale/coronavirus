@@ -40,10 +40,10 @@ model_ny =: xs linear_regress ny_log
 
 death_model =: xs_deaths linear_regress (^. ny_deaths)
 
-prediction =: ^ model p. (i.15)
-prediction_ny =: ^ model_ny p. (i.15)
+prediction =: ^ model p. (i. 7 + $illinois_relevant)
+prediction_ny =: ^ model_ny p. (i. 7 + $ny_relevant)
 
-death_prediction =: ^ death_model p. (i.14)
+death_prediction =: ^ death_model p. (i. 7 + $ny_deaths)
 
 corona_cols =: }. $ corona_data
 col_span =: 4 }. (i.corona_cols)
