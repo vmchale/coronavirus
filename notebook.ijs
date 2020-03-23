@@ -16,7 +16,8 @@ numerize =: makenum each
 
 area_numbers =: 13 : '> numerize (4 }. y)'
 
-get_row =: 3 : '> numerize ((4 & }.) " 1) y { corona_data'
+table_row =: 4 : '> numerize ((4 & }.) " 1) x { y'
+get_row =: table_row & corona_data
 
 illinois_numbers =: area_numbers illinois
 ny_numbers =: area_numbers new_york
@@ -91,7 +92,11 @@ row_n =: {. $ corona_data
 us_ix =: (#~ (>&0)) ((=& (<'US')) ((1 & {) " 1) corona_data) * (i.row_n)
 us_total =: (+/ " 1) |: (get_row us_ix)
 
-us_sample =: |. 14 {. |. us_total
+us_deaths =: (+/ " 1) |: (us_ix table_row deaths)
+
+last_14 =: |. @ (14 & {.) @ |.
+us_sample =: last_14 us_total
+
 us_model =: (i. 14) linear_regress (^. us_sample)
 us_predict =: ^ us_model p. (i. 21)
 
