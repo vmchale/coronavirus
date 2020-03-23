@@ -67,15 +67,20 @@ world_plot =: (i. $progression) ; progression ,: (0 , world_new)
 
 splog =: (^. ` ([ & 0) @. (= & 0)) " 0
 
-iran_all =: splog get_row 156
-sk_all =: splog get_row 157
-italy_all =: splog get_row 17
-vn_all =: splog get_row 192
-macau_all =: splog get_row 195
-taiwan_all =: splog get_row 191
-hk_all =: splog get_row 184
-singapore_all =: splog get_row 3
-jp_all =: splog get_row 2
+prep =: splog @ get_row
+
+iran_all =: prep 156
+sk_all =: prep 157
+italy_all =: prep 17
+vn_all =: prep 192
+macau_all =: prep 195
+taiwan_all =: prep 191
+hk_all =: prep 184
+singapore_all =: prep 3
+jp_all =: prep 2
+uk_all =: prep 404
+de_all =: prep 12
+thailand_all =: prep 1
 
 vn_data =: 1 }. vn_all
 vn_plot =: (i. $vn_data) ; vn_data
