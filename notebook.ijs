@@ -91,6 +91,10 @@ row_n =: {. $ corona_data
 us_ix =: (#~ (>&0)) ((=& (<'US')) ((1 & {) " 1) corona_data) * (i.row_n)
 us_total =: (+/ " 1) |: (get_row us_ix)
 
+us_sample =: |. 14 {. |. us_total
+us_model =: (i. 14) linear_regress (^. us_sample)
+us_predict =: ^ us_model p. (i. 21)
+
 vn_data =: 1 }. vn_all
 vn_plot =: (i. $vn_data) ; vn_data
 
