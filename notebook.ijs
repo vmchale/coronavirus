@@ -87,7 +87,9 @@ NB. thailand_all =: get_row 1
 malaysia_all =: get_row 5
 NB. fr_all =: get_row 158
 
-NB. us_total =: (+/ " 1) |: (get_row 99 }. i.155)
+row_n =: {. $ corona_data
+us_ix =: (#~ (>&0)) ((=& (<'US')) ((1 & {) " 1) corona_data) * (i.row_n)
+us_total =: (+/ " 1) |: (get_row us_ix)
 
 vn_data =: 1 }. vn_all
 vn_plot =: (i. $vn_data) ; vn_data
@@ -97,4 +99,4 @@ iran_data =: 28 }. iran_all
 
 NB. more than one ,:
 plot_opt =: 'title Observed Cases;xcaption Days;ycaption log(Cases);key Iran,SK,Italy,Vietnam,Macau,Taiwan,HK,Singapore,Germany,UK,Japan'
-comparison_plot =: (i. $iran_all) ; (iran_all , sk_all , italy_all , vn_all , macau_all , taiwan_all , hk_all , singapore_all , de_all , uk_all , ,: jp_all)
+comparison_plot =: (i. $iran_all) ; (iran_all , sk_all , italy_all , vn_all , macau_all , taiwan_all , hk_all , singapore_all , de_all , uk_all ,: jp_all)
