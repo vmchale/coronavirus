@@ -87,7 +87,7 @@ NB. thailand_all =: get_row 1
 malaysia_all =: get_row 5
 NB. fr_all =: get_row 158
 
-us_total =: (+/ " 1) |: (get_row 99 }. i.155)
+NB. us_total =: (+/ " 1) |: (get_row 99 }. i.155)
 
 vn_data =: 1 }. vn_all
 vn_plot =: (i. $vn_data) ; vn_data
@@ -96,5 +96,5 @@ sk_data =: sk_all
 iran_data =: 28 }. iran_all
 
 NB. more than one ,:
-plot_opt =: 'title Observed Cases;xcaption Days;ycaption log(Cases);key Iran,SK,Italy,Vietnam,Macau,Taiwan,HK,Signapore,Germany,USA,Japan'
-comparison_plot =: (i. $iran_all) ; (iran_all , sk_all , italy_all , vn_all , macau_all , taiwan_all , hk_all , singapore_all , de_all , (splog us_total) ,: jp_all)
+plot_opt =: 'title Observed Cases;xcaption Days;ycaption log(Cases);key Iran,SK,Italy,Vietnam,Macau,Taiwan,HK,Singapore,Germany,Japan'
+comparison_plot =: (i. $iran_all) ; (iran_all , sk_all , italy_all , vn_all , macau_all , taiwan_all , hk_all , singapore_all , de_all , ,: jp_all)
