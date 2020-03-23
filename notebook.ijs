@@ -16,7 +16,7 @@ numerize =: makenum each
 
 area_numbers =: 13 : '> numerize (4 }. y)'
 
-get_row =: 3 : '> numerize 4 }. y { corona_data'
+get_row =: 3 : '> numerize ((4 & }.) " 1) y { corona_data'
 
 illinois_numbers =: area_numbers illinois
 ny_numbers =: area_numbers new_york
@@ -69,6 +69,7 @@ splog =: (^. ` ([ & 0) @. (= & 0)) " 0
 
 prep =: splog @ get_row
 
+NB. to be plotted
 iran_all =: prep 156
 sk_all =: prep 157
 italy_all =: prep 17
@@ -78,9 +79,15 @@ taiwan_all =: prep 191
 hk_all =: prep 184
 singapore_all =: prep 3
 jp_all =: prep 2
-uk_all =: prep 404
 de_all =: prep 12
-thailand_all =: prep 1
+
+NB. just want the data
+uk_all =: get_row 404
+NB. thailand_all =: get_row 1
+malaysia_all =: get_row 5
+NB. fr_all =: get_row 158
+
+us_total =: (+/ " 1) |: (get_row 99 }. i.155)
 
 vn_data =: 1 }. vn_all
 vn_plot =: (i. $vn_data) ; vn_data
@@ -89,5 +96,5 @@ sk_data =: sk_all
 iran_data =: 28 }. iran_all
 
 NB. more than one ,:
-plot_opt =: 'title Observed Cases;xcaption Days;ycaption log(Cases);key Iran,SK,Italy,Vietnam,Macau,Taiwan,HK,Signapore,Japan'
-comparison_plot =: (i. $iran_all) ; (iran_all , sk_all , italy_all , vn_all , macau_all , taiwan_all , hk_all , singapore_all ,: jp_all)
+plot_opt =: 'title Observed Cases;xcaption Days;ycaption log(Cases);key Iran,SK,Italy,Vietnam,Macau,Taiwan,HK,Signapore,Germany,USA,Japan'
+comparison_plot =: (i. $iran_all) ; (iran_all , sk_all , italy_all , vn_all , macau_all , taiwan_all , hk_all , singapore_all , de_all , (splog us_total) ,: jp_all)
