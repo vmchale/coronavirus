@@ -24,9 +24,6 @@ xs =: i. $tested
 plot_opt =: 'title Coronavirus in Illinois;xcaption Days;ycaption Number;key Tested,Positive,Dead'
 il_plot =: xs ; (tested , positive ,: (2 { array))
 
-rat_option =: 'title Proportion testing Positive in Illinois;xcaption Days;ycaption Proportion'
-positive_ratio =: positive % tested
-
 drat_option =: 'title New positive test results in Illinois;xcaption Days;ycaption Proportion'
 new_positive =: (succ_diff positive) % (succ_diff tested)
 xs_diff =: }: xs
