@@ -36,3 +36,5 @@ NB. predictions one week out
 prediction =: ^ model p. (i. 7 + $positive)
 
 side_by_side =: (xs { prediction) ,: positive
+
+NB. compare =: illinois_relevant ,: |. ($illinois_relevant) {. |. positive
