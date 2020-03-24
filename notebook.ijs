@@ -88,7 +88,7 @@ NB. thailand_all =: get_row 1
 malaysia_all =: get_row 5
 NB. fr_all =: get_row 158
 
-sum_columns =: (+/ " 1) @: |:
+sum_columns =: {: @: (+/ " 1) @: |:
 
 row_n =: {. $ corona_data
 us_ix =: (#~ (>&0)) ((=& (<'US')) ((1 & {) " 1) corona_data) * (i.row_n)
@@ -99,8 +99,8 @@ us_deaths =: sum_columns (us_ix table_row deaths)
 last_14 =: |. @ (14 & {.) @ |.
 us_sample =: last_14 us_total
 
-NB. us_model =: (i. 14) linear_regress (^. us_sample)
-NB. us_predict =: ^ us_model p. (i. 21)
+us_model =: (i. 14) linear_regress (splog us_sample)
+us_predict =: ^ us_model p. (i. 21)
 
 vn_data =: 1 }. vn_all
 vn_plot =: (i. $vn_data) ; vn_data
