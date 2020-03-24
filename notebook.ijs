@@ -74,7 +74,7 @@ NB. to be plotted
 iran_all =: prep 156
 sk_all =: prep 157
 italy_all =: prep 17
-vn_all =: prep 192
+vn_all =: get_row 192
 macau_all =: prep 195
 taiwan_all =: prep 191
 hk_all =: prep 184
@@ -105,8 +105,7 @@ us_predict =: ^ us_model p. (i. 21)
 vn_data =: 1 }. vn_all
 vn_plot =: (i. $vn_data) ; vn_data
 
-sk_data =: sk_all
-iran_data =: 28 }. iran_all
+NB. iran_data =: 28 }. iran_all
 
 plot_opt =: 'title Observed Cases;xcaption Days;ycaption log(Cases);key Iran,SK,Italy,Vietnam,Macau,Taiwan,HK,Singapore,Germany,UK,US,Japan'
-comparison_plot =: (i. $iran_all) ; (iran_all , sk_all , italy_all , vn_all , macau_all , taiwan_all , hk_all , singapore_all , de_all , uk_all , (splog us_total) ,: jp_all)
+comparison_plot =: (i. $iran_all) ; (iran_all , sk_all , italy_all , splog vn_all , macau_all , taiwan_all , hk_all , singapore_all , de_all , uk_all , (splog us_total) ,: jp_all)
