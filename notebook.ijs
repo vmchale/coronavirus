@@ -88,11 +88,13 @@ NB. thailand_all =: get_row 1
 malaysia_all =: get_row 5
 NB. fr_all =: get_row 158
 
+sum_columns =: (+/ " 1) @: |:
+
 row_n =: {. $ corona_data
 us_ix =: (#~ (>&0)) ((=& (<'US')) ((1 & {) " 1) corona_data) * (i.row_n)
-us_total =: (+/ " 1) |: (get_row us_ix)
+us_total =: sum_columns (get_row us_ix)
 
-us_deaths =: (+/ " 1) |: (us_ix table_row deaths)
+us_deaths =: sum_columns (us_ix table_row deaths)
 
 last_14 =: |. @ (14 & {.) @ |.
 us_sample =: last_14 us_total
