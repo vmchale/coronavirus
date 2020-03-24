@@ -97,8 +97,8 @@ us_deaths =: (+/ " 1) |: (us_ix table_row deaths)
 last_14 =: |. @ (14 & {.) @ |.
 us_sample =: last_14 us_total
 
-us_model =: (i. 14) linear_regress (^. us_sample)
-us_predict =: ^ us_model p. (i. 21)
+NB. us_model =: (i. 14) linear_regress (^. us_sample)
+NB. us_predict =: ^ us_model p. (i. 21)
 
 vn_data =: 1 }. vn_all
 vn_plot =: (i. $vn_data) ; vn_data
