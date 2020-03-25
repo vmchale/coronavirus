@@ -51,14 +51,17 @@ thailand_ix =: 1
 malaysia_all =: get_row 5
 malaysia_ix =: 5
 fr_ix =: 158
+us_ix =: 226
+
+sum_columns =: (+/ " 1) @: |:
 
 row_n =: {. $ corona_data
-us_ix =: {. ((#~ (>&0)) ((=& (<'US')) ((1 & {) " 1) corona_data) * (i.row_n))
-us_total =: get_row us_ix
+china_ix =: ((#~ (>&0)) ((=& (<'China')) ((1 & {) " 1) corona_data) * (i.row_n))
+china_total =: sum_columns get_row china_ix
 
-us_deaths =: us_ix table_row deaths
+china_deaths =: sum_columns china_ix table_row deaths
 
 last_14 =: |. @ (14 & {.) @ |.
 
 plot_opt =: 'title Observed Cases;xcaption Days;ycaption log(Cases);key Iran,SK,Italy,Vietnam,Macau,Taiwan,HK,Singapore,Germany,UK,US,Japan'
-comparison_plot =: (i. $iran_all) ; (iran_all , sk_all , italy_all , (prep vn_ix) , macau_all , taiwan_all , hk_all , singapore_all , de_all , uk_all , (splog us_total) ,: jp_all)
+comparison_plot =: (i. $iran_all) ; (iran_all , sk_all , italy_all , (prep vn_ix) , macau_all , taiwan_all , hk_all , singapore_all , de_all , uk_all , (prep us_ix) ,: jp_all)
