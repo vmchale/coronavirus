@@ -47,10 +47,9 @@ de_all =: prep 121
 uk_all =: prep 224
 
 NB. just want the data
-thailand_ix =: 1
-malaysia_all =: get_row 5
-malaysia_ix =: 5
-fr_ix =: 158
+thailand_ix =: 210
+malaysia_ix =: 154
+fr_ix =: 117
 us_ix =: 226
 
 sum_columns =: (+/ " 1) @: |:
