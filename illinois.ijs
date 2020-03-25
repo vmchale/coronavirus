@@ -5,7 +5,7 @@ load 'tables/csv'
 load 'plot'
 
 illinois_table =: readcsv 'illinois.csv'
-chicago_table =: readcsv 'chicago.csv'
+cook_table =: readcsv 'cook.csv'
 
 sap =: 1 : '2 u ~/\ ]'
 
@@ -17,7 +17,9 @@ numerize =: makenum each
 splog =: (^. ` ([ & 0) @. (= & 0)) " 0
 
 array =: > numerize }. " 1 (1 }. illinois_table)
-chi_num =: > numerize }. " 1 (}. chicago_table)
+cook_num =: > numerize }. " 1 (}. chicago_table)
+
+chi_new =: , > numerize }. " 1 }. readcsv 'chicago.csv'
 
 tested =: 0 { array
 positive =: 1 { array
