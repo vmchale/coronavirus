@@ -10,11 +10,10 @@ deaths =: readcsv 'time_series_2019-ncov-Deaths.csv'
 
 numerize =: makenum each
 
+linear_regress =: 4 : 'y %. 1 ,. x'
+
 table_row =: 4 : '> numerize ((4 & }.) " 1) x { y'
 get_row =: table_row & corona_data
-
-il_ix =: 111
-ny_ix =: 100
 
 corona_cols =: }. $ corona_data
 col_span =: 4 }. (i.corona_cols)
@@ -33,19 +32,19 @@ splog =: (^. ` ([ & 0) @. (= & 0)) " 0
 
 prep =: splog @ get_row
 
-vn_ix =: 192
+vn_ix =: 229
 
 NB. to be plotted
-iran_all =: prep 156
-sk_all =: prep 157
-italy_all =: prep 17
-macau_all =: prep 195
-taiwan_all =: prep 191
-hk_all =: prep 184
-singapore_all =: prep 3
-jp_all =: prep 2
-de_all =: prep 12
-uk_all =: prep 404
+iran_all =: prep 134
+sk_all =: prep 144
+italy_all =: prep 138
+macau_all =: prep 70
+taiwan_all =: prep 208
+hk_all =: prep 62
+singapore_all =: prep 197
+jp_all =: prep 140
+de_all =: prep 121
+uk_all =: prep 224
 
 NB. just want the data
 thailand_ix =: 1
@@ -53,13 +52,11 @@ malaysia_all =: get_row 5
 malaysia_ix =: 5
 fr_ix =: 158
 
-sum_columns =: {: @: (+/ " 1) @: |:
-
 row_n =: {. $ corona_data
-us_ix =: (#~ (>&0)) ((=& (<'US')) ((1 & {) " 1) corona_data) * (i.row_n)
-us_total =: sum_columns (get_row us_ix)
+us_ix =: {. ((#~ (>&0)) ((=& (<'US')) ((1 & {) " 1) corona_data) * (i.row_n))
+us_total =: get_row us_ix
 
-us_deaths =: sum_columns (us_ix table_row deaths)
+us_deaths =: us_ix table_row deaths
 
 last_14 =: |. @ (14 & {.) @ |.
 
