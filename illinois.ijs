@@ -1,6 +1,3 @@
-NB. Data from https://dph.illinois.gov/covid19 and https://web.archive.org/web/*/https://dph.illinois.gov/covid19
-NB. also checked via https://covidtracking.com/data/state/illinois/
-
 load 'tables/csv'
 load 'plot'
 

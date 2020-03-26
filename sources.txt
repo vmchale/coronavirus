@@ -1,3 +1,5 @@
 - https://www.chicago.gov/city/en/sites/covid-19/home/latest-data.html
 - http://www.dph.illinois.gov/topics-services/diseases-and-conditions/diseases-a-z-list/coronavirus
 - https://chicagovirus.com/
+- https://covidtracking.com/data/state/illinois/
+- https://web.archive.org/web/*/https://dph.illinois.gov/covid19
