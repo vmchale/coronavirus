@@ -36,13 +36,13 @@ NB. to be plotted
 iran_all =: prep 134
 sk_all =: prep 144
 italy_all =: prep 138
-macau_all =: prep 70
+macau_ix =: 70
 taiwan_all =: prep 208
 hk_all =: prep 62
 singapore_all =: prep 197
-jp_all =: prep 140
-de_all =: prep 121
-uk_all =: prep 224
+jp_ix =: 140
+de_ix =: 121
+uk_ix =: 224
 
 NB. just want the data
 vn_ix =: 229
@@ -64,4 +64,4 @@ china_deaths =: sum_columns china_ix table_row deaths
 last_14 =: |. @ (14 & {.) @ |.
 
 plot_opt =: 'title Observed Cases;xcaption Days;ycaption log(Cases);key Iran,SK,Italy,Vietnam,Macau,Taiwan,HK,Singapore,Germany,UK,US,France,Japan'
-comparison_plot =: (i. $iran_all) ; (iran_all , sk_all , italy_all , (prep vn_ix) , macau_all , taiwan_all , hk_all , singapore_all , de_all , uk_all , (prep us_ix) , (prep fr_ix) ,: jp_all)
+comparison_plot =: (i. $iran_all) ; (iran_all , sk_all , italy_all , (prep vn_ix) , (prep macau_ix) , taiwan_all , hk_all , singapore_all , (prep de_ix) , (prep uk_ix) , (prep us_ix) , (prep fr_ix) ,: (prep jp_ix))
