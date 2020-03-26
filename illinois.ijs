@@ -32,9 +32,14 @@ drat_option =: 'title New positive test results in Illinois;xcaption Days;ycapti
 new_positive =: (succ_diff positive) % (succ_diff tested)
 xs_diff =: }: xs
 
+last_14 =: |. @ (14 & {.) @ |.
+
 model =: xs linear_regress (^. positive)
 NB. predictions one week out
 prediction =: ^ model p. (i. 7 + $positive)
+
+latest_model =: (i.14) linear_regress (^. (last_14 positive))
+latest_prediction =: ^ latest_model p. (i. 21)
 
 side_by_side =: (xs { prediction) ,: positive
 
