@@ -33,13 +33,13 @@ splog =: (^. ` ([ & 0) @. (= & 0)) " 0
 prep =: splog @ get_row
 
 NB. to be plotted
-iran_all =: prep 134
-sk_all =: prep 144
-italy_all =: prep 138
+iran_ix =: 134
+sk_ix =: 144
+italy_ix =: 138
 macau_ix =: 70
-taiwan_all =: prep 208
-hk_all =: prep 62
-singapore_all =: prep 197
+taiwan_ix =: 208
+hk_ix =: 62
+singapore_ix =: 197
 jp_ix =: 140
 de_ix =: 121
 uk_ix =: 224
@@ -64,4 +64,4 @@ china_deaths =: sum_columns china_ix table_row deaths
 last_14 =: |. @ (14 & {.) @ |.
 
 plot_opt =: 'title Observed Cases;xcaption Days;ycaption log(Cases);key Iran,SK,Italy,Vietnam,Macau,Taiwan,HK,Singapore,Germany,UK,US,France,Japan'
-comparison_plot =: (i. $iran_all) ; (iran_all , sk_all , italy_all , (prep vn_ix) , (prep macau_ix) , taiwan_all , hk_all , singapore_all , (prep de_ix) , (prep uk_ix) , (prep us_ix) , (prep fr_ix) ,: (prep jp_ix))
+comparison_plot =: (i. $get_row 1) ; ((prep " 0) (iran_ix , sk_ix , italy_ix , vn_ix , macau_ix , taiwan_ix , hk_ix , singapore_ix , de_ix , uk_ix , us_ix , fr_ix , jp_ix))
