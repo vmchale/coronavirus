@@ -2,10 +2,13 @@
 
 all: time_series_2019-ncov-Confirmed.csv time_series_2019-ncov-Deaths.csv
 
-docs: docs/illinois.html docs/cook.html
+docs: docs/illinois.html docs/cook.html docs/ilgen.html
 
 docs/%.html: %.csv
 	csvtotable $< $@ -o
+
+ilgen.csv:
+	echo "load 'gen.ijs'" | jconsole
 
 time_series_2019-ncov-Confirmed.csv:
 	wget https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv -O $@

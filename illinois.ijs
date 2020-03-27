@@ -29,8 +29,6 @@ drat_option =: 'title New positive test results in Illinois;xcaption Days;ycapti
 new_positive =: (succ_diff positive) % (succ_diff tested)
 xs_diff =: }: xs
 
-NB. new_positive writecsv 'ilpos.csv'
-
 last_14 =: |. @ (14 & {.) @ |.
 
 model =: xs linear_regress (^. positive)
@@ -41,5 +39,9 @@ latest_model =: (i.14) linear_regress (^. (last_14 positive))
 latest_prediction =: ^ latest_model p. (i. 21)
 
 side_by_side =: (xs { prediction) ,: positive
+
+pp_row =: 'New Positive Cases' ; (< " 0 new_positive)
+new_row =: 'New Cases' ; (< " 0 succ_diff positive)
+il_gen =: illinois_table , pp_row ,: new_row
 
 NB. compare =: illinois_relevant ,: |. ($illinois_relevant) {. |. positive
