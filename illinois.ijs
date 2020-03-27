@@ -40,8 +40,4 @@ latest_prediction =: ^ latest_model p. (i. 21)
 
 side_by_side =: (xs { prediction) ,: positive
 
-pp_row =: 'New Positive Cases' ; (< " 0 new_positive)
-new_row =: 'New Cases' ; (< " 0 succ_diff positive)
-il_gen =: illinois_table , pp_row ,: new_row
-
 NB. compare =: illinois_relevant ,: |. ($illinois_relevant) {. |. positive
