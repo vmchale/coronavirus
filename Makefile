@@ -8,7 +8,7 @@ docs/%.html: %.csv
 	csvtotable $< $@ -o
 
 ilgen.csv: gen.ijs illinois.ijs
-	echo "load 'gen.ijs'" | jconsole
+	echo "load 'gen.ijs'" | ijconsole
 
 time_series_2019-ncov-Confirmed.csv:
 	wget https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv -O $@
