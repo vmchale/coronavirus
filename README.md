@@ -20,7 +20,7 @@ is collated into a `.csv` file
 ### Tables
 
 Table containing data for Illinois
-[here](https://vmchale.github.io/coronavirus/illinois.html)
+[here](https://vmchale.github.io/coronavirus/ilgen.html)
 
 Table containing data for Cook county
 [here](https://vmchale.github.io/coronavirus/illinois.html).
