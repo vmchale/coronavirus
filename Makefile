@@ -2,9 +2,9 @@
 
 all: time_series_2019-ncov-Confirmed.csv time_series_2019-ncov-Deaths.csv
 
-docs: docs/illinois.html
+docs: docs/illinois.html docs/cook.html
 
-docs/illinois.html: illinois.csv
+docs/%.html: %.csv
 	csvtotable $< $@ -o
 
 time_series_2019-ncov-Confirmed.csv:
