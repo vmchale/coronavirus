@@ -3,3 +3,4 @@
 - https://chicagovirus.com/
 - https://covidtracking.com/data/state/illinois/
 - https://web.archive.org/web/*/https://dph.illinois.gov/covid19
+- https://github.com/CSSEGISandData/COVID-19/
