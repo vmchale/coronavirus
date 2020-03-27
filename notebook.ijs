@@ -14,6 +14,7 @@ linear_regress =: 4 : 'y %. 1 ,. x'
 
 table_row =: 4 : '> numerize ((4 & }.) " 1) x { y'
 get_row =: table_row & corona_data
+get_deaths =: table_row & deaths
 
 corona_cols =: }. $ corona_data
 col_span =: 4 }. (i.corona_cols)
