@@ -15,6 +15,7 @@ la_ix =: state_ix 'Louisiana'
 ca_ix =: state_ix 'California'
 mi_ix =: state_ix 'Michigan'
 al_ix =: state_ix 'Alabama'
+tx_ix =: state_ix 'Texas'
 
 cases =: > @ numerize @: (3&{) " 1
 deaths =: > @ numerize @: (4&{) " 1
