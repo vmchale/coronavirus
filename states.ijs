@@ -12,6 +12,8 @@ state_ix =: monad define
 
 ny_ix =: state_ix 'New York'
 la_ix =: state_ix 'Louisiana'
+ca_ix =: state_ix 'California'
+mi_ix =: state_ix 'Michigan'
 
 cases =: > @ numerize @: (3&{) " 1
 deaths =: > @ numerize @: (4&{) " 1
