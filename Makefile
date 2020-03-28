@@ -7,7 +7,7 @@ docs: docs/illinois.html docs/cook.html docs/ilgen.html
 docs/%.html: %.csv
 	csvtotable $< $@ -o
 
-ilgen.csv: gen.ijs illinois.ijs
+ilgen.csv: gen.ijs illinois.ijs illinois.csv
 	echo "load 'gen.ijs'" | ijconsole
 
 time_series_2019-ncov-Confirmed.csv:
