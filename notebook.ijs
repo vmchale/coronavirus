@@ -69,3 +69,7 @@ comparison_plot =: (prep " 0) (iran_ix , sk_ix , italy_ix , vn_ix , macau_ix , t
 
 plot_us =: 'title Confirmed Cases;xcaption Days;ycaption Cases;key China,US,Italy'
 compare_us =: china_total , (get_row us_ix) ,: (get_row italy_ix)
+
+NB. (* & population)
+ltransform =: % @: >: @: ^ @: -
+linv =: ltransform ^: _1
