@@ -19,6 +19,7 @@ tx_ix =: state_ix 'Texas'
 ga_ix =: state_ix 'Georgia'
 wa_ix =: state_ix 'Washington'
 ok_ix =: state_ix 'Oklahoma'
+il_ix =: state_ix 'Illinois'
 
 cases =: > @ numerize @: (3&{) " 1
 deaths =: > @ numerize @: (4&{) " 1
