@@ -20,6 +20,7 @@ chi_new =: , > numerize }. " 1 }. readcsv 'chicago.csv'
 
 tested =: 0 { array
 positive =: 1 { array
+deaths =: 2 { array
 xs =: i. $tested
 
 plot_opt =: 'title Coronavirus in Illinois;xcaption Days;ycaption Number;key Tested,Positive,Dead'
