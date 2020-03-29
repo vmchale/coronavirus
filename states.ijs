@@ -17,6 +17,8 @@ mi_ix =: state_ix 'Michigan'
 al_ix =: state_ix 'Alabama'
 tx_ix =: state_ix 'Texas'
 ga_ix =: state_ix 'Georgia'
+wa_ix =: state_ix 'Washington'
+ok_ix =: state_ix 'Oklahoma'
 
 cases =: > @ numerize @: (3&{) " 1
 deaths =: > @ numerize @: (4&{) " 1
