@@ -1,4 +1,3 @@
-load 'tables/csv'
 load 'plot'
 
 load 'common.ijs'
@@ -63,10 +62,3 @@ compare_us =: china_total , (get_row us_ix) ,: (get_row italy_ix)
 NB. (* & population)
 ltransform =: % @: >: @: ^ @: -
 linv =: ltransform ^: _1
-
-predict_7 =: monad define
-    xs =. filter_zero y
-    l =. $xs
-    model =. (i.l) linear_regress ^. xs
-    ^ model p. (i.(l+7))
-)

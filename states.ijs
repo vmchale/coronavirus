@@ -1,5 +1,3 @@
-load 'tables/csv'
-
 load 'common.ijs'
 
 states_table =: readcsv 'us-states.csv'
@@ -23,5 +21,3 @@ il_ix =: state_ix 'Illinois'
 
 cases =: > @ numerize @: (3&{) " 1
 deaths =: > @ numerize @: (4&{) " 1
-
-linear_regress =: 4 : 'y %. 1 ,. x'
