@@ -51,8 +51,6 @@ china_total =: sum_columns get_row china_ix
 
 china_deaths =: sum_columns china_ix table_row deaths
 
-last_14 =: |. @ (14 & {.) @ |.
-
 plot_opt =: 'title Observed Cases;xcaption Days;ycaption log(Cases);key Iran,SK,Italy,Vietnam,Macau,Taiwan,HK,Singapore,Germany,UK,US,France,Japan'
 comparison_plot =: (prep " 0) (iran_ix , sk_ix , italy_ix , vn_ix , macau_ix , taiwan_ix , hk_ix , singapore_ix , de_ix , uk_ix , us_ix , fr_ix , jp_ix)
 

@@ -18,12 +18,6 @@ xs =: i. $tested
 plot_opt =: 'title Coronavirus in Illinois;xcaption Days;ycaption Number;key Tested,Positive,Dead'
 il_plot =: xs ; (tested , positive ,: (2 { array))
 
-drat_option =: 'title New positive test results in Illinois;xcaption Days;ycaption Proportion'
 new_positive =: (succ_diff positive) % (succ_diff tested)
-xs_diff =: }: xs
-
-last_14 =: |. @ (14 & {.) @ |.
 
 NB. side_by_side =: (xs { prediction) ,: positive
-
-NB. compare =: illinois_relevant ,: |. ($illinois_relevant) {. |. positive

@@ -18,3 +18,5 @@ predict_n =: dyad define
     model =. (i.l) linear_regress ^. xs
     ^ model p. (i.(l+y))
 )
+
+last_14 =: |. @ (14 & {.) @ |.
