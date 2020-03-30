@@ -5,9 +5,7 @@ load 'common.ijs'
 illinois_table =: readcsv 'illinois.csv'
 cook_table =: readcsv 'cook.csv'
 
-sap =: 1 : '2 u ~/\ ]'
-
-array =: > numerize }. " 1 (1 }. illinois_table)
+array =: > numerize }. " 1 (}. illinois_table)
 cook_num =: > numerize }. " 1 (}. chicago_table)
 
 chi_new =: , > numerize }. " 1 }. readcsv 'chicago.csv'
