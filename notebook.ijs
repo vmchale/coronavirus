@@ -1,16 +1,10 @@
 load 'tables/csv'
 load 'plot'
 
-sap =: 1 : '2 u ~/\ ]'
-
-succ_diff =: - sap
+load 'common.ijs'
 
 corona_data =: readcsv 'time_series_2019-ncov-Confirmed.csv'
 deaths =: readcsv 'time_series_2019-ncov-Deaths.csv'
-
-numerize =: makenum each
-
-linear_regress =: 4 : 'y %. 1 ,. x'
 
 table_row =: 4 : '> numerize ((4 & }.) " 1) x { y'
 get_row =: table_row & corona_data
@@ -28,8 +22,6 @@ NB. Have a look here for plotting info in J: https://code.jsoftware.com/wiki/Stu
 NB. all cases in the world
 world_new =: succ_diff progression
 world_plot =: (i. $progression) ; progression ,: (0 , world_new)
-
-splog =: (^. ` ([ & 0) @. (= & 0)) " 0
 
 prep =: splog @ get_row
 
@@ -53,8 +45,6 @@ fr_ix =: 117
 us_ix =: 226
 
 sum_columns =: (+/ " 1) @: |:
-
-filter_zero =: (#~ (>&0))
 
 row_n =: {. $ corona_data
 china_ix =: (filter_zero ((=& (<'China')) ((1 & {) " 1) corona_data) * (i.row_n))

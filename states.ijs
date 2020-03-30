@@ -1,13 +1,13 @@
 load 'tables/csv'
 
-numerize =: makenum each
+load 'common.ijs'
 
 states_table =: readcsv 'us-states.csv'
 
 row_n =: {. $states_table
 
 state_ix =: monad define
-    (#~ (>&0)) (=& (< y) (1 & {) " 1 states_table) * (i. row_n)
+    filter_zero (=& (< y) (1 & {) " 1 states_table) * (i. row_n)
 )
 
 ny_ix =: state_ix 'New York'

@@ -1,17 +1,12 @@
 load 'tables/csv'
 load 'plot'
 
+load 'common.ijs'
+
 illinois_table =: readcsv 'illinois.csv'
 cook_table =: readcsv 'cook.csv'
 
 sap =: 1 : '2 u ~/\ ]'
-
-succ_diff =: - sap
-
-linear_regress =: 4 : 'y %. 1 ,. x'
-
-numerize =: makenum each
-splog =: (^. ` ([ & 0) @. (= & 0)) " 0
 
 array =: > numerize }. " 1 (1 }. illinois_table)
 cook_num =: > numerize }. " 1 (}. chicago_table)
