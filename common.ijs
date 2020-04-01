@@ -23,6 +23,6 @@ last_14 =: |. @ (14 & {.) @ |.
 
 NB. first arg the smaller one
 sbs =: dyad define
-    l =. ($y) - ($x)
+    l =. y -&:$ x
     ((l$0) , x) ,: y
 )
