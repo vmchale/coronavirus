@@ -42,6 +42,7 @@ thailand_ix =: 210
 malaysia_ix =: 154
 fr_ix =: 117
 us_ix =: 226
+nz_ix =: 171
 
 sum_columns =: (+/ " 1) @: |:
 
