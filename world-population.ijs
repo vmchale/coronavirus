@@ -12,4 +12,6 @@ country_total =: monad : 'makenum 8 { {. country_table y'
 
 us_pop =: country_total 'United States of America'
 it_pop =: country_total 'Italy'
-fr_pop =: country_total 'Vietnam'
+fr_pop =: country_total 'France'
+vn_pop =: country_total 'Viet Nam'
+NB. macau_pop =: country_total 'China, Macao SAR'
