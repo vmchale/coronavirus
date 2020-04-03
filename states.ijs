@@ -2,7 +2,7 @@ load 'common.ijs'
 
 states_table =: readcsv 'us-states.csv'
 
-row_n =: {. $states_table
+row_n =: # states_table
 
 state_ix =: monad define
     filter_zero (=& (< y) (1 & {) " 1 states_table) * (i. row_n)
@@ -10,7 +10,7 @@ state_ix =: monad define
 
 pop_table =: readcsv 'nst-est2019-alldata.csv'
 
-pop_row_n =: {. $pop_table
+pop_row_n =: # pop_table
 pop_ix =: monad define
     <: {. filter_zero (=& (<y) (4}) " 1 pop_table) * (i. pop_row_n)
 )
