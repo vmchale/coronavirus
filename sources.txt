@@ -5,3 +5,4 @@
 - https://web.archive.org/web/*/https://dph.illinois.gov/covid19
 - https://github.com/CSSEGISandData/COVID-19/
 - https://github.com/nytimes/covid-19-data
+- https://population.un.org/wpp/Download/Standard/CSV/
