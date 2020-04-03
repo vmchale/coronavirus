@@ -19,6 +19,7 @@ pop_num =: > numerize }. 16 { " 1 pop_table
 
 la_pop =: (pop_ix 'Louisiana') { pop_num
 ny_pop =: (pop_ix 'New York') { pop_num
+fl_pop =: (pop_ix 'Florida') { pop_num
 
 ny_ix =: state_ix 'New York'
 la_ix =: state_ix 'Louisiana'
