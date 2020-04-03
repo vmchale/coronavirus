@@ -8,6 +8,18 @@ state_ix =: monad define
     filter_zero (=& (< y) (1 & {) " 1 states_table) * (i. row_n)
 )
 
+pop_table =: readcsv 'nst-est2019-alldata.csv'
+
+pop_row_n =: {. $pop_table
+pop_ix =: monad define
+    <: {. filter_zero (=& (<y) (4}) " 1 pop_table) * (i. pop_row_n)
+)
+
+pop_num =: > numerize }. 16 { " 1 pop_table
+
+la_pop =: (pop_ix 'Louisiana') { pop_num
+ny_pop =: (pop_ix 'New York') { pop_num
+
 ny_ix =: state_ix 'New York'
 la_ix =: state_ix 'Louisiana'
 ca_ix =: state_ix 'California'

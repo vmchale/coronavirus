@@ -1,11 +1,14 @@
 .PHONY: clean
 
-all: time_series_2019-ncov-Confirmed.csv time_series_2019-ncov-Deaths.csv us-states.csv
+all: time_series_2019-ncov-Confirmed.csv time_series_2019-ncov-Deaths.csv us-states.csv nst-est2019-alldata.csv
 
 docs: docs/illinois.html docs/cook.html docs/ilgen.html
 
 docs/%.html: %.csv
 	csvtotable $< $@ -o
+
+nst-est2019-alldata.csv:
+	wget http://www2.census.gov/programs-surveys/popest/datasets/2010-2019/national/totals/nst-est2019-alldata.csv -O $@
 
 ilgen.csv: gen.ijs illinois.ijs illinois.csv
 	echo "load 'gen.ijs'" | ijconsole
@@ -20,4 +23,4 @@ us-states.csv:
 	wget https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-states.csv -O $@
 
 clean:
-	rm -rf time_series_*.csv ilgen.csv us-states.csv
+	rm -rf time_series_*.csv ilgen.csv us-states.csv nst-est2019-alldata.csv
