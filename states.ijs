@@ -20,6 +20,8 @@ pop_num =: > numerize }. 16 { " 1 pop_table
 la_pop =: (pop_ix 'Louisiana') { pop_num
 ny_pop =: (pop_ix 'New York') { pop_num
 fl_pop =: (pop_ix 'Florida') { pop_num
+ca_pop =: (pop_ix 'California') { pop_num
+il_pop =: (pop_ix 'Illinois') { pop_num
 
 ny_ix =: state_ix 'New York'
 la_ix =: state_ix 'Louisiana'
@@ -32,6 +34,8 @@ wa_ix =: state_ix 'Washington'
 ok_ix =: state_ix 'Oklahoma'
 il_ix =: state_ix 'Illinois'
 fl_ix =: state_ix 'Florida'
+
+scaled_deaths =: 3 : '(filter_zero deaths (state_ix y) { states_table) % ((pop_ix y) { pop_num)'
 
 cases =: > @ numerize @: (3&{) " 1
 deaths =: > @ numerize @: (4&{) " 1
