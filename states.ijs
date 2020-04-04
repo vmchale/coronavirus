@@ -22,6 +22,7 @@ ny_pop =: (pop_ix 'New York') { pop_num
 fl_pop =: (pop_ix 'Florida') { pop_num
 ca_pop =: (pop_ix 'California') { pop_num
 il_pop =: (pop_ix 'Illinois') { pop_num
+mi_pop =: (pop_ix 'Michigan') { pop_num
 
 ny_ix =: state_ix 'New York'
 la_ix =: state_ix 'Louisiana'
@@ -36,6 +37,7 @@ il_ix =: state_ix 'Illinois'
 fl_ix =: state_ix 'Florida'
 
 scaled_deaths =: 3 : '(filter_zero deaths (state_ix y) { states_table) % ((pop_ix y) { pop_num)'
+scaled_cases =: 3 : '(filter_zero cases (state_ix y) { states_table) % ((pop_ix y) { pop_num)'
 
 cases =: > @ numerize @: (3&{) " 1
 deaths =: > @ numerize @: (4&{) " 1
