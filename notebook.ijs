@@ -43,6 +43,7 @@ malaysia_ix =: 154
 fr_ix =: 117
 us_ix =: 226
 nz_ix =: 171
+nigeria_ix =: 174
 
 sum_columns =: (+/ " 1) @: |:
 
