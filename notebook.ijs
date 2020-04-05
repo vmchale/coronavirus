@@ -44,6 +44,7 @@ fr_ix =: 117
 us_ix =: 226
 nz_ix =: 171
 nigeria_ix =: 174
+se_ix =: 206
 
 sum_columns =: (+/ " 1) @: |:
 
