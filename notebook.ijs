@@ -24,7 +24,6 @@ world_plot =: (i. $progression) ; progression ,: (0 , world_new)
 
 prep =: splog @ get_row
 
-NB. to be plotted
 iran_ix =: 134
 sk_ix =: 144
 italy_ix =: 138
@@ -35,8 +34,8 @@ singapore_ix =: 197
 jp_ix =: 140
 de_ix =: 121
 uk_ix =: 224
+dk_ix =: 95
 
-NB. just want the data
 vn_ix =: 229
 thailand_ix =: 210
 malaysia_ix =: 154
