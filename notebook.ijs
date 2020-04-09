@@ -62,3 +62,5 @@ compare_us =: china_total , (get_row us_ix) ,: (get_row italy_ix)
 NB. (* & population)
 ltransform =: % @: >: @: ^ @: -
 linv =: ltransform ^: _1
+
+NB. us fit 'title Deaths in the US;key Actual,Fitted;xcaption Days;ycaption log(Cases)' plot (^. filter_zero get_deaths us_ix) ,: (^. (get_deaths us_ix) predict_n 0)
