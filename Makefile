@@ -2,7 +2,7 @@
 
 all: time_series_2019-ncov-Confirmed.csv time_series_2019-ncov-Deaths.csv us-states.csv nst-est2019-alldata.csv WPP2019_TotalPopulationBySex.csv
 
-docs: docs/illinois.html docs/cook.html docs/ilgen.html
+docs: docs/illinois.html docs/ilgen.html
 
 docs/%.html: %.csv
 	csvtotable $< $@ -o
