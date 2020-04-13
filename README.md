@@ -16,9 +16,10 @@ Table containing data for Illinois
 
 ## Use
 
-First, install `graphics/plot` and `tables/csv`, viz.
+First, install `graphics/plot`, `stats/base`, and `tables/csv`, viz.
 
 ```
   install 'graphics/plot'
-  install `tables/csv'
+  install 'tables/csv'
+  install 'stats/base'
 ```

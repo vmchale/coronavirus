@@ -7,7 +7,7 @@ deaths =: readcsv 'time_series_2019-ncov-Deaths.csv'
 
 table_row =: 4 : '> numerize ((4 & }.) " 1) x { y'
 get_row =: table_row & corona_data
-get_deaths =: table_row & deaths
+get_deaths =: (table_row & deaths) f.
 
 corona_cols =: }. $ corona_data
 col_span =: 4 }. (i.corona_cols)
