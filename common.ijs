@@ -1,5 +1,8 @@
 load 'tables/csv'
 
+NB. for verb 'corr'
+load 'stats/base/multivariate'
+
 sap =: 1 : '2 u ~/\ ]'
 
 succ_diff =: - sap
