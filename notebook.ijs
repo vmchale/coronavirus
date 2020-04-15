@@ -35,6 +35,7 @@ jp_ix =: 140
 de_ix =: 121
 uk_ix =: 224
 dk_ix =: 95
+spain_ix =: 202
 
 vn_ix =: 229
 thailand_ix =: 210
