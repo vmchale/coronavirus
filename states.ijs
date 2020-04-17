@@ -43,6 +43,7 @@ ar_ix =: state_ix 'Arkansas'
 pa_ix =: state_ix 'Pennsylvania'
 nj_ix =: state_ix 'New Jersey'
 sd_ix =: state_ix 'South Dakota'
+md_ix =: state_ix 'Maryland'
 
 scaled_deaths =: 3 : '(filter_zero deaths (state_ix y) { states_table) % ((pop_ix y) { pop_num)'
 scaled_cases =: 3 : '(filter_zero cases (state_ix y) { states_table) % ((pop_ix y) { pop_num)'
