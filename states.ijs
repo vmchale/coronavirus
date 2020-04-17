@@ -26,6 +26,7 @@ mi_pop =: (pop_ix 'Michigan') { pop_num
 az_pop =: (pop_ix 'Arizona') { pop_num
 ar_pop =: (pop_ix 'Arkansas') { pop_num
 pa_pop =: (pop_ix 'Pennsylvania') { pop_num
+sd_pop =: (pop_ix 'South Dakota') { pop_num
 
 ny_ix =: state_ix 'New York'
 la_ix =: state_ix 'Louisiana'
@@ -50,5 +51,3 @@ scaled_cases =: 3 : '(filter_zero cases (state_ix y) { states_table) % ((pop_ix 
 
 cases =: > @ numerize @: (3&{) " 1
 deaths =: > @ numerize @: (4&{) " 1
-
-NB. plot (^. cases sd_ix { states_table) ,: (^. (cases sd_ix { states_table) predict_n 0)

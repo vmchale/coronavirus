@@ -67,3 +67,4 @@ ltransform =: % @: >: @: ^ @: -
 linv =: ltransform ^: _1
 
 NB. us fit 'title Deaths in the US;key Actual,Fitted;xcaption Days;ycaption log(Cases)' plot (^. filter_zero get_deaths us_ix) ,: (^. (get_deaths us_ix) predict_n 0)
+NB. 'key Norway,Finland,Denmark,Sweden;xcaption Days;ycaption Deaths;title Deaths per thousand persons' plot ((get_deaths no_ix) % no_pop) , ((get_deaths fi_ix) % fi_pop) , ((get_deaths dk_ix) % dk_pop) ,: ((get_deaths se_ix) % se_pop)
