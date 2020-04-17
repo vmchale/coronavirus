@@ -42,9 +42,12 @@ az_ix =: state_ix 'Arizona'
 ar_ix =: state_ix 'Arkansas'
 pa_ix =: state_ix 'Pennsylvania'
 nj_ix =: state_ix 'New Jersey'
+sd_ix =: state_ix 'South Dakota'
 
 scaled_deaths =: 3 : '(filter_zero deaths (state_ix y) { states_table) % ((pop_ix y) { pop_num)'
 scaled_cases =: 3 : '(filter_zero cases (state_ix y) { states_table) % ((pop_ix y) { pop_num)'
 
 cases =: > @ numerize @: (3&{) " 1
 deaths =: > @ numerize @: (4&{) " 1
+
+NB. plot (^. cases sd_ix { states_table) ,: (^. (cases sd_ix { states_table) predict_n 0)
