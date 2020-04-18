@@ -51,3 +51,5 @@ scaled_cases =: 3 : '(filter_zero cases (state_ix y) { states_table) % ((pop_ix 
 
 cases =: > @ numerize @: (3&{) " 1
 deaths =: > @ numerize @: (4&{) " 1
+
+NB. 'key Actual,Fitted;title Cases in South Dakota, logarithmic scale;xcaption Days;ycaption log(Cases)' plot (^. cases sd_ix { states_table) ,: (^. (cases sd_ix { states_table) predict_n 0))
