@@ -27,6 +27,7 @@ az_pop =: (pop_ix 'Arizona') { pop_num
 ar_pop =: (pop_ix 'Arkansas') { pop_num
 pa_pop =: (pop_ix 'Pennsylvania') { pop_num
 sd_pop =: (pop_ix 'South Dakota') { pop_num
+nd_pop =: (pop_ix 'North Dakota') { pop_num
 
 ny_ix =: state_ix 'New York'
 la_ix =: state_ix 'Louisiana'
@@ -45,6 +46,7 @@ pa_ix =: state_ix 'Pennsylvania'
 nj_ix =: state_ix 'New Jersey'
 sd_ix =: state_ix 'South Dakota'
 md_ix =: state_ix 'Maryland'
+nd_ix =: state_ix 'North Dakota'
 
 scaled_deaths =: 3 : '(filter_zero deaths (state_ix y) { states_table) % ((pop_ix y) { pop_num)'
 scaled_cases =: 3 : '(filter_zero cases (state_ix y) { states_table) % ((pop_ix y) { pop_num)'
