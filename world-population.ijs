@@ -1,14 +1,11 @@
 load 'tables/csv'
 
-pop_table =: readcsv 'WPP2019_TotalPopulationBySex.csv'
+pop_table =: readcsv 'world-population.csv'
 
-get_country =: 4 : '(1 { x = (< y))'
-get_year =: 4 : '(4 { x = (< y))'
-get_2020 =: get_year & '2020'
-filt_2020 =: (#~ (get_2020 " 1))
+get_country =: 4 : '(0 { x = (< y))'
 
-country_table =: monad : 'filt_2020 (#~ ((get_country & y) " 1)) pop_table'
-country_total =: monad : 'makenum 8 { {. country_table y'
+country_table =: monad : ', (#~ ((get_country & y) " 1)) pop_table'
+country_total =: monad : 'makenum 1 { country_table y'
 
 us_pop =: country_total 'United States of America'
 it_pop =: country_total 'Italy'
@@ -21,5 +18,5 @@ dk_pop =: country_total 'Denmark'
 no_pop =: country_total 'Norway'
 fi_pop =: country_total 'Finland'
 spain_pop =: country_total 'Spain'
-NB. macau_pop =: country_total 'China, Macao SAR'
-NB. taiwan_pop =: country_total 'China, Taiwan Province of China'
+macau_pop =: country_total 'China, Macao SAR'
+taiwan_pop =: country_total 'China, Taiwan Province of China'

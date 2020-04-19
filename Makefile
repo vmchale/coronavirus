@@ -1,6 +1,6 @@
 .PHONY: clean
 
-all: time_series_2019-ncov-Confirmed.csv time_series_2019-ncov-Deaths.csv us-states.csv nst-est2019-alldata.csv WPP2019_TotalPopulationBySex.csv
+all: time_series_2019-ncov-Confirmed.csv time_series_2019-ncov-Deaths.csv us-states.csv nst-est2019-alldata.csv
 
 docs: docs/illinois.html docs/ilgen.html
 
