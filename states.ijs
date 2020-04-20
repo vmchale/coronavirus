@@ -48,6 +48,7 @@ sd_ix =: state_ix 'South Dakota'
 md_ix =: state_ix 'Maryland'
 nd_ix =: state_ix 'North Dakota'
 ky_ix =: state_ix 'Kentucky'
+sc_ix =: state_ix 'South Carolina'
 
 scaled_deaths =: 3 : '(filter_zero deaths (state_ix y) { states_table) % ((pop_ix y) { pop_num)'
 scaled_cases =: 3 : '(filter_zero cases (state_ix y) { states_table) % ((pop_ix y) { pop_num)'
