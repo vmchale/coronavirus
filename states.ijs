@@ -1,12 +1,13 @@
 load 'common.ijs'
 
-states_table =: readcsv 'us-states.csv'
+states_table =: readcsv 'daily.csv'
 
-row_n =: # states_table
-
-state_ix =: monad define
-    filter_zero (=& (< y) (1 & {) " 1 states_table) * (i. row_n)
+table_ix =: dyad define
+    row_n =. # x
+    filter_zero (=& (< y) (1 & {) " 1 x) * (i. row_n)
 )
+
+state_ix =: states_table & table_ix
 
 pop_table =: readcsv 'nst-est2019-alldata.csv'
 
@@ -29,31 +30,35 @@ pa_pop =: (pop_ix 'Pennsylvania') { pop_num
 sd_pop =: (pop_ix 'South Dakota') { pop_num
 nd_pop =: (pop_ix 'North Dakota') { pop_num
 
-ny_ix =: state_ix 'New York'
-la_ix =: state_ix 'Louisiana'
-ca_ix =: state_ix 'California'
-mi_ix =: state_ix 'Michigan'
-al_ix =: state_ix 'Alabama'
-tx_ix =: state_ix 'Texas'
-ga_ix =: state_ix 'Georgia'
-wa_ix =: state_ix 'Washington'
-ok_ix =: state_ix 'Oklahoma'
-il_ix =: state_ix 'Illinois'
-fl_ix =: state_ix 'Florida'
-az_ix =: state_ix 'Arizona'
-ar_ix =: state_ix 'Arkansas'
-pa_ix =: state_ix 'Pennsylvania'
-nj_ix =: state_ix 'New Jersey'
-sd_ix =: state_ix 'South Dakota'
-md_ix =: state_ix 'Maryland'
-nd_ix =: state_ix 'North Dakota'
-ky_ix =: state_ix 'Kentucky'
-sc_ix =: state_ix 'South Carolina'
+ny_ix =: state_ix 'NY'
+la_ix =: state_ix 'LA'
+ca_ix =: state_ix 'CA'
+mi_ix =: state_ix 'MI'
+al_ix =: state_ix 'AL'
+tx_ix =: state_ix 'TX'
+ga_ix =: state_ix 'GA'
+wa_ix =: state_ix 'WA'
+ok_ix =: state_ix 'OK'
+il_ix =: state_ix 'IL'
+fl_ix =: state_ix 'FL'
+az_ix =: state_ix 'AZ'
+ar_ix =: state_ix 'AR'
+pa_ix =: state_ix 'PA'
+nj_ix =: state_ix 'NJ'
+sd_ix =: state_ix 'SD'
+md_ix =: state_ix 'MD'
+nd_ix =: state_ix 'ND'
+ky_ix =: state_ix 'KY'
+sc_ix =: state_ix 'SC'
 
-scaled_deaths =: 3 : '(filter_zero deaths (state_ix y) { states_table) % ((pop_ix y) { pop_num)'
-scaled_cases =: 3 : '(filter_zero cases (state_ix y) { states_table) % ((pop_ix y) { pop_num)'
+filter_null =: (#~ ((-.@-:) & (<'') " 0))
 
-cases =: > @ numerize @: (3&{) " 1
-deaths =: > @ numerize @: (4&{) " 1
+col =: dyad : '> numerize filter_null (y&{) " 1 x'
 
-NB. 'key Actual,Fitted;title Cases in South Dakota, logarithmic scale;xcaption Days;ycaption log(Cases)' plot (^. cases sd_ix { states_table) ,: (^. (cases sd_ix { states_table) predict_n 0))
+cases =: col & 2
+deaths =: col & 14
+tested =: col & 17
+
+cases =: |. @: (cases f.)
+deaths =: |. @: (deaths f.)
+tested =: |. @: (tested f.)
