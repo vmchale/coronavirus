@@ -58,9 +58,11 @@ col =: dyad : '> numerize filter_null (y&{) " 1 x'
 cases =: col & 2
 deaths =: col & 14
 tested =: col & 17
+recovered =: col & 11
 
 cases =: |. @: (cases f.)
 deaths =: |. @: (deaths f.)
 tested =: |. @: (tested f.)
+recovered =: |. @: (recovered f.)
 
 spooky =: tested corr cases
