@@ -62,3 +62,5 @@ tested =: col & 17
 cases =: |. @: (cases f.)
 deaths =: |. @: (deaths f.)
 tested =: |. @: (tested f.)
+
+spooky =: tested corr cases
