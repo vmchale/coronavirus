@@ -40,6 +40,7 @@ al_ix =: state_ix 'AL'
 tx_ix =: state_ix 'TX'
 ga_ix =: state_ix 'GA'
 wa_ix =: state_ix 'WA'
+or_ix =: state_ix 'OR'
 ok_ix =: state_ix 'OK'
 il_ix =: state_ix 'IL'
 fl_ix =: state_ix 'FL'
@@ -52,6 +53,7 @@ md_ix =: state_ix 'MD'
 nd_ix =: state_ix 'ND'
 ky_ix =: state_ix 'KY'
 sc_ix =: state_ix 'SC'
+wi_ix =: state_ix 'WI'
 
 filter_null =: (#~ ((-.@-:) & (<'') " 0))
 
