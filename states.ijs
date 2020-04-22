@@ -53,6 +53,7 @@ md_ix =: state_ix 'MD'
 nd_ix =: state_ix 'ND'
 ky_ix =: state_ix 'KY'
 sc_ix =: state_ix 'SC'
+nc_ix =: state_ix 'NC'
 wi_ix =: state_ix 'WI'
 
 filter_null =: (#~ ((-.@-:) & (<'') " 0))
