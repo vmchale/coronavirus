@@ -68,3 +68,6 @@ tested =: |. @: (tested f.)
 recovered =: |. @: (recovered f.)
 
 spooky =: tested corr cases
+
+NB. "percent positive"
+pp =: (succ_diff @ cases) % (succ_diff @ tested)
