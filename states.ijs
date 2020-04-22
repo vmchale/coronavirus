@@ -29,6 +29,8 @@ ar_pop =: (pop_ix 'Arkansas') { pop_num
 pa_pop =: (pop_ix 'Pennsylvania') { pop_num
 sd_pop =: (pop_ix 'South Dakota') { pop_num
 nd_pop =: (pop_ix 'North Dakota') { pop_num
+ga_pop =: (pop_ix 'Georgia') { pop_num
+tx_pop =: (pop_ix 'Texas') { pop_num
 
 ny_ix =: state_ix 'NY'
 la_ix =: state_ix 'LA'
