@@ -32,5 +32,5 @@ sbs =: dyad define
 
 mean =: +/ % #
 
-NB. discards some data
+NB. left argument window size
 sliding_mean =: (mean " 1) @: ]\
