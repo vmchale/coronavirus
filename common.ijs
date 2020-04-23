@@ -34,6 +34,6 @@ mean =: +/ % #
 
 NB. discards some data
 sliding_mean =: dyad define
-    chunks =. |. (-x)]\ (|. y)
-    }. (mean " 1 chunks)
+    chunks =. |. x]\ (|. y)
+    mean " 1 chunks
 )
