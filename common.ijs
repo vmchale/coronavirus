@@ -33,7 +33,4 @@ sbs =: dyad define
 mean =: +/ % #
 
 NB. discards some data
-sliding_mean =: dyad define
-    chunks =. |. x]\ (|. y)
-    mean " 1 chunks
-)
+sliding_mean =: (mean " 1) @: ]\
