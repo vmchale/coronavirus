@@ -29,3 +29,11 @@ sbs =: dyad define
     l =. y -&:$ x
     ((l$0) , x) ,: y
 )
+
+mean =: +/ % #
+
+NB. discards some data
+sliding_mean =: dyad define
+    chunks =. |. (-x)]\ (|. y)
+    }. (mean " 1 chunks)
+)
