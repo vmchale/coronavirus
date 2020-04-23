@@ -32,5 +32,5 @@ sbs =: dyad define
 
 mean =: +/ % #
 
-NB. left argument window size
-sliding_mean =: (mean " 1) @: ]\
+with_window =: adverb : 'u @: ]\'
+sliding_mean =: (mean " 1) with_window
