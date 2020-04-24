@@ -30,7 +30,5 @@ sbs =: dyad define
     ((l$0) , x) ,: y
 )
 
-mean =: +/ % #
-
 with_window =: adverb : 'u @: ]\'
-sliding_mean =: (mean " 1) with_window
+sliding_mean =: (+/ % # " 1) with_window
