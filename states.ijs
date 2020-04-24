@@ -73,7 +73,8 @@ recovered =: |. @: (recovered f.)
 spooky =: tested corr cases
 
 NB. "percent positive"
-pp =: (succ_diff @ cases) % (succ_diff @ tested)
+pp =: cases daily_ratio tested
 
 sliding_diff =: (7 & sliding_mean) @: succ_diff
-pp_sliding =: (sliding_diff @ cases) % (sliding_diff @ tested)
+sliding_ratio =: % &: sliding_diff
+pp_sliding =: cases sliding_ratio tested

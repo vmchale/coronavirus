@@ -7,6 +7,8 @@ sap =: 1 : '2 u ~/\ ]'
 
 succ_diff =: - sap
 
+daily_ratio =: % &: succ_diff
+
 numerize =: makenum each
 
 linear_regress =: 4 : 'y %. 1 ,. x'
