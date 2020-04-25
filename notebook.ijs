@@ -48,6 +48,7 @@ nz_ix =: 171
 nigeria_ix =: 174
 se_ix =: 206
 brazil_ix =: 29
+is_ix =: 131
 
 sum_columns =: (+/ " 1) @: |:
 
