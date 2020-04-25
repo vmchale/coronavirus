@@ -19,7 +19,7 @@ filter_zero =: (#~ (>&0))
 
 predict_n =: dyad define
     xs =. filter_zero x
-    l =. $xs
+    l =. #xs
     model =. (i.l) linear_regress ^. xs
     ^ model p. (i.(l+y))
 )
@@ -35,4 +35,5 @@ s_sbs =: dyad define
 sbs =: s_sbs~ ` s_sbs @. (<&:#)
 
 with_window =: adverb : 'u @: ]\'
+NB. idk what the monadic case does
 sliding_mean =: (+/ % # " 1) with_window
