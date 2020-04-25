@@ -6,8 +6,12 @@ Simple predictions using exponential regression and plot examples
 
 ## Data
 
+### Illinois
+
 I have collated data from the Illinois Department of Health into a `.csv` file
 [here](https://github.com/vmchale/coronavirus/blob/master/illinois.csv).
+
+### Chicago
 
 Data from Chicago:
   - [Cases](https://github.com/vmchale/coronavirus/blob/master/chicago.csv)
