@@ -70,6 +70,8 @@ deaths =: |. @: (deaths f.)
 tested =: |. @: (tested f.)
 recovered =: |. @: (recovered f.)
 
+new_cases =: succ_diff @: cases
+
 spooky =: tested corr cases
 
 NB. "percent positive"
