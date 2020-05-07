@@ -37,3 +37,4 @@ sbs =: s_sbs~ ` s_sbs @. (<&:#)
 with_window =: adverb : 'u @: ]\'
 NB. idk what the monadic case does
 sliding_mean =: (+/ % # " 1) with_window
+week_mean =: 7 & sliding_mean
