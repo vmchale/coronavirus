@@ -62,7 +62,7 @@ filter_null =: (#~ ((-.@-:) & (<'') " 0))
 col =: dyad : '> numerize filter_null (y&{) " 1 x'
 
 cases =: col & 2
-deaths =: col & 14
+deaths =: col & 16
 tested =: col & 17
 recovered =: col & 11
 
