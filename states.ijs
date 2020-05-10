@@ -32,6 +32,10 @@ nd_pop =: (pop_ix 'North Dakota') { pop_num
 ga_pop =: (pop_ix 'Georgia') { pop_num
 tx_pop =: (pop_ix 'Texas') { pop_num
 md_pop =: (pop_ix 'Maryland') { pop_num
+va_pop =: (pop_ix 'Virginia') { pop_num
+ma_pop =: (pop_ix 'Massachusetts') { pop_num
+tn_pop =: (pop_ix 'Tennessee') { pop_num
+ne_pop =: (pop_ix 'Nebraska') { pop_num
 
 ny_ix =: state_ix 'NY'
 la_ix =: state_ix 'LA'
@@ -56,14 +60,18 @@ ky_ix =: state_ix 'KY'
 sc_ix =: state_ix 'SC'
 nc_ix =: state_ix 'NC'
 wi_ix =: state_ix 'WI'
+ma_ix =: state_ix 'MA'
+va_ix =: state_ix 'VA'
+tn_ix =: state_ix 'TN'
+ne_ix =: state_ix 'NE'
 
 filter_null =: (#~ ((-.@-:) & (<'') " 0))
 
 col =: dyad : '> numerize filter_null (y&{) " 1 x'
 
 cases =: col & 2
-deaths =: col & 14
-tested =: col & 17
+deaths =: col & 16
+tested =: col & 19
 recovered =: col & 11
 
 cases =: |. @: (cases f.)

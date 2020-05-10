@@ -10,5 +10,7 @@ chicago_cases =: get_numbers chicago_table
 chicago_deaths =: get_numbers chicago_deaths_table
 chicago_tested =: get_numbers chicago_tested_table
 
+NB. latest_pos =: chicago_cases %&: ({: @ succ_diff) chicago_tested
+
 NB. https://www.census.gov/quickfacts/fact/table/chicagocityillinois/POP010210
 chi_pop =: 2695598
