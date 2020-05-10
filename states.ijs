@@ -32,6 +32,8 @@ nd_pop =: (pop_ix 'North Dakota') { pop_num
 ga_pop =: (pop_ix 'Georgia') { pop_num
 tx_pop =: (pop_ix 'Texas') { pop_num
 md_pop =: (pop_ix 'Maryland') { pop_num
+va_pop =: (pop_ix 'Virginia') { pop_num
+ma_pop =: (pop_ix 'Massachusetts') { pop_num
 
 ny_ix =: state_ix 'NY'
 la_ix =: state_ix 'LA'
