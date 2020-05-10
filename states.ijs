@@ -56,6 +56,8 @@ ky_ix =: state_ix 'KY'
 sc_ix =: state_ix 'SC'
 nc_ix =: state_ix 'NC'
 wi_ix =: state_ix 'WI'
+ma_ix =: state_ix 'MA'
+va_ix =: state_ix 'VA'
 
 filter_null =: (#~ ((-.@-:) & (<'') " 0))
 
@@ -63,7 +65,7 @@ col =: dyad : '> numerize filter_null (y&{) " 1 x'
 
 cases =: col & 2
 deaths =: col & 16
-tested =: col & 17
+tested =: col & 19
 recovered =: col & 11
 
 cases =: |. @: (cases f.)
