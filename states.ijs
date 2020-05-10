@@ -35,6 +35,7 @@ md_pop =: (pop_ix 'Maryland') { pop_num
 va_pop =: (pop_ix 'Virginia') { pop_num
 ma_pop =: (pop_ix 'Massachusetts') { pop_num
 tn_pop =: (pop_ix 'Tennessee') { pop_num
+ne_pop =: (pop_ix 'Nebraska') { pop_num
 
 ny_ix =: state_ix 'NY'
 la_ix =: state_ix 'LA'
@@ -62,6 +63,7 @@ wi_ix =: state_ix 'WI'
 ma_ix =: state_ix 'MA'
 va_ix =: state_ix 'VA'
 tn_ix =: state_ix 'TN'
+ne_ix =: state_ix 'NE'
 
 filter_null =: (#~ ((-.@-:) & (<'') " 0))
 
