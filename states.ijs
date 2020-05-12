@@ -37,6 +37,7 @@ ma_pop =: (pop_ix 'Massachusetts') { pop_num
 tn_pop =: (pop_ix 'Tennessee') { pop_num
 ne_pop =: (pop_ix 'Nebraska') { pop_num
 ia_pop =: (pop_ix 'Iowa') { pop_num
+wi_pop =: (pop_ix 'Wisconsin') { pop_num
 
 ny_ix =: state_ix 'NY'
 la_ix =: state_ix 'LA'
