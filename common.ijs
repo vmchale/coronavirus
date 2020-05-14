@@ -42,7 +42,7 @@ common =: dyad define
 ccat =: dyad define
     max_dim =. >./@:$
     sel =. y <.&max_dim x
-    x (,&:(|.@:(sel & {. " 1)@:|.)) y
+    x (,&:((|."1)@(sel & {. " 1)@(|."1))) y
 )
 
 clink =: dyad define
