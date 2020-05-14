@@ -24,8 +24,6 @@ predict_n =: dyad define
     ^ model p. (i.(l+y))
 )
 
-last_14 =: 14 last_n
-
 NB. first arg the smaller one
 s_sbs =: dyad define
     l =. y -&:# x
@@ -33,6 +31,8 @@ s_sbs =: dyad define
 )
 
 last_n =: adverb : '|. @: (x & {.) @: |.'
+
+last_14 =: 14 last_n
 
 common =: dyad define
     sel =. y <.&# x
