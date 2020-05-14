@@ -32,6 +32,8 @@ s_sbs =: dyad define
     ((l$0) , x) ,: y
 )
 
+NB. common and ccat are helper functions to truncate data to make things comparable
+NB. plot x ccat y common z is like plot x , y ,: z for x y z of different lengths
 common =: dyad define
     sel =. y <.&# x
     x (,:&(sel & {.)) y
