@@ -24,7 +24,7 @@ predict_n =: dyad define
     ^ model p. (i.(l+y))
 )
 
-last_14 =: |. @ (14 & {.) @ |.
+last_14 =: 14 last_n
 
 NB. first arg the smaller one
 s_sbs =: dyad define
@@ -32,17 +32,22 @@ s_sbs =: dyad define
     ((l$0) , x) ,: y
 )
 
-NB. common and ccat are helper functions to truncate data to make things comparable
-NB. plot x ccat y common z is like plot x , y ,: z for x y z of different lengths
+last_n =: adverb : '|. @: (x & {.) @: |.'
+
 common =: dyad define
     sel =. y <.&# x
-    x (,:&(sel & {.)) y
+    x (,:&(sel last_n)) y
 )
 
 ccat =: dyad define
     max_dim =. >./@:$
     sel =. y <.&max_dim x
-    x (,&:(sel & {. " 1)) y
+    x (,&:(|.@:(sel & {. " 1)@:|.)) y
+)
+
+clink =: dyad define
+    sel =. y <.&# x
+    x (;&(sel last_n)) y
 )
 
 sbs =: s_sbs~ ` s_sbs @. (<&:#)
