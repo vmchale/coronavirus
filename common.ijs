@@ -37,9 +37,8 @@ common =: dyad define
     x (,:&(sel & {.)) y
 )
 
-max_dim =: >./@:$
-
 ccat =: dyad define
+    max_dim =. >./@:$
     sel =. y <.&max_dim x
     x (,&:(sel & {. " 1)) y
 )
