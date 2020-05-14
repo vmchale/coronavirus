@@ -32,6 +32,18 @@ s_sbs =: dyad define
     ((l$0) , x) ,: y
 )
 
+common =: dyad define
+    sel =. y <.&# x
+    x (,:&(sel & {.)) y
+)
+
+max_dim =: >./@:$
+
+ccat =: dyad define
+    sel =. y <.&max_dim x
+    x (,&:(sel & {. " 1)) y
+)
+
 sbs =: s_sbs~ ` s_sbs @. (<&:#)
 
 with_window =: adverb : 'u @: ]\'
