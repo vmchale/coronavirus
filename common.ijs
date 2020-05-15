@@ -56,7 +56,7 @@ with_window =: adverb : 'u @: ]\'
 am =: +/ % #
 NB. better b/c overflows on fewer things
 gm =: am &.: ^.
-hm =: am &.: %
+NB. hm =: am &.: %
 
 NB. idk what the monadic case does
 sliding_mean =: (am " 1) with_window
