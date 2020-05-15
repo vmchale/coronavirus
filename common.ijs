@@ -53,6 +53,11 @@ clink =: dyad define
 sbs =: s_sbs~ ` s_sbs @. (<&:#)
 
 with_window =: adverb : 'u @: ]\'
+am =: +/ % #
+NB. better b/c overflows on fewer things
+gm =: am &.: ^.
+hm =: am &.: %
+
 NB. idk what the monadic case does
-sliding_mean =: (+/ % # " 1) with_window
+sliding_mean =: (am " 1) with_window
 week_mean =: 7 & sliding_mean
