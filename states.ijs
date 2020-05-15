@@ -39,6 +39,7 @@ ne_pop =: (pop_ix 'Nebraska') { pop_num
 ia_pop =: (pop_ix 'Iowa') { pop_num
 wi_pop =: (pop_ix 'Wisconsin') { pop_num
 mn_pop =: (pop_ix 'Minnesota') { pop_num
+in_pop =: (pop_ix 'Indiana') { pop_num
 
 ny_ix =: state_ix 'NY'
 la_ix =: state_ix 'LA'
@@ -69,6 +70,7 @@ tn_ix =: state_ix 'TN'
 ne_ix =: state_ix 'NE'
 ia_ix =: state_ix 'IA'
 mn_ix =: state_ix 'MN'
+in_ix =: state_ix 'IN'
 
 filter_null =: (#~ ((-.@-:) & (<'') " 0))
 
