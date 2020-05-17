@@ -55,7 +55,8 @@ russia_ix =: 188
 sum_columns =: (+/ " 1) @: |:
 
 row_n =: {. $ corona_data
-china_ix =: (filter_zero ((=& (<'China')) ((1 & {) " 1) corona_data) * (i.row_n))
+NB. replace with I.
+china_ix =: I. ((=& (<'China')) ((1 & {) " 1) corona_data)
 china_total =: sum_columns get_row china_ix
 
 china_deaths =: sum_columns china_ix table_row deaths
