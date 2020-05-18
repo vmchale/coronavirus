@@ -10,8 +10,8 @@ chicago_cases =: get_numbers chicago_table
 chicago_deaths =: get_numbers chicago_deaths_table
 chicago_tested =: get_numbers chicago_tested_table
 
-NB. 'c t' =: chicago_cases common chicago_tested
-NB. (c %&succ_diff t)
+'c_chicago_ t_chicago_' =: chicago_cases common chicago_tested
+pp_chicago_ =: (c_chicago_ %&succ_diff t_chicago_)
 
 NB. latest_pos =: chicago_cases %&: ({: @ succ_diff) chicago_tested
 
