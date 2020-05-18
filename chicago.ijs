@@ -13,7 +13,5 @@ chicago_tested =: get_numbers chicago_tested_table
 'c_chicago_ t_chicago_' =: chicago_cases common chicago_tested
 pp_chicago_ =: (c_chicago_ %&succ_diff t_chicago_)
 
-NB. latest_pos =: chicago_cases %&: ({: @ succ_diff) chicago_tested
-
 NB. https://www.census.gov/quickfacts/fact/table/chicagocityillinois/POP010210
 chi_pop =: 2695598
