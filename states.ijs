@@ -96,6 +96,7 @@ tested =: |. @: (tested f.)
 recovered =: |. @: (recovered f.)
 
 new_cases =: succ_diff @: cases
+new_deaths =: succ_diff @: deaths
 
 spooky =: tested corr cases
 
