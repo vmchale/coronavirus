@@ -45,6 +45,7 @@ in_pop =: (pop_ix 'Indiana') { pop_num
 oh_pop =: (pop_ix 'Ohio') { pop_num
 ms_pop =: (pop_ix 'Mississippi') { pop_num
 wy_pop =: (pop_ix 'Wyoming') { pop_num
+al_pop =: (pop_ix 'Alabama') { pop_num
 
 ny_ix =: state_ix 'NY'
 la_ix =: state_ix 'LA'
