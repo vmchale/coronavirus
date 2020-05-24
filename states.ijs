@@ -80,6 +80,7 @@ in_ix =: state_ix 'IN'
 oh_ix =: state_ix 'OH'
 ms_ix =: state_ix 'MS'
 wy_ix =: state_ix 'WY'
+dc_ix =: state_ix 'DC'
 
 filter_null =: (#~ ((-.@-:) & (<'') " 0))
 
