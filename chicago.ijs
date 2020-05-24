@@ -1,4 +1,5 @@
 load 'common.ijs'
+load'plot'
 
 chicago_table =: readcsv 'chicago.csv'
 chicago_deaths_table =: readcsv 'chicago-deaths.csv'

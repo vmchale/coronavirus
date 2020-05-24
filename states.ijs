@@ -1,4 +1,5 @@
 load 'common.ijs'
+load'plot'
 
 states_table =: readcsv 'daily.csv'
 
