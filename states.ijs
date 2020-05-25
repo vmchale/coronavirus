@@ -83,6 +83,7 @@ ms_ix =: state_ix 'MS'
 wy_ix =: state_ix 'WY'
 dc_ix =: state_ix 'DC'
 mo_ix =: state_ix 'MO'
+co_ix =: state_ix 'CO'
 
 filter_null =: (#~ ((-.@-:) & (<'') " 0))
 
