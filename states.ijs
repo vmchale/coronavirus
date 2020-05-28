@@ -93,6 +93,7 @@ ri_ix =: state_ix 'RI'
 nv_ix =: state_ix 'NV'
 nm_ix =: state_ix 'NM'
 ut_ix =: state_ix 'UT'
+me_ix =: state_ix 'ME'
 
 filter_null =: (#~ ((-.@-:) & (<'') " 0))
 
