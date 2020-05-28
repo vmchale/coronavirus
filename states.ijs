@@ -23,6 +23,7 @@ pop_num =: > numerize }. 16 { " 1 pop_table
 
 la_pop =: (pop_ix 'Louisiana') { pop_num
 ny_pop =: (pop_ix 'New York') { pop_num
+nj_pop =: (pop_ix 'New Jersey') { pop_num
 fl_pop =: (pop_ix 'Florida') { pop_num
 ca_pop =: (pop_ix 'California') { pop_num
 il_pop =: (pop_ix 'Illinois') { pop_num
