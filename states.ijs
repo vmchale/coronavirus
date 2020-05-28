@@ -85,6 +85,13 @@ wy_ix =: state_ix 'WY'
 dc_ix =: state_ix 'DC'
 mo_ix =: state_ix 'MO'
 co_ix =: state_ix 'CO'
+wv_ix =: state_ix 'WV'
+mt_ix =: state_ix 'MT'
+ct_ix =: state_ix 'CT'
+ri_ix =: state_ix 'RI'
+nv_ix =: state_ix 'NV'
+nm_ix =: state_ix 'NM'
+ut_ix =: state_ix 'UT'
 
 filter_null =: (#~ ((-.@-:) & (<'') " 0))
 
