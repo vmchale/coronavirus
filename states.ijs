@@ -114,7 +114,7 @@ recovered =: |. @: (recovered f.) @: with_table
 new_cases =: succ_diff @: cases
 new_deaths =: succ_diff @: deaths
 
-smoothed_cases =: week_mean @: new_deaths
+smoothed_cases =: week_mean @: new_cases
 
 spooky =: tested corr cases
 
