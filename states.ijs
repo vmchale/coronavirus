@@ -104,13 +104,17 @@ deaths =: col & 16
 tested =: col & 19
 recovered =: col & 11
 
-cases =: |. @: (cases f.)
-deaths =: |. @: (deaths f.)
-tested =: |. @: (tested f.)
-recovered =: |. @: (recovered f.)
+with_table =: ({&states_table)
+
+cases =: |. @: (cases f.) @: with_table
+deaths =: |. @: (deaths f.) @: with_table
+tested =: |. @: (tested f.) @: with_table
+recovered =: |. @: (recovered f.) @: with_table
 
 new_cases =: succ_diff @: cases
 new_deaths =: succ_diff @: deaths
+
+smoothed_cases =: week_mean @: new_deaths
 
 spooky =: tested corr cases
 
