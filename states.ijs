@@ -104,12 +104,18 @@ deaths =: col & 16
 tested =: col & 23
 recovered =: col & 11
 
+hospitalized =: col & 5
+icu =: col & 8
+
 with_table =: ({&states_table)
 
 cases =: |. @: (cases f.) @: with_table
 deaths =: |. @: (deaths f.) @: with_table
 tested =: |. @: (tested f.) @: with_table
 recovered =: |. @: (recovered f.) @: with_table
+
+hospitalized =: |. @: (hospitalized f.) @: with_table
+icu =: |. @: (icu f.) @: with_table
 
 new_cases =: succ_diff @: cases
 new_deaths =: succ_diff @: deaths
