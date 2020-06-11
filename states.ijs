@@ -109,10 +109,11 @@ icu =: col & 7
 
 with_table =: ({&states_table)
 
-cases =: |. @: (cases f.) @: with_table
-deaths =: |. @: (deaths f.) @: with_table
-tested =: |. @: (tested f.) @: with_table
-recovered =: |. @: (recovered f.) @: with_table
+fixy =: adverb : '|. @: (u f.) @: with_table'
+cases =: cases fixy
+deaths =: deaths fixy
+tested =: tested fixy
+recovered =: recovered fixy
 
 hospitalized =: |. @: (hospitalized f.) @: with_table
 icu =: |. @: (icu f.) @: with_table
