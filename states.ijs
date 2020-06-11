@@ -105,7 +105,7 @@ tested =: col & 23
 recovered =: col & 11
 
 hospitalized =: col & 5
-icu =: col & 8
+icu =: col & 7
 
 with_table =: ({&states_table)
 
