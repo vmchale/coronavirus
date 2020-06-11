@@ -115,8 +115,8 @@ deaths =: deaths fixy
 tested =: tested fixy
 recovered =: recovered fixy
 
-hospitalized =: |. @: (hospitalized f.) @: with_table
-icu =: |. @: (icu f.) @: with_table
+hospitalized =: hospitalized fixy
+icu =: icu fixy
 
 new_cases =: succ_diff @: cases
 new_deaths =: succ_diff @: deaths
