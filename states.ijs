@@ -51,6 +51,7 @@ al_pop =: (pop_ix 'Alabama') { pop_num
 nc_pop =: (pop_ix 'North Carolina') { pop_num
 sc_pop =: (pop_ix 'South Carolina') { pop_num
 ok_pop =: (pop_ix 'Oklahoma') { pop_num
+nv_pop =: (pop_ix 'Nevada') { pop_num
 
 ny_ix =: state_ix 'NY'
 la_ix =: state_ix 'LA'
