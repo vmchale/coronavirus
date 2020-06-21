@@ -29,7 +29,7 @@ us-states.csv:
 	wget https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-states.csv -O $@
 
 clean:
-	rm -rf time_series_*.csv ilgen.csv us-states.csv nst-est2019-alldata.csv WPP2019_TotalPopulationBySex.csv daily.csv compressed
+	rm -rf time_series_*.csv ilgen.csv us-states.csv nst-est2019-alldata.csv WPP2019_TotalPopulationBySex.csv daily.csv
 
 compress: compressed/daily.csv.zst
 
