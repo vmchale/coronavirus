@@ -15,3 +15,4 @@ plot_opt =: 'title Coronavirus in Illinois;xcaption Days;ycaption Number;key Tes
 il_plot =: xs ; (tested , positive ,: (2 { array))
 
 new_positive =: (succ_diff positive) % (succ_diff tested)
+illinois_smooth =: week_mean succ_diff positive
