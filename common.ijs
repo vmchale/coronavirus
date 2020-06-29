@@ -35,9 +35,9 @@ last_n =: adverb : '|. @: (x & {.) @: |.'
 last_14 =: 14 last_n
 
 last_14_predict_n =: dyad define
-    xs =. last_14 x
-    model =. (i.14) linear_regress ^. xs
-    ^ model p. (i.(14+y))
+    l =. #x
+    model =. (last_14 (i.l)) linear_regress ^. (last_14 x)
+    ^ model p. (i.(l+y))
 )
 
 common =: dyad define
