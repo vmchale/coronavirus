@@ -133,7 +133,15 @@ spooky =: tested corr cases
 
 NB. "percent positive"
 pp =: cases daily_ratio tested
+pp_match =: monad define
+    'c t' =. (cases y) common (tested y)
+    c daily_ratio t
+)
 
 sliding_diff =: (7 & sliding_mean) @: succ_diff
 sliding_ratio =: % &: sliding_diff
 pp_sliding =: cases sliding_ratio tested
+pp_match_sliding =: monad define
+    'c t' =. (cases y) common (tested y)
+    c sliding_ratio t
+)
