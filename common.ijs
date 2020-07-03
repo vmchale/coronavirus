@@ -34,10 +34,14 @@ last_n =: adverb : '|. @: (x & {.) @: |.'
 
 last_14 =: 14 last_n
 
-last_14_predict_n =: dyad define
+NB. Used like so:
+NB.
+NB. (cases az_ix) last_k_predict_n (14;7) to use the last 14 days to predict the next 7
+last_k_predict_n =: dyad define
+    'k n' =. y
     l =. #x
-    model =. (last_14 (i.l)) linear_regress ^. (last_14 x)
-    ^ model p. (i.(l+y))
+    model =. (k last_n (i.l)) linear_regress ^. (k last_n x)
+    ^ model p. (i.(l+n))
 )
 
 common =: dyad define
