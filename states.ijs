@@ -138,7 +138,5 @@ pp_match =: monad define
     c daily_ratio t
 )
 
-sliding_diff =: (7 & sliding_mean) @: succ_diff
-sliding_ratio =: % &: sliding_diff
-pp_sliding =: cases sliding_ratio tested
+pp_sliding =: week_mean @: pp
 pp_match_sliding =: week_mean @: pp_match
