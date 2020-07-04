@@ -141,7 +141,4 @@ pp_match =: monad define
 sliding_diff =: (7 & sliding_mean) @: succ_diff
 sliding_ratio =: % &: sliding_diff
 pp_sliding =: cases sliding_ratio tested
-pp_match_sliding =: monad define
-    'c t' =. (cases y) common (tested y)
-    c sliding_ratio t
-)
+pp_match_sliding =: week_mean @: pp_match
