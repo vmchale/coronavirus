@@ -128,6 +128,7 @@ new_cases =: succ_diff @: cases
 new_deaths =: succ_diff @: deaths
 
 smoothed_cases =: week_mean @: new_cases
+smoothed_deaths =: week_mean @: new_deaths
 
 spooky =: tested corr cases
 
