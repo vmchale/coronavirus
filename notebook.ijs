@@ -70,6 +70,9 @@ compare_us =: china_total , (get_row us_ix) ,: (get_row italy_ix)
 new_cases =: succ_diff @: get_row
 new_deaths =: succ_diff @: get_deaths
 
+smoothed_cases =: week_mean @: new_cases
+smoothed_deaths =: week_mean @: new_deaths
+
 NB. (* & population)
 ltransform =: % @: >: @: ^ @: -
 linv =: ltransform ^: _1
