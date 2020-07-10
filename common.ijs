@@ -30,9 +30,9 @@ s_sbs =: dyad define
     ((l$0) , x) ,: y
 )
 
-last_n =: adverb : '|. @: (x & {.) @: |.'
+last_n =: adverb : '(- x) & {.' NB. adverb : '|. @: (x & {.) @: |.'
 
-last_14 =: 14 last_n
+last_14 =: _14 & {.
 
 NB. Used like so:
 NB.
