@@ -1,6 +1,6 @@
 .PHONY: clean
 
-all: time_series_2019-ncov-Confirmed.csv time_series_2019-ncov-Deaths.csv nst-est2019-alldata.csv daily.csv
+all: time_series_2019-ncov-Confirmed.csv time_series_2019-ncov-Deaths.csv nst-est2019-alldata.csv daily.csv chicago-tested.csv chicago-cases.csv
 
 docs: docs/illinois.html docs/ilgen.html
 
@@ -28,8 +28,14 @@ time_series_2019-ncov-Deaths.csv:
 us-states.csv:
 	wget https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-states.csv -O $@
 
+chicago-tested.csv:
+	wget https://data.cityofchicago.org/resource/t4hh-4ku9.csv -O $@
+
+chicago-cases.csv:
+	wget https://data.cityofchicago.org/resource/naz8-j4nc.csv -O $@
+
 clean:
-	rm -rf time_series_*.csv ilgen.csv us-states.csv nst-est2019-alldata.csv WPP2019_TotalPopulationBySex.csv daily.csv
+	rm -rf time_series_*.csv ilgen.csv us-states.csv nst-est2019-alldata.csv WPP2019_TotalPopulationBySex.csv daily.csv chicago-tested.csv
 
 compress: compressed/daily.csv.zst
 
