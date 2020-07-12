@@ -32,7 +32,7 @@ s_sbs =: dyad define
 
 last_n =: adverb : '(- x) & {.'
 
-last_14 =: _14 & {.
+NB. last_14 =: _14 & {.
 
 NB. Used like so:
 NB.

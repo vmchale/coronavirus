@@ -1,6 +1,7 @@
 ilgen.csv
 chicago-cases.csv
 chicago-tested.csv
+chicago-hospitalized.csv
 daily.csv
 us-states.csv
 *.swp
