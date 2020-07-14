@@ -38,6 +38,7 @@ dk_ix =: 95
 no_ix =: 176
 fi_ix =: 107
 spain_ix =: 202
+india_ix =: 132
 
 vn_ix =: 229
 thailand_ix =: 210
