@@ -71,3 +71,5 @@ NB. harmonic_means_ =: arithmetic_means_ &.: %
 NB. idk what the monadic case does
 sliding_mean =: (arithmetic_means_ " 1) with_window
 week_mean =: 7 & sliding_mean
+
+NB. 7 (+/%#)\]
