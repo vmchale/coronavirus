@@ -111,6 +111,7 @@ tested =: col & 19
 recovered =: col & 11
 
 hospitalized =: col & 5
+hospitalized_cum =: col & 6
 icu =: col & 7
 
 with_table =: ({&states_table)
@@ -122,6 +123,7 @@ tested =: tested fixy
 recovered =: recovered fixy
 
 hospitalized =: hospitalized fixy
+hospitalized_cum =: hospitalized_cum fixy
 icu =: icu fixy
 
 new_cases =: succ_diff @: cases
