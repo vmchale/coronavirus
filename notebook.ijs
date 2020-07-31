@@ -25,6 +25,7 @@ world_plot =: (i. $progression) ; progression ,: (0 , world_new)
 prep =: splog @ get_row
 
 iran_ix =: 134
+belgium_ix =: 24
 sk_ix =: 144
 italy_ix =: 138
 macau_ix =: 70
