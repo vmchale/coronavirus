@@ -24,14 +24,15 @@ world_plot =: (i. $progression) ; progression ,: (0 , world_new)
 
 prep =: splog @ get_row
 
+NB. two-letter abbreviations based on domain codes
 iran_ix =: 134
-belgium_ix =: 24
+be_ix =: 24
 sk_ix =: 144
-italy_ix =: 138
+it_ix =: 138
 macau_ix =: 70
 taiwan_ix =: 208
 hk_ix =: 62
-singapore_ix =: 197
+sg_ix =: 197
 jp_ix =: 140
 de_ix =: 121
 uk_ix =: 224
@@ -49,25 +50,30 @@ us_ix =: 226
 nz_ix =: 171
 nigeria_ix =: 174
 se_ix =: 206
-brazil_ix =: 29
+br_ix =: 29
 is_ix =: 131
 greece_ix =: 123
 russia_ix =: 188
+nl_ix =: 170
+
+name_ixes =: 3 : 'I. ((=& (<y)) ((1 & {) " 1) corona_data)'
+
+au_ixes =: name_ixes 'Australia'
+ca_ixes =: name_ixes 'Canada'
+cn_ixes =: name_ixes 'China'
 
 sum_columns =: (+/ " 1) @: |:
 
 row_n =: {. $ corona_data
-NB. replace with I.
-china_ix =: I. ((=& (<'China')) ((1 & {) " 1) corona_data)
-china_total =: sum_columns get_row china_ix
 
-china_deaths =: sum_columns china_ix table_row deaths
+china_total =: sum_columns get_row cn_ixes
+china_deaths =: sum_columns get_deaths cn_ixes
 
 plot_opt =: 'title Observed Cases;xcaption Days;ycaption log(Cases);key Iran,SK,Italy,Vietnam,Macau,Taiwan,HK,Singapore,Germany,UK,US,France,Japan'
-comparison_plot =: (prep " 0) (iran_ix , sk_ix , italy_ix , vn_ix , macau_ix , taiwan_ix , hk_ix , singapore_ix , de_ix , uk_ix , us_ix , fr_ix , jp_ix)
+comparison_plot =: (prep " 0) (iran_ix , sk_ix , it_ix , vn_ix , macau_ix , taiwan_ix , hk_ix , sg_ix , de_ix , uk_ix , us_ix , fr_ix , jp_ix)
 
 plot_us =: 'title Confirmed Cases;xcaption Days;ycaption Cases;key China,US,Italy'
-compare_us =: china_total , (get_row us_ix) ,: (get_row italy_ix)
+compare_us =: china_total , (get_row us_ix) ,: (get_row it_ix)
 
 new_cases =: succ_diff @: get_row
 new_deaths =: succ_diff @: get_deaths
