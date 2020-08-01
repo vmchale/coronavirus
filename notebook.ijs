@@ -56,7 +56,8 @@ greece_ix =: 123
 russia_ix =: 188
 nl_ix =: 170
 
-name_ixes =: 3 : 'I. ((=& (<y)) ((1 & {) " 1) corona_data)'
+country_names =: ((1 & {) " 1) corona_data
+name_ixes =: 3 : 'I. ((=& (<y)) country_names)'
 
 au_ixes =: name_ixes 'Australia'
 ca_ixes =: name_ixes 'Canada'
