@@ -58,6 +58,8 @@ mt_pop =: (pop_ix 'Montana') { pop_num
 ct_pop =: (pop_ix 'Connecticut') { pop_num
 wa_pop =: (pop_ix 'Washington') { pop_num
 ky_pop =: (pop_ix 'Kentucky') { pop_num
+me_pop =: (pop_ix 'Maine') { pop_num
+ri_pop =: (pop_ix 'Rhode Island') { pop_num
 
 ny_ix =: state_ix 'NY'
 la_ix =: state_ix 'LA'
