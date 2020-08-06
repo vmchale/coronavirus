@@ -7,8 +7,8 @@ chicago_hospitalized_table =: readcsv 'chicago-hospitalized.csv'
 
 renumber =: |. @: > @: numerize
 
-chicago_tested_total =: renumber }. (2&{) "1 chicago_tested_table
-chicago_tested_total =: renumber }. (3&{) "1 chicago_tested_table
+chicago_tested_all =: renumber }. (2&{) "1 chicago_tested_table
+chicago_tested_positive =: renumber }. (3&{) "1 chicago_tested_table
 
 chicago_cases =: renumber }. 1&{"1 chicago_table
 chicago_deaths =: renumber }. 2&{"1 chicago_table
