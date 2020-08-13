@@ -24,45 +24,16 @@ world_plot =: (i. $progression) ; progression ,: (0 , world_new)
 
 prep =: splog @ get_row
 
-NB. two-letter abbreviations based on domain codes
-iran_ix =: 134
-be_ix =: 24
-sk_ix =: 144
-it_ix =: 138
-macau_ix =: 70
-taiwan_ix =: 208
-hk_ix =: 62
-sg_ix =: 197
-jp_ix =: 140
-de_ix =: 121
-uk_ix =: 224
-dk_ix =: 95
-no_ix =: 176
-fi_ix =: 107
-spain_ix =: 202
-india_ix =: 132
-
-vn_ix =: 229
-thailand_ix =: 210
-malaysia_ix =: 154
-fr_ix =: 117
-us_ix =: 226
-nz_ix =: 171
-nigeria_ix =: 174
-se_ix =: 206
-br_ix =: 29
-is_ix =: 131
-greece_ix =: 123
-russia_ix =: 188
-nl_ix =: 170
-kenya_ix =: 143
-
 country_names =: ((1 & {) " 1) corona_data
 name_ixes =: 3 : 'I. ((=& (<y)) country_names)'
+name_ix =: {: @: name_ixes
 
+NB. two-letter abbreviations based on domain codes
 au_ixes =: name_ixes 'Australia'
 ca_ixes =: name_ixes 'Canada'
 cn_ixes =: name_ixes 'China'
+us_ix =: name_ix 'US'
+vn_ix =: name_ix 'Vietnam'
 
 sum_columns =: (+/ " 1) @: |:
 
