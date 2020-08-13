@@ -34,6 +34,17 @@ ca_ixes =: name_ixes 'Canada'
 cn_ixes =: name_ixes 'China'
 us_ix =: name_ix 'US'
 vn_ix =: name_ix 'Vietnam'
+sg_ix =: name_ix 'Singapore'
+be_ix =: name_ix 'Belgium'
+fr_ix =: name_ix 'France'
+uk_ix =: name_ix 'United Kingdom'
+de_ix =: name_ix 'Germany'
+nl_ix =: name_ix 'Netherlands'
+es_ix =: name_ix 'Spain'
+sg_ix =: name_ix 'Singapore'
+sk_ix =: name_ix 'Korea, South'
+jp_ix =: name_ix 'Japan'
+it_ix =: name_ix 'Italy'
 
 sum_columns =: (+/ " 1) @: |:
 
@@ -41,12 +52,6 @@ row_n =: {. $ corona_data
 
 china_total =: sum_columns get_row cn_ixes
 china_deaths =: sum_columns get_deaths cn_ixes
-
-plot_opt =: 'title Observed Cases;xcaption Days;ycaption log(Cases);key Iran,SK,Italy,Vietnam,Macau,Taiwan,HK,Singapore,Germany,UK,US,France,Japan'
-comparison_plot =: (prep " 0) (iran_ix , sk_ix , it_ix , vn_ix , macau_ix , taiwan_ix , hk_ix , sg_ix , de_ix , uk_ix , us_ix , fr_ix , jp_ix)
-
-plot_us =: 'title Confirmed Cases;xcaption Days;ycaption Cases;key China,US,Italy'
-compare_us =: china_total , (get_row us_ix) ,: (get_row it_ix)
 
 new_cases =: succ_diff @: get_row
 new_deaths =: succ_diff @: get_deaths
