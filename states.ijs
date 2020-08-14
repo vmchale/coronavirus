@@ -61,6 +61,7 @@ ky_pop =: (pop_ix 'Kentucky') { pop_num
 me_pop =: (pop_ix 'Maine') { pop_num
 ri_pop =: (pop_ix 'Rhode Island') { pop_num
 ks_pop =: (pop_ix 'Kansas') { pop_num
+id_pop =: (pop_ix 'Idaho') { pop_num
 
 ny_ix =: state_ix 'NY'
 la_ix =: state_ix 'LA'
@@ -107,6 +108,7 @@ nm_ix =: state_ix 'NM'
 ut_ix =: state_ix 'UT'
 me_ix =: state_ix 'ME'
 ks_ix =: state_ix 'KS'
+id_ix =: state_ix 'ID'
 
 filter_null =: (#~ ((-.@-:) & (<'') " 0))
 
