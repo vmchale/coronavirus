@@ -45,6 +45,10 @@ sg_ix =: name_ix 'Singapore'
 sk_ix =: name_ix 'Korea, South'
 jp_ix =: name_ix 'Japan'
 it_ix =: name_ix 'Italy'
+se_ix =: name_ix 'Sweden'
+dk_ix =: name_ix 'Denmark'
+fi_ix =: name_ix 'Finland'
+no_ix =: name_ix 'Norway'
 
 sum_columns =: (+/ " 1) @: |:
 
