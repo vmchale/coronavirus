@@ -33,6 +33,7 @@ chicago-tested.csv:
 
 chicago-cases.csv:
 	wget https://data.cityofchicago.org/resource/naz8-j4nc.csv -O $@
+	xsv sort $@ -o $@
 
 chicago-hospitalized.csv:
 	wget https://data.cityofchicago.org/resource/f3he-c6sv.csv -O $@
