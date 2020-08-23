@@ -6,6 +6,8 @@ state_ixes =: monad : 'I. (=& (< y) (1&{" 1) excess_death_table)'
 
 ga_ixes =: state_ixes 'Georgia'
 
+colize =: dyad : '> makenum each y&{"1 x { excess_death_table'
+
 NB. 'Oberserved Number'
-deaths_actual =: monad : '> makenum each 2&{"1 y { excess_death_table'
-deaths_expected =: monad : '> makenum each 5&{"1 y { excess_death_table'
+deaths_actual =: colize & 2
+deaths_expected =: colize & 5
