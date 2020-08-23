@@ -4,8 +4,6 @@ load'plot'
 states_table =: readcsv 'daily.csv'
 
 table_ix =: dyad define
-    row_n =. # x
-    NB. replace with I.
     I. (=& (< y) (1 & {) " 1 x)
 )
 
@@ -13,7 +11,6 @@ state_ix =: states_table & table_ix
 
 pop_table =: readcsv 'nst-est2019-alldata.csv'
 
-pop_row_n =: # pop_table
 pop_ix =: monad define
     NB. replace with I.
     <: {. I. (=& (<y) (4}) " 1 pop_table)
