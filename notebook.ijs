@@ -50,6 +50,7 @@ dk_ix =: name_ix 'Denmark'
 fi_ix =: name_ix 'Finland'
 no_ix =: name_ix 'Norway'
 nz_ix =: name_ix 'New Zealand'
+br_ix =: name_ix 'Brazil'
 
 sum_columns =: (+/ " 1) @: |:
 
