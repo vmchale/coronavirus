@@ -7,6 +7,7 @@ state_ixes =: monad : 'I. (=& (< y) (1&{" 1) excess_death_table)'
 ga_ixes =: state_ixes 'Georgia'
 ny_ixes =: state_ixes 'New York'
 tx_ixes =: state_ixes 'Texas'
+ok_ixes =: state_ixes 'Oklahoma'
 
 colize =: dyad : '> makenum each y&{"1 x { excess_death_table'
 
