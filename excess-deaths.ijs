@@ -14,3 +14,5 @@ colize =: dyad : '> makenum each y&{"1 x { excess_death_table'
 NB. 'Oberserved Number'
 deaths_actual =: colize & 2
 deaths_expected =: colize & 5
+
+excess =: deaths_actual - deaths_expected
