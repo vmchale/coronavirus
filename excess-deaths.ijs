@@ -11,7 +11,7 @@ ok_ixes =: state_ixes 'Oklahoma'
 la_ixes =: state_ixes 'Louisiana'
 il_ixes =: state_ixes 'Illinois'
 az_ixes =: state_ixes 'Arizona'
-nj_ixes =: states_ixes 'New Jersey'
+nj_ixes =: state_ixes 'New Jersey'
 
 colize =: dyad : '> makenum each y&{"1 x { excess_death_table'
 dates =: monad : '{."1 y { excess_death_table'
