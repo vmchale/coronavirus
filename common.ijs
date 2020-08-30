@@ -32,8 +32,6 @@ s_sbs =: dyad define
 
 last_n =: adverb : '(- x) & {.'
 
-NB. last_14 =: _14 & {.
-
 NB. Used like so:
 NB.
 NB. (cases az_ix) last_k_predict_n (14;7) to use the last 14 days to predict the next 7
