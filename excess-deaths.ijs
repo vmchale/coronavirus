@@ -12,11 +12,14 @@ la_ixes =: state_ixes 'Louisiana'
 il_ixes =: state_ixes 'Illinois'
 az_ixes =: state_ixes 'Arizona'
 nj_ixes =: state_ixes 'New Jersey'
+nv_ixes =: state_ixes 'Nevada'
+mi_ixes =: state_ixes 'Michigan'
+ma_ixes =: state_ixes 'Massachusetts'
 
 colize =: dyad : '> makenum each y&{"1 x { excess_death_table'
 dates =: monad : '{."1 y { excess_death_table'
 
-NB. 'Oberserved Number'
+NB. 'Observed Number'
 deaths_actual =: colize & 2
 deaths_expected =: colize & 5
 
