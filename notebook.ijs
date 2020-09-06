@@ -38,10 +38,8 @@ us_ix =: name_ix 'US'
 vn_ix =: name_ix 'Vietnam'
 sg_ix =: name_ix 'Singapore'
 be_ix =: name_ix 'Belgium'
-fr_ix =: name_ix 'France'
 uk_ix =: name_ix 'United Kingdom'
 de_ix =: name_ix 'Germany'
-nl_ixes =: name_ixes 'Netherlands'
 es_ix =: name_ix 'Spain'
 sg_ix =: name_ix 'Singapore'
 sk_ix =: name_ix 'Korea, South'
@@ -54,6 +52,8 @@ no_ix =: name_ix 'Norway'
 nz_ix =: name_ix 'New Zealand'
 br_ix =: name_ix 'Brazil'
 hk_ix =: province_ix 'Hong Kong'
+fr_ix =: 127
+nl_ix =: 192
 
 sum_columns =: (+/ " 1) @: |:
 
