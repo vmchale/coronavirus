@@ -27,7 +27,7 @@ prep =: splog @ get_row
 country_names =: ((1 & {) " 1) corona_data
 province_names =: {."1 corona_data
 name_ixes =: 3 : 'I. ((=& (<y)) country_names)'
-name_ix =: {. @: name_ixes
+name_ix =: {: @: name_ixes
 province_ix =: 3 : '{. I. ((=& (<y)) province_names)'
 
 NB. two-letter abbreviations based on domain codes
