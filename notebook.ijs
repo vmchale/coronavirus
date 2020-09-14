@@ -55,6 +55,7 @@ hk_ix =: province_ix 'Hong Kong'
 fr_ix =: 127
 nl_ix =: 192
 sn_ix =: name_ix 'Senegal'
+za_ix =: name_ix 'South Africa'
 
 sum_columns =: (+/ " 1) @: |:
 
