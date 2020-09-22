@@ -23,6 +23,7 @@ nd_ixes =: state_ixes 'North Dakota'
 wi_ixes =: state_ixes 'Wisconsin'
 md_ixes =: state_ixes 'Maryland'
 us_ixes =: state_ixes 'United States'
+ca_ixes =: state_ixes 'California'
 
 colize =: dyad : '> makenum each y&{"1 x { excess_death_table'
 dates =: monad : '{."1 y { excess_death_table'
