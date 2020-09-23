@@ -8,3 +8,4 @@
 - https://population.un.org/wpp/Download/Standard/CSV/
 - https://covidtracking.com/api
 - https://www.cdc.gov/nchs/nvss/vsrr/covid19/excess_deaths.htm
+  - https://data.cdc.gov/NCHS/Excess-Deaths-Associated-with-COVID-19/xkkf-xrst/
