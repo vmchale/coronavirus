@@ -1,6 +1,6 @@
 load'tables/csv'
 
-excess_death_table =: readcsv 'Excess_Deaths_Associated_with_COVID-19.csv'
+excess_death_table =: readcsv 'excess.csv'
 
 state_ixes =: monad : 'I. (=& (< y) (1&{" 1) excess_death_table)'
 
