@@ -1,3 +1,6 @@
+*.cdefs
+*.cwidths
+jdclass
 ilgen.csv
 Excess_Deaths_Associated_with_COVID-19.csv
 chicago-cases.csv
