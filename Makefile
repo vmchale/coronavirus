@@ -1,6 +1,6 @@
 .PHONY: clean
 
-all: time_series_2019-ncov-Confirmed.csv time_series_2019-ncov-Deaths.csv nst-est2019-alldata.csv daily.csv chicago-tested.csv chicago-cases.csv chicago-hospitalized.csv Excess_Deaths_Associated_with_COVID-19.csv
+all: time_series_2019-ncov-Confirmed.csv time_series_2019-ncov-Deaths.csv nst-est2019-alldata.csv daily.csv chicago-tested.csv chicago-cases.csv chicago-hospitalized.csv excess.csv
 
 docs: docs/illinois.html docs/ilgen.html
 
@@ -19,7 +19,7 @@ nst-est2019-alldata.csv:
 ilgen.csv: gen.ijs illinois.ijs illinois.csv
 	echo "load 'gen.ijs'" | ijconsole
 
-Excess_Deaths_Associated_with_COVID-19.csv:
+excess.csv:
 	wget https://data.cdc.gov/api/views/xkkf-xrst/rows.csv -O $@
 
 time_series_2019-ncov-Confirmed.csv:
@@ -42,7 +42,7 @@ chicago-hospitalized.csv:
 	wget https://data.cityofchicago.org/resource/f3he-c6sv.csv -O $@
 
 clean:
-	rm -rf time_series_*.csv ilgen.csv us-states.csv nst-est2019-alldata.csv WPP2019_TotalPopulationBySex.csv daily.csv chicago-tested.csv chicago-hospitalized.csv chicago-cases.csv Excess_Deaths_Associated_with_COVID-19.csv *.cdefs *.cwidths jdclass
+	rm -rf time_series_*.csv ilgen.csv us-states.csv nst-est2019-alldata.csv WPP2019_TotalPopulationBySex.csv daily.csv chicago-tested.csv chicago-hospitalized.csv chicago-cases.csv excess.csv *.cdefs *.cwidths jdclass
 
 compress: compressed/daily.csv.zst
 

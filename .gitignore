@@ -2,7 +2,7 @@
 *.cwidths
 jdclass
 ilgen.csv
-Excess_Deaths_Associated_with_COVID-19.csv
+excess.csv
 chicago-cases.csv
 chicago-tested.csv
 chicago-hospitalized.csv
