@@ -1,5 +1,6 @@
 states:("DSI  IIII       II                               ";enlist ",")0:`:daily.csv
-excess:("DSI  I           ";enlist ",")0:`:excess.csv
-excess:`date`state`observed`expected xcol excess
+excess:("DSI  I       S   ";enlist ",")0:`:excess.csv
+excess:`date`state`observed`expected`weighted xcol excess
+excess:select date,state,observed,expected from excess where weighted=`Unweighted
 \
-`date`excess xcol select date,observed-expected from excess where state=`Texas, date>2020.02.29
+select date,excess:observed-expected from excess where state=`Texas, date>2020.02.29, date<2020.09.05
