@@ -3,7 +3,7 @@ jdadminx'corona'
 CSVFOLDER =:'/home/vanessa/programming/j/coronavirus'
 
 jd'csvprobe /replace excess.csv'
-jd'csvcdefs /replace /h 1 excess.csv'
+jd'csvcdefs /replace /h 1 /v 5 excess.csv'
 jd'csvscan excess.csv'
 jd'csvrd excess.csv excess'
 
