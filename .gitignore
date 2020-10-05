@@ -1,12 +1,10 @@
-*.cdefs
-*.cwidths
+daily.c*
+excess.c*
 jdclass
 ilgen.csv
-excess.csv
 chicago-cases.csv
 chicago-tested.csv
 chicago-hospitalized.csv
-daily.csv
 us-states.csv
 *.swp
 time_series_*.csv
