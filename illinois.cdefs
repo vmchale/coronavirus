@@ -1,0 +1,5 @@
+1 Date     byte 7
+2 Tested   int   
+3 Positive int   
+4 Deaths   int   
+options , LF " NO 1 iso8601-char
