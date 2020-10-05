@@ -11,17 +11,8 @@ Simple predictions using exponential regression and plot examples
 I have collated data from the Illinois Department of Health into a `.csv` file
 [here](https://github.com/vmchale/coronavirus/blob/master/illinois.csv).
 
-### Chicago
-
-Data from Chicago:
-  - [Cases](https://github.com/vmchale/coronavirus/blob/master/chicago.csv)
-  - [Deaths](https://github.com/vmchale/coronavirus/blob/master/chicago-deaths.csv)
-  - [Tests](https://github.com/vmchale/coronavirus/blob/master/chicago-tested.csv)
-
-### Tables
-
-Table containing data for Illinois
-[here](https://vmchale.github.io/coronavirus/ilgen.html)
+It is arranged to be used from a columnar database; I use
+[jd](https://www.jsoftware.com/jd_tuts.html).
 
 ## Use
 

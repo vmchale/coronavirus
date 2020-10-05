@@ -2,11 +2,6 @@
 
 all: time_series_2019-ncov-Confirmed.csv time_series_2019-ncov-Deaths.csv nst-est2019-alldata.csv daily.csv chicago-tested.csv chicago-cases.csv chicago-hospitalized.csv excess.csv
 
-docs: docs/illinois.html docs/ilgen.html
-
-docs/%.html: %.csv
-	csvtotable $< $@ -o
-
 daily.csv:
 	wget https://covidtracking.com/api/v1/states/daily.csv -O $@
 
