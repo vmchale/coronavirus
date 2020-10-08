@@ -113,7 +113,7 @@ col =: dyad : '> numerize filter_null (y&{) " 1 x'
 
 cases =: col & 2
 deaths =: col & 18
-tested =: col & 5
+tested =: col & 6
 recovered =: col & 11
 
 hospitalized =: col & 6

@@ -9,7 +9,7 @@ WPP2019_TotalPopulationBySex.csv:
 	wget 'https://population.un.org/wpp/Download/Files/1_Indicators%20(Standard)/CSV_FILES/WPP2019_TotalPopulationBySex.csv' -O $@
 
 nst-est2019-alldata.csv:
-	wget http://www2.census.gov/programs-surveys/popest/datasets/2010-2019/national/totals/nst-est2019-alldata.csv -O $@
+	wget https://www2.census.gov/programs-surveys/popest/datasets/2010-2019/national/totals/nst-est2019-alldata.csv -O $@
 
 ilgen.csv: gen.ijs illinois.ijs illinois.csv
 	echo "load 'gen.ijs'" | ijconsole
