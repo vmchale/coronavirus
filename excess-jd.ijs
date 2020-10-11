@@ -2,9 +2,9 @@ load'jd'
 jdadminx'corona'
 CSVFOLDER =:'/home/vanessa/programming/j/coronavirus'
 
-jd'csvprobe /replace excess.csv'
-jd'csvcdefs /replace /h 1 /v 11 excess.csv'
-jd'csvscan excess.csv'
+NB. jd'csvprobe /replace excess.csv'
+NB. jd'csvcdefs /replace /h 1 /v 11 excess.csv'
+NB. jd'csvscan excess.csv'
 jd'csvrd excess.csv excess'
 
 NB. get observed and expected data

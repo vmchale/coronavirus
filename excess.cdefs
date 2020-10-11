@@ -1,0 +1,18 @@
+01 "Week Ending Date"                     edate  
+02 State                                  varbyte
+03 "Observed Number"                      int    
+04 "Upper Bound Threshold"                int    
+05 "Exceeds Threshold"                    byte 5 
+06 "Average Expected Count"               int    
+07 "Excess Lower Estimate"                int    
+08 "Excess Higher Estimate"               int    
+09 Year                                   int    
+10 "Total Excess Lower Estimate in 2020"  int    
+11 "Total Excess Higher Estimate in 2020" int    
+12 "Percent Excess Lower Estimate"        float  
+13 "Percent Excess Higher Estimate"       float  
+14 Type                                   varbyte
+15 Outcome                                byte      30
+16 Suppress                               varbyte
+17 Note                                   varbyte
+options , LF " NO 1 iso8601-char
