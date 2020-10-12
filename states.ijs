@@ -116,10 +116,10 @@ deaths =: col & 18
 tested =: col & 6
 recovered =: col & 11
 
-hospitalized =: col & 6
-hospitalized_cum =: col & 7
-icu =: col & 8
-icu_cum =: col & 9
+hospitalized =: col & 7
+hospitalized_cum =: col & 8
+icu =: col & 9
+icu_cum =: col & 10
 
 with_table =: ({&states_table)
 
