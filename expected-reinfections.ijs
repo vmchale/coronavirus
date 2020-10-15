@@ -11,6 +11,6 @@ pairs_sep_by =: dyad : '(({. , {:) " 1) y ]\ x'
 mu =: monad : '(*/"1 nv_vect pairs_sep_by y) % nv_pop'
 
 nv_sep_by =: +/ @: mu
-nv_tot =: +/ nv_sep_by "0 (30 + i.192) NB. wrong; start with 45
+nv_tot =: +/ nv_sep_by "0 (45 + i.133)
 
 NB. doesn't account for "interference" b/w reinfections -> if one is reinfected day 30, one cannot be reinfected day 31!
