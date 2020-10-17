@@ -9,7 +9,7 @@ jd'csvrd excess.csv excess'
 
 jd'csvrd excess-age.csv excessAge'
 
-NB. jd'reads "Week Ending Date","State Abbreviation","Age Group","Number of Deaths" from excessAge where "State Abbreviation"="NY"'
+NB. jd'reads "Week Ending Date","State Abbreviation","Age Group","Number of Deaths" from excessAge where "State Abbreviation"="NY" and "Week Ending Date" > "2020-01-01"'
 
 NB. get observed and expected data
 NB. jd'reads "Week Ending Date","Observed Number","Average Expected Count" from excess where State="Texas" and "Week Ending Date" >= "2020-02-29" and Type="Unweighted" and Outcome="All causes"'
