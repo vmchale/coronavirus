@@ -112,14 +112,13 @@ filter_null =: (#~ ((-.@-:) & (<'') " 0))
 col =: dyad : '> numerize filter_null (y&{) " 1 x'
 
 cases =: col & 2
-deaths =: col & 18
-tested =: col & 6
-recovered =: col & 11
+deaths =: col & 19
+tested =: col & 7
 
-hospitalized =: col & 7
-hospitalized_cum =: col & 8
-icu =: col & 9
-icu_cum =: col & 10
+hospitalized =: col & 8
+hospitalized_cum =: col & 9
+icu =: col & 10
+icu_cum =: col & 11
 
 with_table =: ({&states_table)
 
@@ -127,7 +126,6 @@ fixy =: adverb : '|. @: (u f.) @: with_table'
 cases =: cases fixy
 deaths =: deaths fixy
 tested =: tested fixy
-recovered =: recovered fixy
 
 hospitalized =: hospitalized fixy
 hospitalized_cum =: hospitalized_cum fixy
