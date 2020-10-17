@@ -1,0 +1,12 @@
+01 Jurisdiction         byte      20
+02 "Week Ending Date"   edate
+03 "State Abbreviation" byte 2 
+04 Year                 int    
+05 Week                 int    
+06 "Age Group"          varbyte
+07 "Number of Deaths"   int    
+08 "Time Period"        byte 9 
+09 Type                 varbyte
+10 Suppress             byte      55
+11 Note                 varbyte
+options , LF " NO 1 iso8601-char

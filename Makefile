@@ -17,6 +17,10 @@ ilgen.csv: gen.ijs illinois.ijs illinois.csv
 excess.csv:
 	wget https://data.cdc.gov/api/views/xkkf-xrst/rows.csv -O $@
 
+excess-age.csv:
+	wget https://data.cdc.gov/api/views/y5bj-9g5w/rows.csv -O $@
+	sed -i 's/\([[:digit:]]\+\)\/\([[:digit:]]\+\)\/\([[:digit:]]\+\)/\3-\1-\2/' $@
+
 time_series_2019-ncov-Confirmed.csv:
 	wget https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv -O $@
 
@@ -37,7 +41,7 @@ chicago-hospitalized.csv:
 	wget https://data.cityofchicago.org/resource/f3he-c6sv.csv -O $@
 
 clean:
-	rm -rf time_series_*.csv ilgen.csv us-states.csv nst-est2019-alldata.csv WPP2019_TotalPopulationBySex.csv chicago-tested.csv chicago-hospitalized.csv chicago-cases.csv daily.c* excess.csv jdclass
+	rm -rf time_series_*.csv ilgen.csv us-states.csv nst-est2019-alldata.csv WPP2019_TotalPopulationBySex.csv chicago-tested.csv chicago-hospitalized.csv chicago-cases.csv daily.c* excess.csv jdclass excess-age.csv
 
 compress: compressed/daily.csv.zst
 
