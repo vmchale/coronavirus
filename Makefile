@@ -19,7 +19,7 @@ excess.csv:
 
 excess-age.csv:
 	wget https://data.cdc.gov/api/views/y5bj-9g5w/rows.csv -O $@
-	sed -i 's/\([[:digit:]]\+\)\/\([[:digit:]]\+\)\/\([[:digit:]]\+\)/\3-\1-\2/' $@
+	perl -i -pe 's/(\d+)\/(\d+)\/(\d+)/\3-\1-\2/' $@
 
 time_series_2019-ncov-Confirmed.csv:
 	wget https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv -O $@
