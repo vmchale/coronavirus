@@ -2,9 +2,9 @@ daily.c*
 excess.csv
 jdclass
 ilgen.csv
-chicago-cases.csv
-chicago-tested.csv
-chicago-hospitalized.csv
+chicago-cases.c*
+chicago-tested.c*
+chicago-hospitalized.c*
 us-states.csv
 *.swp
 time_series_*.csv
