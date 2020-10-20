@@ -40,7 +40,11 @@ deaths =: monad define
 )
 
 cases =: monad define
-    jd'reads date,death from states where state="',y,'" and death > _9223372036854775808 order by date'
+    jd'reads date,positive from states where state="',y,'" and positive > _9223372036854775808 order by date'
+)
+
+hospitalized =: monad define
+    jd'reads date,hospitalizedCurrently from states where state="',y,'" and hospitalizedCurrently > _9223372036854775808 order by date'
 )
 
 smoothed_cases =: monad : 'week_mean succ_diff ,> (< 1 1) { cases y'
