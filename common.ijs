@@ -3,9 +3,7 @@ load 'tables/csv'
 NB. for verb 'corr'
 load 'stats/base/multivariate'
 
-sap =: 1 : '2 u ~/\ ]'
-
-succ_diff =: - sap
+succ_diff =: 2 -~/\ ]
 
 daily_ratio =: % &: succ_diff
 
@@ -67,7 +65,4 @@ geometric_means_ =: arithmetic_means_ &.: ^.
 NB. harmonic_means_ =: arithmetic_means_ &.: %
 
 NB. idk what the monadic case does
-sliding_mean =: (arithmetic_means_ " 1) with_window
-week_mean =: 7 & sliding_mean
-
-NB. 7 (+/%#)\]
+week_mean =: 7 (+/%#)\]
