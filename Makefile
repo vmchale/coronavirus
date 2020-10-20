@@ -4,6 +4,7 @@ all: time_series_2019-ncov-Confirmed.csv time_series_2019-ncov-Deaths.csv nst-es
 
 daily.csv:
 	wget https://covidtracking.com/api/v1/states/daily.csv -O $@
+	perl -i -pe 's/(\d{4})(\d{2})(\d{2})/\1-\2-\3/' daily.csv
 
 WPP2019_TotalPopulationBySex.csv:
 	wget 'https://population.un.org/wpp/Download/Files/1_Indicators%20(Standard)/CSV_FILES/WPP2019_TotalPopulationBySex.csv' -O $@

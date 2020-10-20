@@ -20,3 +20,6 @@ jd'csvprobe /replace chicago-tested.csv'
 jd'csvcdefs /replace /h 1 /v 30 chicago-tested.csv'
 jd'csvscan chicago-tested.csv'
 jd'csvrd chicago-tested.csv chicagoTested'
+
+NB. plot week_mean , > (< 1 0) { jd'reads cases_total from chicagoCases'
+NB. plot , > (<1 1) { jd'reads date,combined_hospital_beds_in_use_covid_19 from chicagoHospitalized where combined_hospital_beds_in_use_covid_19 > _9223372036854775808 order by date'
