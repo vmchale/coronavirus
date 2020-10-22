@@ -33,7 +33,7 @@ cases_pp_ =: monad define
      , > (< 1 1) { jd'reads date,positives.cases from tested,tested-positives where positives.cases > _9223372036854775808 and tested > _9223372036854775808 and state="',y,'" order by date'
 )
 
-pp =: cases_pp_ % tested_pp_
+pp =: cases_pp_ (% &: succ_diff) tested_pp_
 
 deaths =: monad define
     jd'reads date,death from states where state="',y,'" and death > _9223372036854775808 order by date'
