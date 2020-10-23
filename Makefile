@@ -1,6 +1,6 @@
 .PHONY: clean
 
-all: time_series_2019-ncov-Confirmed.csv time_series_2019-ncov-Deaths.csv nst-est2019-alldata.csv daily.csv chicago-tested.csv chicago-cases.csv chicago-hospitalized.csv excess.csv excess-age.csv
+all: time_series_2019-ncov-Confirmed.csv time_series_2019-ncov-Deaths.csv nst-est2019-alldata.csv daily.csv chicago-tested.csv chicago-cases.csv chicago-hospitalized.csv excess.csv excess-age.csv mask-survey.csv
 
 daily.csv:
 	wget https://covidtracking.com/api/v1/states/daily.csv -O $@
@@ -11,9 +11,6 @@ WPP2019_TotalPopulationBySex.csv:
 
 nst-est2019-alldata.csv:
 	wget https://www2.census.gov/programs-surveys/popest/datasets/2010-2019/national/totals/nst-est2019-alldata.csv -O $@
-
-ilgen.csv: gen.ijs illinois.ijs illinois.csv
-	echo "load 'gen.ijs'" | ijconsole
 
 mask-survey.csv: pre-mask-survey.csv
 	xsv select geo_value,time_value,value,stderr,sample_size $^ > $@
