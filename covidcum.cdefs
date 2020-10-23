@@ -1,0 +1,4 @@
+1 geo_value  byte 2
+2 time_value edate 
+3 value      float 
+options , LF " NO 1 iso8601-char

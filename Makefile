@@ -12,6 +12,12 @@ WPP2019_TotalPopulationBySex.csv:
 nst-est2019-alldata.csv:
 	wget https://www2.census.gov/programs-surveys/popest/datasets/2010-2019/national/totals/nst-est2019-alldata.csv -O $@
 
+covidcum.csv: pre-covidcum.csv
+	xsv select geo_value,time_value,value $^ > $@
+
+pre-covidcum.csv:
+	wget 'https://delphi.cmu.edu/csv?signal=indicator-combination%3Aconfirmed_cumulative_prop&start_day=2020-09-08&end_day=2020-10-22&geo_type=state' -O $@
+
 mask-survey.csv: pre-mask-survey.csv
 	xsv select geo_value,time_value,value,stderr,sample_size $^ > $@
 
@@ -45,7 +51,7 @@ chicago-hospitalized.csv:
 	wget https://data.cityofchicago.org/resource/f3he-c6sv.csv -O $@
 
 clean:
-	rm -rf time_series_*.csv ilgen.csv us-states.csv nst-est2019-alldata.csv WPP2019_TotalPopulationBySex.csv chicago-tested.c* chicago-hospitalized.c* chicago-cases.c* daily.c* excess.csv jdclass excess-age.csv mask-survey.csv pre-mask-survey.csv
+	rm -rf time_series_*.csv ilgen.csv us-states.csv nst-est2019-alldata.csv WPP2019_TotalPopulationBySex.csv chicago-tested.c* chicago-hospitalized.c* chicago-cases.c* daily.c* excess.csv jdclass excess-age.csv mask-survey.csv pre-mask-survey.csv covidcum.csv pre-covidcum.csv
 
 compress: compressed/daily.csv.zst
 
