@@ -1,0 +1,6 @@
+1 geo_value   byte 2
+2 time_value  edate 
+3 value       float 
+4 stderr      float 
+5 sample_size float 
+options , LF " NO 1 iso8601-char

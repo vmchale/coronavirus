@@ -15,6 +15,12 @@ nst-est2019-alldata.csv:
 ilgen.csv: gen.ijs illinois.ijs illinois.csv
 	echo "load 'gen.ijs'" | ijconsole
 
+mask-survey.csv: pre-mask-survey.csv
+	xsv select geo_value,time_value,value,stderr,sample_size $^ > $@
+
+pre-mask-survey.csv:
+	wget 'https://delphi.cmu.edu/csv?signal=fb-survey%3Asmoothed_wearing_mask&start_day=2020-09-08&end_day=2020-10-22&geo_type=state' -O $@
+
 excess.csv:
 	wget https://data.cdc.gov/api/views/xkkf-xrst/rows.csv -O $@
 
@@ -42,7 +48,7 @@ chicago-hospitalized.csv:
 	wget https://data.cityofchicago.org/resource/f3he-c6sv.csv -O $@
 
 clean:
-	rm -rf time_series_*.csv ilgen.csv us-states.csv nst-est2019-alldata.csv WPP2019_TotalPopulationBySex.csv chicago-tested.c* chicago-hospitalized.c* chicago-cases.c* daily.c* excess.csv jdclass excess-age.csv
+	rm -rf time_series_*.csv ilgen.csv us-states.csv nst-est2019-alldata.csv WPP2019_TotalPopulationBySex.csv chicago-tested.c* chicago-hospitalized.c* chicago-cases.c* daily.c* excess.csv jdclass excess-age.csv mask-survey.csv pre-mask-survey.csv
 
 compress: compressed/daily.csv.zst
 
