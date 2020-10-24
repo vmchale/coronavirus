@@ -16,13 +16,13 @@ covidcum.csv: pre-covidcum.csv
 	xsv select geo_value,time_value,value $^ > $@
 
 pre-covidcum.csv:
-	wget 'https://delphi.cmu.edu/csv?signal=indicator-combination%3Aconfirmed_cumulative_prop&start_day=2020-09-08&end_day=2020-10-22&geo_type=state' -O $@
+	wget 'https://delphi.cmu.edu/csv?signal=indicator-combination%3Aconfirmed_cumulative_prop&start_day=2020-09-08&end_day=2020-10-23&geo_type=state' -O $@
 
 mask-survey.csv: pre-mask-survey.csv
 	xsv select geo_value,time_value,value,stderr,sample_size $^ > $@
 
 pre-mask-survey.csv:
-	wget 'https://delphi.cmu.edu/csv?signal=fb-survey%3Asmoothed_wearing_mask&start_day=2020-09-08&end_day=2020-10-22&geo_type=state' -O $@
+	wget 'https://delphi.cmu.edu/csv?signal=fb-survey%3Asmoothed_wearing_mask&start_day=2020-09-08&end_day=2020-10-23&geo_type=state' -O $@
 
 excess.csv:
 	wget https://data.cdc.gov/api/views/xkkf-xrst/rows.csv -O $@
