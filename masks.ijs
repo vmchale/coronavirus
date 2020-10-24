@@ -23,9 +23,9 @@ NB. from Stokes book https://www.jsoftware.com/help/learning/24.htm
 mu =: +/ % #
 norm =: -mu
 var =: mu @: *: @: norm
-std_dev =: %: @: var
+sigma =: %: @: var
 cov =: mu @: (*&norm)
-r =: cov % (*&std_dev)
+r =: cov % (*&sigma)
 
 jd'ref /left newCases state masking state'
 
