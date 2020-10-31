@@ -6,7 +6,7 @@ NB. sucessive differences idiom from Rosetta Code: https://rosettacode.org/wiki/
 succ_diff =: 2 -~/\ ]
 
 NB. up until Aug 28 (date preprint was published)
-nv_vect =: succ_diff , > (<1 1) { jd'reads "date","positive" from states where "state"="NV" and date <= 20200828 order by date'
+nv_vect =: succ_diff , > (<1 1) { jd'reads "date","positive" from states where "state"="NV" and date <= "2020-08-28" order by date'
 
 NB. day's infections, y days apart...
 pairs_sep_by =: monad : '(({. , {:) " 1) y ]\ nv_vect'
