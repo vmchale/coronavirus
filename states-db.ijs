@@ -1,4 +1,6 @@
 load'common.ijs'
+load'state-population.ijs'
+load'plot'
 load'jd'
 jdadminx'corona'
 CSVFOLDER =:'/development/j/coronavirus'
