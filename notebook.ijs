@@ -58,6 +58,8 @@ sn_ix =: name_ix 'Senegal'
 za_ix =: name_ix 'South Africa'
 in_ix =: name_ix 'India'
 ru_ix =: name_ix 'Russia'
+rw_ix =: name_ix 'Rwanda'
+my_ix =: name_ix 'Malaysia'
 
 sum_columns =: (+/ " 1) @: |:
 
