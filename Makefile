@@ -1,6 +1,6 @@
 .PHONY: clean
 
-all: time_series_2019-ncov-Confirmed.csv time_series_2019-ncov-Deaths.csv nst-est2019-alldata.csv daily.csv chicago-tested.csv chicago-cases.csv chicago-hospitalized.csv excess.csv excess-age.csv mask-survey.csv covidcum.csv
+all: time_series_2019-ncov-Confirmed.csv time_series_2019-ncov-Deaths.csv nst-est2019-alldata.csv daily.csv chicago-tested.csv chicago-cases.csv chicago-hospitalized.csv excess.csv excess-age.csv
 
 daily.csv:
 	wget https://covidtracking.com/api/v1/states/daily.csv -O $@
