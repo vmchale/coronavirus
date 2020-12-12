@@ -60,6 +60,7 @@ in_ix =: name_ix 'India'
 ru_ix =: name_ix 'Russia'
 rw_ix =: name_ix 'Rwanda'
 my_ix =: name_ix 'Malaysia'
+th_ix =: name_ix 'Thailand'
 
 sum_columns =: (+/ " 1) @: |:
 
