@@ -3,7 +3,7 @@ load'state-population.ijs'
 load'plot'
 load'jd'
 jdadminx'corona'
-CSVFOLDER =:'/development/j/coronavirus'
+CSVFOLDER =:'~/dev/j/coronavirus'
 
 NB. build db
 jd'csvprobe /replace daily.csv'
@@ -47,6 +47,10 @@ cases =: monad define
 
 hospitalized =: monad define
     jd'reads date,hospitalizedCurrently from states where state="',y,'" and hospitalizedCurrently > _9223372036854775808 order by date'
+)
+
+smoothed_tested =: monad define
+    week_mean succ_diff ,> (<1 1) { jd'reads date,totalTestResults from states where state="',y,'" and totalTestResults > _1 order by date'
 )
 
 smoothed_cases =: monad : 'week_mean succ_diff ,> (< 1 1) { cases y'
