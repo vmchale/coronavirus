@@ -21,6 +21,12 @@ pre-covidcum.csv:
 mask-survey.csv: pre-mask-survey.csv
 	xsv select geo_value,time_value,value,stderr,sample_size $^ > $@
 
+moderna.csv:
+	wget https://data.cdc.gov/api/views/b7pe-5nws/rows.csv -O $@
+
+pfizer.csv:
+	wget https://data.cdc.gov/api/views/saz5-9hgg/rows.csv -O $@
+
 pre-mask-survey.csv:
 	wget 'https://delphi.cmu.edu/csv?signal=fb-survey%3Asmoothed_wearing_mask&start_day=2020-09-08&end_day=2020-10-31&geo_type=state' -O $@
 
@@ -51,7 +57,7 @@ chicago-hospitalized.csv:
 	wget https://data.cityofchicago.org/resource/f3he-c6sv.csv -O $@
 
 clean:
-	rm -rf time_series_*.csv ilgen.csv us-states.csv nst-est2019-alldata.csv WPP2019_TotalPopulationBySex.csv chicago-tested.c* chicago-hospitalized.c* chicago-cases.c* daily.c* excess.csv jdclass excess-age.csv mask-survey.csv pre-mask-survey.csv covidcum.csv pre-covidcum.csv
+	rm -rf time_series_*.csv ilgen.csv us-states.csv nst-est2019-alldata.csv WPP2019_TotalPopulationBySex.csv chicago-tested.c* chicago-hospitalized.c* chicago-cases.c* daily.c* excess.csv jdclass excess-age.csv mask-survey.csv pre-mask-survey.csv covidcum.csv pre-covidcum.csv moderna.csv pfizer.csv
 
 compress: compressed/daily.csv.zst
 
