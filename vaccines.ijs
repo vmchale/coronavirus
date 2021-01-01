@@ -13,3 +13,5 @@ even_ix =: monad define
 )
 
 num_row =: dyad : 'even_ix makenum _2 }. 2 }. (x get_row y)'
+
+NB. moderna num_row 'Chicago'
