@@ -3,7 +3,7 @@ load'state-population.ijs'
 load'plot'
 load'jd'
 jdadminx'corona'
-CSVFOLDER =:'~/dev/j/coronavirus'
+CSVFOLDER =:'/development/j/coronavirus'
 
 NB. build db
 jd'csvprobe /replace daily.csv'
