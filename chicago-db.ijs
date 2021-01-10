@@ -1,6 +1,6 @@
 load'jd'
 jdadminx'corona'
-CSVFOLDER =:'/development/j/coronavirus'
+CSVFOLDER =:'~/dev/j/coronavirus'
 
 NB. https://www.census.gov/quickfacts/fact/table/chicagocityillinois/POP010210
 chi_pop =: 2695598
