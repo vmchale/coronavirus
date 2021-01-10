@@ -49,6 +49,10 @@ hospitalized =: monad define
     jd'reads date,hospitalizedCurrently from states where state="',y,'" and hospitalizedCurrently > _9223372036854775808 order by date'
 )
 
+hospitalized_cum =: monad define
+    jd'reads date,hospitalizedCumulative from states where state="',y,'" and hospitalizedCurrently > _9223372036854775808 order by date'
+)
+
 smoothed_tested =: monad define
     week_mean succ_diff ,> (<1 1) { jd'reads date,totalTestResults from states where state="',y,'" and totalTestResults > _1 order by date'
 )
