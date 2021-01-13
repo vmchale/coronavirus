@@ -20,3 +20,4 @@ hospitalized_cum_dph_ =: monad define
 )
 
 dph =: deaths_dph_ % hospitalized_cum_dph_
+dps =: {: @: dph
