@@ -23,3 +23,5 @@ new_hosp =: succ_diff @: hospitalized_cum_dph_
 
 dph =: deaths_dph_ % hospitalized_cum_dph_
 dps =: {: @: dph
+
+NB. dph =: deaths_dph_ (% &: succ_diff) hospitalized_cum_dph_
