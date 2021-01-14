@@ -19,5 +19,7 @@ hospitalized_cum_dph_ =: monad define
      , > (< 1 1) { jd'reads date,hospitalizedCum from hospitalizedCum,hospitalizedCum-deaths where deaths.deaths > _9223372036854775808 and hospitalizedCum > _9223372036854775808 and state="',y,'" order by date'
 )
 
+new_hosp =: succ_diff @: hospitalized_cum_dph_
+
 dph =: deaths_dph_ % hospitalized_cum_dph_
 dps =: {: @: dph
