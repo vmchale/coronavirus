@@ -20,6 +20,7 @@ hospitalized_cum_dph_ =: monad define
 )
 
 new_hosp =: succ_diff @: hospitalized_cum_dph_
+new_deaths =: succ_diff @: deaths_dph_
 
 dph =: deaths_dph_ % hospitalized_cum_dph_
 dps =: {: @: dph
