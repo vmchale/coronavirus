@@ -28,7 +28,7 @@ s_sbs =: dyad define
     ((l$0) , x) ,: y
 )
 
-last_n =: adverb : '(- x) & {.'
+last_n =: adverb : '(- u) & {.'
 
 NB. Used like so:
 NB.
