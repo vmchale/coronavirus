@@ -63,6 +63,7 @@ my_ix =: name_ix 'Malaysia'
 th_ix =: name_ix 'Thailand'
 pe_ix =: name_ix 'Peru'
 ie_ix =: name_ix 'Ireland'
+pt_ix =: name_ix 'Portugal'
 
 sum_columns =: (+/ " 1) @: |:
 
