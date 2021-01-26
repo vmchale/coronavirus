@@ -68,3 +68,4 @@ NB. idk what the monadic case does
 week_mean =: 7 (+/%#)\]
 
 NB. all_names =: (4!:1) i.4
+NB. (list -> cool verb)
