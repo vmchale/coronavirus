@@ -9,6 +9,10 @@ daily.csv:
 WPP2019_TotalPopulationBySex.csv:
 	wget 'https://population.un.org/wpp/Download/Files/1_Indicators%20(Standard)/CSV_FILES/WPP2019_TotalPopulationBySex.csv' -O $@
 
+cases-deaths.csv:
+	wget https://data.cdc.gov/api/views/9mfq-cb36/rows.csv -O $@
+	perl -i -pe 's/(\d+)\/(\d+)\/(\d+)/\3-\1-\2/' $@
+
 nst-est2019-alldata.csv:
 	wget https://www2.census.gov/programs-surveys/popest/datasets/2010-2019/national/totals/nst-est2019-alldata.csv -O $@
 
