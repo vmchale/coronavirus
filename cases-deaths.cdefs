@@ -1,0 +1,16 @@
+01 submission_date edate  
+02 state           byte 3 
+03 tot_cases       int    
+04 conf_cases      int    
+05 prob_cases      int    
+06 new_case        int    
+07 pnew_case       int    
+08 tot_death       int    
+09 conf_death      int    
+10 prob_death      int    
+11 new_death       int    
+12 pnew_death      int    
+13 created_at      byte 22
+14 consent_cases   byte 9 
+15 consent_deaths  byte 9 
+options , LF " NO 1 iso8601-char

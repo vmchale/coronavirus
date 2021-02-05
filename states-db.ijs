@@ -38,9 +38,3 @@ smoothed_cases =: monad : 'week_mean succ_diff ,> (< 1 1) { cases y'
 smoothed_deaths =: monad : 'week_mean succ_diff ,> (< 1 1) { deaths y'
 hospitalized_plot =: monad : ',> (< 1 1) { hospitalized y'
 deaths_plot =: monad : ',> (< 1 1) { deaths y'
-
-NB. jd'csvrd nst-est2019-alldata.csv statePopulation'
-NB. jd'reads NAME,POPESTIMATE2019 from statePopulation'
-
-NB. jd'reads state,positiveIncrease from states where date="2020-10-22"'
-NB. jd'reads date,state,tested,positives.cases from tested,tested-positives where positives.cases > _9223372036854775808 and tested > _9223372036854775808 and state="ND" order by date'
