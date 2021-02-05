@@ -1,6 +1,6 @@
 load'jd'
 jdadminx'corona'
-CSVFOLDER =:'/development/j/coronavirus'
+CSVFOLDER =:'~/dev/j/coronavirus'
 
 NB. build db
 jd'csvprobe /replace cases-deaths.csv'
