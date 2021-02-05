@@ -17,3 +17,7 @@ smoothed_cases =: monad define
 smoothed_deaths =: monad define
     week_mean , > (<1 1) { jd'reads submission_date,new_death from states where state="',y,'" order by submission_date'
 )
+
+deaths_plot =: monad define
+    week_mean , > (<1 1) { jd'reads submission_date,tot_death from states where state="',y,'" order by submission_date'
+)
