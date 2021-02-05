@@ -13,3 +13,7 @@ load'common.ijs'
 smoothed_cases =: monad define
     week_mean , > (<1 1) { jd'reads submission_date,new_case from states where state="',y,'" order by submission_date'
 )
+
+smoothed_deaths =: monad define
+    week_mean , > (<1 1) { jd'reads submission_date,new_death from states where state="',y,'" order by submission_date'
+)
