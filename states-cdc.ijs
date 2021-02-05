@@ -10,14 +10,10 @@ jd'csvrd cases-deaths.csv states'
 
 load'common.ijs'
 
-smoothed_cases =: monad define
-    week_mean , > (<1 1) { jd'reads submission_date,new_case from states where state="',y,'" order by submission_date'
+read_vector_col =: dyad define
+    week_mean , > (<1 1) { jd'reads submission_date,',x,' from states where state="',y,'" order by submission_date'
 )
 
-smoothed_deaths =: monad define
-    week_mean , > (<1 1) { jd'reads submission_date,new_death from states where state="',y,'" order by submission_date'
-)
-
-deaths_plot =: monad define
-    week_mean , > (<1 1) { jd'reads submission_date,tot_death from states where state="',y,'" order by submission_date'
-)
+smoothed_cases =: 'new_case' & read_vector_col
+smoothed_deaths =: 'new_death' & read_vector_col
+deaths_plot =: 'tot_death' & read_vector_col
