@@ -2,13 +2,17 @@
 
 all: time_series_2019-ncov-Confirmed.csv time_series_2019-ncov-Deaths.csv nst-est2019-alldata.csv daily.csv chicago-tested.csv chicago-cases.csv chicago-hospitalized.csv excess.csv excess-age.csv moderna.csv pfizer.csv cases-deaths.csv
 
+test.csv:
+	wget $$(curl -s 'https://healthdata.gov/api/3/action/package_show?id=c13c00e3-f3d0-4d49-8c43-bf600a6c0a0d&page=0' | jq -r '.result | .[0] | .resources | .[0] | .url') -O $@
+	perl -i -pe 's/(\d{4})(\d{2})(\d{2})/\1-\2-\3/' $@
+
 all.csv:
 	wget https://data.cdc.gov/api/views/vbim-akqf/rows.csv -O $@
 	perl -i -pe 's/(\d+)\/(\d+)\/(\d+)/\1-\2-\3/g' $@
 
 daily.csv:
 	wget https://covidtracking.com/api/v1/states/daily.csv -O $@
-	perl -i -pe 's/(\d{4})(\d{2})(\d{2})/\1-\2-\3/' daily.csv
+	perl -i -pe 's/(\d{4})(\d{2})(\d{2})/\1-\2-\3/' $@
 
 WPP2019_TotalPopulationBySex.csv:
 	wget 'https://population.un.org/wpp/Download/Files/1_Indicators%20(Standard)/CSV_FILES/WPP2019_TotalPopulationBySex.csv' -O $@
@@ -65,7 +69,7 @@ chicago-hospitalized.csv:
 	wget https://data.cityofchicago.org/resource/f3he-c6sv.csv -O $@
 
 clean:
-	rm -rf time_series_*.csv ilgen.csv us-states.csv nst-est2019-alldata.csv WPP2019_TotalPopulationBySex.csv chicago-tested.c* chicago-hospitalized.c* chicago-cases.c* daily.c* excess.csv jdclass excess-age.csv mask-survey.csv pre-mask-survey.csv covidcum.csv pre-covidcum.csv moderna.csv pfizer.csv cases-deaths.csv all.csv
+	rm -rf time_series_*.csv ilgen.csv us-states.csv nst-est2019-alldata.csv WPP2019_TotalPopulationBySex.csv chicago-tested.c* chicago-hospitalized.c* chicago-cases.c* daily.c* excess.csv jdclass excess-age.csv mask-survey.csv pre-mask-survey.csv covidcum.csv pre-covidcum.csv moderna.csv pfizer.csv cases-deaths.csv all.csv test.csv
 
 compress: compressed/daily.csv.zst
 
