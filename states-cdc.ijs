@@ -4,6 +4,8 @@ CSVFOLDER =:'/development/j/coronavirus'
 
 NB. build db
 jd'csvrd cases-deaths.csv states'
+jd'csvrd test.csv tests'
+
 
 load'common.ijs'
 
