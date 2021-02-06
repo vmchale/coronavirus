@@ -3,9 +3,6 @@ jdadminx'corona'
 CSVFOLDER =:'/development/j/coronavirus'
 
 NB. build db
-jd'csvprobe /replace cases-deaths.csv'
-jd'csvcdefs /replace /h 1 cases-deaths.csv'
-jd'csvscan cases-deaths.csv'
 jd'csvrd cases-deaths.csv states'
 
 load'common.ijs'
