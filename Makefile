@@ -2,6 +2,10 @@
 
 all: time_series_2019-ncov-Confirmed.csv time_series_2019-ncov-Deaths.csv nst-est2019-alldata.csv daily.csv chicago-tested.csv chicago-cases.csv chicago-hospitalized.csv excess.csv excess-age.csv moderna.csv pfizer.csv cases-deaths.csv
 
+all.csv:
+	wget https://data.cdc.gov/api/views/vbim-akqf/rows.csv -O $@
+	perl -i -pe 's/(\d+)\/(\d+)\/(\d+)/\1-\2-\3/g' $@
+
 daily.csv:
 	wget https://covidtracking.com/api/v1/states/daily.csv -O $@
 	perl -i -pe 's/(\d{4})(\d{2})(\d{2})/\1-\2-\3/' daily.csv
