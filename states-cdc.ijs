@@ -16,3 +16,5 @@ read_vector_col =: dyad define
 smoothed_cases =: 'new_case' & read_vector_col
 smoothed_deaths =: 'new_death' & read_vector_col
 deaths_plot =: 'tot_death' & read_vector_col
+
+load'state-population.ijs'
