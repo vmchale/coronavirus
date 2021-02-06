@@ -1,4 +1,4 @@
-states:("DSI  IIII       II                               ";enlist ",")0:`:daily.csv
+states:("DSIIIIIIIIII II";enlist ",")0:`:cdc.csv
 excess:("DSI  I       S   ";enlist ",")0:`:excess.csv
 excess:`date`state`observed`expected`weighted xcol excess
 excess:select date,state,observed,expected from excess where weighted=`Unweighted
