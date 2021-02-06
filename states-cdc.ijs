@@ -3,7 +3,7 @@ jdadminx'corona'
 CSVFOLDER =:'/development/j/coronavirus'
 
 NB. build db
-jd'csvrd cases-deaths.csv states'
+jd'csvrd cdc.csv states'
 jd'csvrd test.csv tests'
 
 
