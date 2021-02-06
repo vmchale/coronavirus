@@ -1,15 +1,11 @@
 - https://www.chicago.gov/city/en/sites/covid-19/home/latest-data.html
 - http://www.dph.illinois.gov/topics-services/diseases-and-conditions/diseases-a-z-list/coronavirus
-- https://chicagovirus.com/
-- https://covidtracking.com/data/state/illinois/
-- https://web.archive.org/web/*/https://dph.illinois.gov/covid19
 - https://github.com/CSSEGISandData/COVID-19/
-- https://github.com/nytimes/covid-19-data
 - https://population.un.org/wpp/Download/Standard/CSV/
-- https://covidtracking.com/api
 - https://www.cdc.gov/nchs/nvss/vsrr/covid19/excess_deaths.htm
   - https://data.cdc.gov/NCHS/Excess-Deaths-Associated-with-COVID-19/xkkf-xrst/
 - [ ] https://covidcast.cmu.edu
 - https://data.cdc.gov/Vaccinations/COVID-19-Vaccine-Distribution-Allocations-by-Juris/saz5-9hgg
 - https://data.cdc.gov/Vaccinations/COVID-19-Vaccine-Distribution-Allocations-by-Juris/b7pe-5nws
 - https://data.cdc.gov/Case-Surveillance/United-States-COVID-19-Cases-and-Deaths-by-State-o/9mfq-cb36
+- https://healthdata.gov/dataset/covid-19-diagnostic-laboratory-testing-pcr-testing-time-series
