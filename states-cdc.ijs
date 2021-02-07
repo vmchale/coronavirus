@@ -3,10 +3,9 @@ jdadminx'corona'
 CSVFOLDER =:'~/dev/j/coronavirus'
 
 NB. build db
-jd'csvprobe /replace cases-deaths.csv'
-jd'csvcdefs /replace /h 1 cases-deaths.csv'
-jd'csvscan cases-deaths.csv'
-jd'csvrd cases-deaths.csv states'
+jd'csvrd cdc.csv states'
+jd'csvrd test.csv tests'
+
 
 load'common.ijs'
 
@@ -17,3 +16,5 @@ read_vector_col =: dyad define
 smoothed_cases =: 'new_case' & read_vector_col
 smoothed_deaths =: 'new_death' & read_vector_col
 deaths_plot =: 'tot_death' & read_vector_col
+
+load'state-population.ijs'
