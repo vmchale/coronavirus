@@ -1,6 +1,6 @@
 load'jd'
 jdadminx'vaccines'
-CSVFOLDER =:'~/dev/j/coronavirus'
+CSVFOLDER =:'/development/j/coronavirus'
 
 jd'csvprobe /replace pfizer.csv'
 jd'csvcdefs /replace /h 1 /v 30 pfizer.csv'
