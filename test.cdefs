@@ -1,0 +1,9 @@
+1 state                  byte 2 
+2 state_name             byte      20
+3 state_fips             int    
+4 fema_region            byte 9 
+5 overall_outcome        byte 12
+6 date                   edate  
+7 new_results_reported   int    
+8 total_results_reported byte 10
+options , CRLF " NO 1 iso8601-char
