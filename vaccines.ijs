@@ -1,19 +1,21 @@
-load'tables/csv'
-moderna =: readcsv'moderna.csv'
-pfizer =: readcsv'pfizer.csv'
+load'jd'
+jdadminx'vaccines'
+CSVFOLDER =:'~/dev/j/coronavirus'
 
-get_row_vax_ =: dyad define
-    , ((I. ((=& (< y)) "0) ({."1) x) { x)
+jd'csvprobe /replace pfizer.csv'
+jd'csvcdefs /replace /h 1 /v 30 pfizer.csv'
+jd'csvscan pfizer.csv'
+jd'csvrd pfizer.csv pfizer'
+
+jd'csvprobe /replace moderna.csv'
+jd'csvcdefs /replace /h 1 /v 30 moderna.csv'
+jd'csvscan moderna.csv'
+jd'csvrd moderna.csv moderna'
+
+moderna_table =: monad define
+    jd'reads "Week of Allocations","1st Dose Allocations" from moderna where Jurisdiction="',y,'"'
 )
 
-NB. keep only even indices
-even_ix =: monad define
-    n =. $ y
-    (2 * (i.(n%2))) { y
+pfizer_table =: monad define
+    jd'reads "Week of Allocations","1st Dose Allocations" from pfizer where Jurisdiction="',y,'"'
 )
-
-num_row =: dyad : 'even_ix makenum _2 }. 2 }. (x get_row_vax_ y)'
-
-NB. moderna num_row 'Chicago'
-NB. headers_moderna =: }: even_ix {. moderna
-NB. headers_pfizer =: }: even_ix {. moderna
