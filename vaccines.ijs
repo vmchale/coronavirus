@@ -12,10 +12,19 @@ jd'csvcdefs /replace /h 1 /v 30 moderna.csv'
 jd'csvscan moderna.csv'
 jd'csvrd moderna.csv moderna'
 
+jd'csvprobe /replace janssen.csv'
+jd'csvcdefs /replace /h 1 /v 30 janssen.csv'
+jd'csvscan janssen.csv'
+jd'csvrd janssen.csv janssen'
+
 moderna_table =: monad define
     jd'reads "Week of Allocations","1st Dose Allocations" from moderna where Jurisdiction="',y,'"'
 )
 
 pfizer_table =: monad define
     jd'reads "Week of Allocations","1st Dose Allocations" from pfizer where Jurisdiction="',y,'"'
+)
+
+janssen_table =: monad define
+    jd'reads "Week of Allocations","1st Dose Allocations" from janssen where Jurisdiction="',y,'"'
 )

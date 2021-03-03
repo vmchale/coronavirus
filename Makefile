@@ -1,6 +1,6 @@
 .PHONY: clean
 
-all: time_series_2019-ncov-Confirmed.csv time_series_2019-ncov-Deaths.csv nst-est2019-alldata.csv chicago-tested.csv chicago-cases.csv chicago-hospitalized.csv excess.csv excess-age.csv moderna.csv pfizer.csv cdc.csv test.csv hosp.csv
+all: time_series_2019-ncov-Confirmed.csv time_series_2019-ncov-Deaths.csv nst-est2019-alldata.csv chicago-tested.csv chicago-cases.csv chicago-hospitalized.csv excess.csv excess-age.csv moderna.csv pfizer.csv cdc.csv test.csv hosp.csv janssen.csv
 
 hosp.csv:
 	wget $$(curl -s 'https://healthdata.gov/api/3/action/package_show?id=83b4a668-9321-4d8c-bc4f-2bef66c49050&page=0' | jq -r '.result | .[0] | .resources | .[0] | .url') -O $@
@@ -39,6 +39,9 @@ moderna.csv:
 pfizer.csv:
 	wget https://data.cdc.gov/api/views/saz5-9hgg/rows.csv -O $@
 
+janssen.csv:
+	wget https://data.cdc.gov/api/views/w9zu-fywh/rows.csv -O $@
+
 pre-mask-survey.csv:
 	wget 'https://delphi.cmu.edu/csv?signal=fb-survey%3Asmoothed_wearing_mask&start_day=2020-09-08&end_day=2020-10-31&geo_type=state' -O $@
 
@@ -69,4 +72,4 @@ chicago-hospitalized.csv:
 	wget https://data.cityofchicago.org/resource/f3he-c6sv.csv -O $@
 
 clean:
-	rm -rf time_series_*.csv ilgen.csv us-states.csv nst-est2019-alldata.csv WPP2019_TotalPopulationBySex.csv chicago-tested.c* chicago-hospitalized.c* chicago-cases.c* excess.csv jdclass excess-age.csv mask-survey.csv pre-mask-survey.csv covidcum.csv pre-covidcum.csv moderna.csv pfizer.csv cdc.csv all.csv test.csv hosp.csv
+	rm -rf time_series_*.csv ilgen.csv us-states.csv nst-est2019-alldata.csv WPP2019_TotalPopulationBySex.csv chicago-tested.c* chicago-hospitalized.c* chicago-cases.c* excess.csv jdclass excess-age.csv mask-survey.csv pre-mask-survey.csv covidcum.csv pre-covidcum.csv moderna.csv pfizer.csv cdc.csv all.csv test.csv hosp.csv janssen.csv
