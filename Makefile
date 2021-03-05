@@ -2,6 +2,8 @@
 
 all: time_series_2019-ncov-Confirmed.csv time_series_2019-ncov-Deaths.csv nst-est2019-alldata.csv chicago-tested.csv chicago-cases.csv chicago-hospitalized.csv excess.csv excess-age.csv moderna.csv pfizer.csv cdc.csv test.csv hosp.csv janssen.csv
 
+vaccines: janssen.csv moderna.csv pfizer.csv
+
 hosp.csv:
 	wget $$(curl -s 'https://healthdata.gov/api/3/action/package_show?id=83b4a668-9321-4d8c-bc4f-2bef66c49050&page=0' | jq -r '.result | .[0] | .resources | .[0] | .url') -O $@
 	perl -i -pe 's/(\d{4})(\d{2})(\d{2})/\1-\2-\3/' $@
