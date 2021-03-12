@@ -40,12 +40,15 @@ mask-survey.csv: pre-mask-survey.csv
 
 moderna.csv:
 	wget https://data.cdc.gov/api/views/b7pe-5nws/rows.csv -O $@
+	perl -i -pe 's/(\d+)\/(\d+)\/(\d+)/\3-\1-\2/' $@
 
 pfizer.csv:
 	wget https://data.cdc.gov/api/views/saz5-9hgg/rows.csv -O $@
+	perl -i -pe 's/(\d+)\/(\d+)\/(\d+)/\3-\1-\2/' $@
 
 janssen.csv:
 	wget https://data.cdc.gov/api/views/w9zu-fywh/rows.csv -O $@
+	perl -i -pe 's/(\d+)\/(\d+)\/(\d+)/\3-\1-\2/' $@
 
 pre-mask-survey.csv:
 	wget 'https://delphi.cmu.edu/csv?signal=fb-survey%3Asmoothed_wearing_mask&start_day=2020-09-08&end_day=2020-10-31&geo_type=state' -O $@
