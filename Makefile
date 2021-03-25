@@ -1,5 +1,7 @@
 .PHONY: clean
 
+.DELETE_ON_ERROR:
+
 all: time_series_2019-ncov-Confirmed.csv time_series_2019-ncov-Deaths.csv nst-est2019-alldata.csv chicago-tested.csv chicago-cases.csv chicago-hospitalized.csv excess.csv excess-age.csv moderna.csv pfizer.csv cdc.csv test.csv hosp.csv janssen.csv variants.csv
 
 vaccines: janssen.csv moderna.csv pfizer.csv
