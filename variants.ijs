@@ -14,3 +14,7 @@ pos =: monad define
 sgtf =: monad define
     ,> (<1 1) { jd'reads collection_date,all_SGTF from variants where state="',y,'"'
 )
+
+load'common.ijs'
+
+present =: monad : '(week_mean pos y) ,: (week_mean sgtf y)'
