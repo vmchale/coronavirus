@@ -1,6 +1,6 @@
 load'jd'
 jdadminx'corona'
-CSVFOLDER =:'/development/j/coronavirus'
+CSVFOLDER =:'~/dev/j/coronavirus'
 
 NB. jd'csvprobe /replace excess.csv'
 NB. jd'csvcdefs /replace /h 1 /v 11 excess.csv'
