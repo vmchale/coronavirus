@@ -20,3 +20,7 @@ NB. jd'reads "date","death" from states where "state"="TX" order by date'
 NB. jd'reads "Week Ending Date","Observed Number","Average Expected Count" from excess where State="United States" and "Week Ending Date" >= "2020-02-29" and Type="Predicted (weighted)" and Outcome="All causes"'
 
 decolumnize =: ,@:>@{:
+
+deaths_state =: dyad define
+    -/,> {: jd'reads sum "Observed Number",sum "Average Expected Count" from excess where State="',x,'" and "Week Ending Date" >= "2020-02-29" and "Week Ending Date" <= "',y,'" and Type="Unweighted" and Outcome="All causes"'
+)
