@@ -52,3 +52,5 @@ me_pop =: (pop_ix 'Maine') { pop_num
 ri_pop =: (pop_ix 'Rhode Island') { pop_num
 ks_pop =: (pop_ix 'Kansas') { pop_num
 id_pop =: (pop_ix 'Idaho') { pop_num
+
+nyc_pop =: 8419000
