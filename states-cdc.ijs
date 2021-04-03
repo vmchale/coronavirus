@@ -22,3 +22,8 @@ smoothed_deaths =: 'new_death' & read_vector_col
 deaths_plot =: 'tot_death' & read_vector_col
 
 load'state-population.ijs'
+
+NB. load'states.ijs'
+NB. deaths_vect =: (({:@:deaths_plot)@>) state_abbr
+NB. pop_vect =: pop_state@> states
+NB. |: states,:<"0 deaths_vect%pop_vect

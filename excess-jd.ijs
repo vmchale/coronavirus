@@ -20,3 +20,11 @@ inspect =: monad define
 deaths_state =: dyad define
     -/,> {: jd'reads sum "Observed Number",sum "Average Expected Count" from excess where State="',x,'" and "Week Ending Date" >= "2020-02-29" and "Week Ending Date" <= "',y,'" and Type="Unweighted" and Outcome="All causes"'
 )
+
+load'states.ijs'
+load'state-population.ijs'
+NB. deaths_vect =: (deaths_state&'2021-02-06'@>) states
+NB. pop_vect =: pop_state@> states
+NB. |: states,:<"0 deaths_vect%pop_vect
+NB.
+NB. ((deaths_state&'2021-02-06'%pop_state)@>) states
