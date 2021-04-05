@@ -1,0 +1,5 @@
+1 Date    edate
+2 B.1.1.7 int  
+3 B.1.351 int  
+4 P.1     int  
+options , LF " NO 1 iso8601-char

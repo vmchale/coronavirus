@@ -7,6 +7,8 @@ jd'csvcdefs /replace /h 1 variants.csv'
 jd'csvscan variants.csv'
 jd'csvrd variants.csv variants'
 
+jd'csvrd bc.csv bc'
+
 pos =: monad define
     ,> (<1 1) { jd'reads collection_date,positive from variants where state="',y,'"'
 )
