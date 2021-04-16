@@ -22,7 +22,7 @@ load'common.ijs'
 present =: monad : '(week_mean pos y) ,: (week_mean sgtf y)'
 
 sel_var =: monad define
-    succ_diff ,> (<1 1) { jd'reads Date,"',y,'" from bc order by Date'
+    2 -~/\ ] ,> (<1 1) { jd'reads Date,"',y,'" from bc order by Date'
 )
 
 p1 =: sel_var'P.1'
