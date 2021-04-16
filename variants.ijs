@@ -30,6 +30,6 @@ b117 =: sel_var'B.1.1.7'
 b351 =: sel_var'B.1.351'
 
 NB. var_tab =: b117 , b351 ,: p1
-NB. percent_table =: var_tab %"1 +/ var_tab
+NB. percent_table =: ([ %"1 +/) var_tab
 
-NB. area_plot =: |. +/\ var_tab %"1 +/ var_tab
+NB. area_plot =: |. +/\ percent_table
