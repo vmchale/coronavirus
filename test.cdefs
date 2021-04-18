@@ -1,4 +1,4 @@
-1 state                  byte 2 
+1 state                  byte 3 
 2 state_name             byte 7 
 3 state_fips             int    
 4 fema_region            byte 8 
