@@ -14,7 +14,7 @@ hosp.csv:
 	perl -i -pe 's/(\d{4})(\d{2})(\d{2})/\1-\2-\3/' $@
 
 test.csv:
-	wget https://healthdata.gov/resource/j8mb-icvb.csv -O $@
+	wget https://healthdata.gov/api/views/j8mb-icvb/rows.csv -O $@
 
 all.csv:
 	wget https://data.cdc.gov/api/views/vbim-akqf/rows.csv -O $@
