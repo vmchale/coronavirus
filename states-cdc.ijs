@@ -15,7 +15,7 @@ NB. jd'csvrd hosp.csv hosp'
 load'common.ijs'
 
 read_vector_col =: dyad define
-    week_mean , > (<1 1) { jd'reads submission_date,',x,' from states where state="',y,'" order by submission_date'
+    week_mean , > (<1 1) { jd'reads submission_date,',x,' from states where state="',y,'" order by submissionDate'
 )
 
 NB. hospitalized_plot =: monad define
