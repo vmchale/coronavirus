@@ -14,8 +14,7 @@ hosp.csv:
 	perl -i -pe 's/(\d{4})(\d{2})(\d{2})/\1-\2-\3/' $@
 
 test.csv:
-	wget $$(curl -s 'https://healthdata.gov/api/3/action/package_show?id=c13c00e3-f3d0-4d49-8c43-bf600a6c0a0d&page=0' | jq -r '.result | .[0] | .resources | .[0] | .url') -O $@
-	perl -i -pe 's/(\d{4})(\d{2})(\d{2})/\1-\2-\3/' $@
+	wget https://healthdata.gov/resource/j8mb-icvb.csv -O $@
 
 all.csv:
 	wget https://data.cdc.gov/api/views/vbim-akqf/rows.csv -O $@

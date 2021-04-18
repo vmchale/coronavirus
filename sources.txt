@@ -9,6 +9,6 @@
 - https://data.cdc.gov/Vaccinations/COVID-19-Vaccine-Distribution-Allocations-by-Juris/b7pe-5nws
 - https://data.cdc.gov/Vaccinations/COVID-19-Vaccine-Distribution-Allocations-by-Juris/w9zu-fywh
 - https://data.cdc.gov/Case-Surveillance/United-States-COVID-19-Cases-and-Deaths-by-State-o/9mfq-cb36
-- https://healthdata.gov/dataset/covid-19-diagnostic-laboratory-testing-pcr-testing-time-series
+- https://healthdata.gov/dataset/COVID-19-Diagnostic-Laboratory-Testing-PCR-Testing/j8mb-icvb
 - https://www.cdc.gov/coronavirus/2019-ncov/cases-updates/variant-surveillance/genomic-surveillance-dashboard.html
 - http://www.bccdc.ca/health-info/diseases-conditions/covid-19/data#Situationreport
