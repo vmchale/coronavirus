@@ -4,7 +4,11 @@ CSVFOLDER =:'/development/j/coronavirus'
 
 NB. build db
 jd'csvrd cdc.csv states'
-NB. jd'csvrd test.csv tests'
+
+jd'csvprobe /replace test.csv'
+jd'csvcdefs /replace /h 1 test.csv'
+jd'csvscan test.csv'
+jd'csvrd test.csv tests'
 NB. jd'csvrd hosp.csv hosp'
 
 load'common.ijs'
