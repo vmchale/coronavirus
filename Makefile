@@ -15,6 +15,7 @@ hosp.csv:
 
 test.csv:
 	wget https://healthdata.gov/api/views/j8mb-icvb/rows.csv -O $@
+	perl -i -pe 's/(\d+)\/(\d+)\/(\d+)/\1-\2-\3/g' $@
 
 all.csv:
 	wget https://data.cdc.gov/api/views/vbim-akqf/rows.csv -O $@
