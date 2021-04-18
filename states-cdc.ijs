@@ -31,7 +31,7 @@ jd'renamecol states submission_date submissionDate'
 
 jd'ref /left tests state date states state submissionDate'
 
-NB. jd'reads from tests,tests-states order by date'
+NB. jd'reads sum new_results_reported by date,state,states.tot_cases from tests,tests-states order by date'
 
 load'state-population.ijs'
 
