@@ -31,7 +31,15 @@ jd'renamecol states submission_date submissionDate'
 
 jd'ref /left tests state date states state submissionDate'
 
-NB. jd'reads sum new_results_reported by date,state,states.tot_cases from tests,tests-states order by date'
+NB. jd'reads sum new_results_reported by date,state,states.new_case from tests,tests-states order by date'
+new_cases =: monad define
+    , > (<1 2) { jd'reads sum new_results_reported by date,state,states.new_case from tests,tests-states where state="',y,'" order by date'
+)
+
+new_tests =: monad define
+    , > (<1 3) { jd'reads sum new_results_reported by date,state,states.new_case from tests,tests-states where state="',y,'" order by date'
+)
+NB. _7 {. week_mean (new_cases%new_tests) 'FL'
 
 load'state-population.ijs'
 
