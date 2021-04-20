@@ -14,8 +14,11 @@ NB. jd'csvrd hosp.csv hosp'
 
 load'common.ijs'
 
+NB. rename columns so we can do joins on them (limitation of jd)
+jd'renamecol states submission_date submissionDate'
+
 read_vector_col =: dyad define
-    week_mean , > (<1 1) { jd'reads submission_date,',x,' from states where state="',y,'" order by submissionDate'
+    week_mean , > (<1 1) { jd'reads submissionDate,',x,' from states where state="',y,'" order by submissionDate'
 )
 
 NB. hospitalized_plot =: monad define
@@ -25,9 +28,6 @@ NB. )
 smoothed_cases =: 'new_case' & read_vector_col
 smoothed_deaths =: 'new_death' & read_vector_col
 deaths_plot =: 'tot_death' & read_vector_col
-
-NB. rename columns so we can do joins on them (limitation of jd)
-jd'renamecol states submission_date submissionDate'
 
 jd'ref /left tests state date states state submissionDate'
 
