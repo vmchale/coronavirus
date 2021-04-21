@@ -32,4 +32,4 @@ b351 =: sel_var'B.1.351'
 var_tab =: (2 -~/\ ]) " 1 ,"2> }. {: jd'reads from bc order by Date'
 NB. percent_table =: ([ %"1 +/) var_tab
 
-NB. area_plot =: +/\ percent_table
+NB. area_plot =: |."2 +/\ percent_table
