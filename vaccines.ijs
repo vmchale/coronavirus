@@ -17,14 +17,10 @@ jd'csvcdefs /replace /h 1 /v 30 janssen.csv'
 jd'csvscan janssen.csv'
 jd'csvrd janssen.csv janssen'
 
-moderna_table =: monad define
-    jd'reads "Week of Allocations","1st Dose Allocations" from moderna where Jurisdiction="',y,'"'
-)
+janssen =: jd'reads sum "1st Dose Allocations" by "Week of Allocations" from janssen'
+moderna =: jd'reads sum "1st Dose Allocations" by "Week of Allocations" from moderna'
+pfizer =: jd'reads sum "1st Dose Allocations" by "Week of Allocations" from pfizer'
 
-pfizer_table =: monad define
-    jd'reads "Week of Allocations","1st Dose Allocations" from pfizer where Jurisdiction="',y,'"'
-)
-
-janssen_table =: monad define
-    jd'reads "Week of Allocations","1st Dose Allocations" from janssen where Jurisdiction="',y,'"'
-)
+janssen_plot =: ,>(<1 1) { janssen
+moderna_plot =: ,>(<1 1) { moderna
+pfizer_plot =: ,>(<1 1) { pfizer
