@@ -12,3 +12,4 @@
 - https://healthdata.gov/dataset/COVID-19-Diagnostic-Laboratory-Testing-PCR-Testing/j8mb-icvb
 - https://www.cdc.gov/coronavirus/2019-ncov/cases-updates/variant-surveillance/genomic-surveillance-dashboard.html
 - http://www.bccdc.ca/health-info/diseases-conditions/covid-19/data#Situationreport
+- https://www.doh.wa.gov/Portals/1/Documents/1600/coronavirus/data-tables/420-316-SequencingAndVariantsReport.pdf

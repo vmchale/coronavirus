@@ -11,6 +11,8 @@ jd'csvrd bc.csv bc'
 
 jd'csvrd us.csv us'
 
+jd'csvrd wa.csv wa'
+
 pos =: monad define
     ,> (<1 1) { jd'reads collection_date,positive from variants where state="',y,'"'
 )
