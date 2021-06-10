@@ -51,6 +51,12 @@ abs_cases =: monad define
     |. (}: percent_variant_variants_ y) * cases_by_fnight
 )
 
+present_variant =: monad define
+    dates =. dates =: }. |. > (<1 0) { jd'reads Fortnight from us'
+    pres =. ,"0 abs_cases y
+    ('Fortnight';y) ,: (dates;pres)
+)
+
 NB. plot (|. cases_by_fnight) ,: (abs_cases'B.1.1.7')
 
 NB. percent_table =: ([ %"1 +/) var_tab
