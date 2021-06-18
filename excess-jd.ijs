@@ -23,9 +23,15 @@ deaths_state =: dyad define
 
 load'states.ijs'
 load'state-population.ijs'
-NB. deaths_vect =: (deaths_state&'2021-02-06'@>) states
-NB. nyc_excess =: ('New York City'deaths_state'2021-04-24')%nyc_pop
-NB. pop_vect =: pop_state@> states
-NB. |: states,:<"0 deaths_vect%pop_vect
+
+deaths_vect =: 3 : '(deaths_state&y@>) states'
+nyc_excess =: monad define
+    ('New York City'deaths_state y)%nyc_pop
+)
+pop_vect =: pop_state@> states
+deaths_present =: monad define
+    key =. (deaths_vect y)%pop_vect
+    (\: key) { |: states,:<"0 key
+)
 NB.
 NB. ((deaths_state&'2021-02-06'%pop_state)@>) states
