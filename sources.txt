@@ -10,6 +10,6 @@
 - https://data.cdc.gov/Vaccinations/COVID-19-Vaccine-Distribution-Allocations-by-Juris/w9zu-fywh
 - https://data.cdc.gov/Case-Surveillance/United-States-COVID-19-Cases-and-Deaths-by-State-o/9mfq-cb36
 - https://healthdata.gov/dataset/COVID-19-Diagnostic-Laboratory-Testing-PCR-Testing/j8mb-icvb
-- http://www.bccdc.ca/health-info/diseases-conditions/covid-19/data#Situationreport
+- http://www.bccdc.ca/health-info/diseases-conditions/covid-19/data#variants
 - https://www.doh.wa.gov/Portals/1/Documents/1600/coronavirus/data-tables/420-316-SequencingAndVariantsReport.pdf
 - https://covid.cdc.gov/covid-data-tracker/#variant-proportions
