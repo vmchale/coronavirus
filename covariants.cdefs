@@ -1,0 +1,5 @@
+1 Fortnight edate
+2 Alpha float
+3 Gamma float
+4 Delta float
+options , LF " NO 1 iso8601-char

@@ -11,6 +11,11 @@ jd'csvrd bc.csv bc'
 
 jd'csvrd us.csv us'
 
+NB. data from covariants.org
+jd'csvrd covariants.csv covariants'
+
+jd'csvrd wa.csv wa'
+
 pos =: monad define
     ,> (<1 1) { jd'reads collection_date,positive from variants where state="',y,'"'
 )
@@ -33,7 +38,7 @@ b351 =: sel_var'B.1.351'
 
 var_tab =: (2 -~/\ ]) " 1 ,"2> }. {: jd'reads from bc order by Date'
 
-fnights_variants_ =: 2 ]\] > (<1 0) { jd'reads Fortnight from us'
+fnights_variants_ =: 2 ]\] > (<1 0) { jd'reads Fortnight from covariants'
 
 jd'csvrd cdc.csv states'
 
@@ -44,7 +49,7 @@ cases_in_variants_ =: dyad define
 cases_by_fnight =: , cases_in_variants_ / " 2 fnights_variants_
 
 percent_variant_variants_ =: monad define
-    100%~ ,>(<1 0) { jd'reads "',y,'" from us'
+    100%~ ,>(<1 0) { jd'reads "',y,'" from covariants'
 )
 
 abs_cases =: monad define
@@ -52,7 +57,7 @@ abs_cases =: monad define
 )
 
 present_variant =: monad define
-    dates =. dates =: }. |. > (<1 0) { jd'reads Fortnight from us'
+    dates =. dates =: }. |. > (<1 0) { jd'reads Fortnight from covariants'
     pres =. ,"0 abs_cases y
     ('Fortnight';y) ,: (dates;pres)
 )
