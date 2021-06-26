@@ -33,5 +33,9 @@ deaths_present =: monad define
     key =. (deaths_vect y)%pop_vect
     (\: key) { |: states,:<"0 key
 )
+NB. deaths_vect =: (deaths_state&'2021-02-06'@>) states
+NB. nyc_excess =: ('New York City'deaths_state'2021-04-24')%nyc_pop
+NB. pop_vect =: pop_state@> states
+NB. |: states,:<"0 deaths_vect%pop_vect
 NB.
 NB. ((deaths_state&'2021-02-06'%pop_state)@>) states
