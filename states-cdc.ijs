@@ -5,6 +5,11 @@ CSVFOLDER =:'~/dev/j/coronavirus'
 NB. build db
 jd'csvrd cdc.csv states'
 
+jd'csvprobe /replace hosp.csv'
+jd'csvcdefs /replace /h 1 hosp.csv'
+jd'csvscan hosp.csv'
+jd'csvrd hosp.csv hosp'
+
 NB. jd'csvprobe /replace test.csv'
 NB. jd'csvcdefs /replace /h 1 test.csv'
 NB. jd'csvscan test.csv'
@@ -21,11 +26,10 @@ read_vector_col =: dyad define
     week_mean , > (<1 1) { jd'reads submissionDate,',x,' from states where state="',y,'" order by submissionDate'
 )
 
-NB. hospitalized_plot =: monad define
-    NB. , > (<1 1) { jd'reads date,total_adult_patients_hospitalized_confirmed_and_suspected_covid from hosp where state="',y,'" and total_adult_patients_hospitalized_confirmed_and_suspected_covid > _1 order by date'
-NB. )
+hospitalized_plot =: monad define
+    ,> (< 1 1) { jd'reads date,inpatient_beds_used_covid from hosp where state="',y,'" order by date'
+)
 
-smoothed_cases =: 'new_case' & read_vector_col
 smoothed_deaths =: 'new_death' & read_vector_col
 deaths_plot =: 'tot_death' & read_vector_col
 
