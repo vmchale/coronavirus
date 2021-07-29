@@ -10,7 +10,7 @@ variants.csv:
 	wget https://raw.githubusercontent.com/myhelix/helix-covid19db/master/counts_by_state.csv -O $@
 
 hosp.csv:
-	wget $$(curl -s 'https://healthdata.gov/api/3/action/package_show?id=83b4a668-9321-4d8c-bc4f-2bef66c49050&page=0' | jq -r '.result | .[0] | .resources | .[0] | .url') -O $@
+	wget https://healthdata.gov/api/views/g62h-syeh/rows.csv -O $@
 	perl -i -pe 's/(\d{4})(\d{2})(\d{2})/\1-\2-\3/' $@
 
 test.csv:
