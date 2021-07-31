@@ -11,7 +11,7 @@ variants.csv:
 
 hosp.csv:
 	wget https://healthdata.gov/api/views/g62h-syeh/rows.csv -O $@
-	perl -i -pe 's/(\d{4})(\d{2})(\d{2})/\1-\2-\3/' $@
+	perl -i -pe 's/(\d{4})\/(\d{2})\/(\d{2})/\1-\2-\3/' $@
 
 test.csv:
 	wget https://healthdata.gov/api/views/j8mb-icvb/rows.csv -O $@
