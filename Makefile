@@ -1,10 +1,8 @@
-.PHONY: clean
+.PHONY: clean all
 
 .DELETE_ON_ERROR:
 
 all: time_series_2019-ncov-Confirmed.csv time_series_2019-ncov-Deaths.csv nst-est2019-alldata.csv chicago-tested.csv chicago-cases.csv chicago-hospitalized.csv excess.csv excess-age.csv moderna.csv pfizer.csv cdc.csv janssen.csv variants.csv test.csv hosp.csv
-
-vaccines: janssen.csv moderna.csv pfizer.csv
 
 variants.csv:
 	wget https://raw.githubusercontent.com/myhelix/helix-covid19db/master/counts_by_state.csv -O $@
