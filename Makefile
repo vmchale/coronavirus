@@ -31,9 +31,6 @@ cdc.csv:
 nst-est2019-alldata.csv:
 	wget https://www2.census.gov/programs-surveys/popest/datasets/2010-2019/national/totals/nst-est2019-alldata.csv -O $@
 
-mask-survey.csv: pre-mask-survey.csv
-	xsv select geo_value,time_value,value,stderr,sample_size $^ > $@
-
 moderna.csv:
 	wget https://data.cdc.gov/api/views/b7pe-5nws/rows.csv -O $@
 	perl -i -pe 's/(\d+)\/(\d+)\/(\d+)/\3-\1-\2/' $@
@@ -45,9 +42,6 @@ pfizer.csv:
 janssen.csv:
 	wget https://data.cdc.gov/api/views/w9zu-fywh/rows.csv -O $@
 	perl -i -pe 's/(\d+)\/(\d+)\/(\d+)/\3-\1-\2/' $@
-
-pre-mask-survey.csv:
-	wget 'https://delphi.cmu.edu/csv?signal=fb-survey%3Asmoothed_wearing_mask&start_day=2020-09-08&end_day=2020-10-31&geo_type=state' -O $@
 
 excess.csv:
 	wget https://data.cdc.gov/api/views/xkkf-xrst/rows.csv -O $@
@@ -76,4 +70,4 @@ chicago-hospitalized.csv:
 	wget https://data.cityofchicago.org/resource/f3he-c6sv.csv -O $@
 
 clean:
-	rm -rf time_series_*.csv ilgen.csv us-states.csv nst-est2019-alldata.csv WPP2019_TotalPopulationBySex.csv chicago-tested.c* chicago-hospitalized.c* chicago-cases.c* excess.csv jdclass excess-age.csv mask-survey.csv pre-mask-survey.csv moderna.csv pfizer.csv cdc.csv all.csv test.csv hosp.csv janssen.csv variants.csv
+	rm -rf time_series_*.csv ilgen.csv us-states.csv nst-est2019-alldata.csv WPP2019_TotalPopulationBySex.csv chicago-tested.c* chicago-hospitalized.c* chicago-cases.c* excess.csv jdclass excess-age.csv moderna.csv pfizer.csv cdc.csv all.csv test.csv hosp.csv janssen.csv variants.csv
