@@ -68,6 +68,8 @@ hu_ix =: name_ix 'Hungary'
 cl_ix =: name_ix 'Chile'
 ir_ix =: name_ix 'Iran'
 ug_ix =: name_ix 'Uganda'
+at_ix =: name_ix 'Austria'
+ch_ix =: name_ix 'Switzerland'
 
 sum_columns =: (+/ " 1) @: |:
 
