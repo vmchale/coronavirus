@@ -4,9 +4,12 @@
 
 all: time_series_2019-ncov-Confirmed.csv time_series_2019-ncov-Deaths.csv nst-est2019-alldata.csv chicago-tested.csv chicago-cases.csv chicago-hospitalized.csv excess.csv excess-age.csv moderna.csv pfizer.csv cdc.csv janssen.csv variants.csv test.csv hosp.csv
 
-data/COVID19Cases_geoRegion.csv data/COVID19Hosp_geoRegion.csv &:
-	wget https://www.covid19.admin.ch/api/data/20211206-n9ipa928/downloads/sources-csv.zip
-	unzip sources-csv.zip $@
+sources-csv.zip:
+	curl https://www.covid19.admin.ch/api/data/20211206-n9ipa928/downloads/sources-csv.zip -o $@
+
+
+data/COVID19Cases_geoRegion.csv data/COVID19Hosp_geoRegion.csv &: sources-csv.zip
+	unzip $< $@
 
 variants.csv:
 	curl -L https://raw.githubusercontent.com/myhelix/helix-covid19db/master/counts_by_state.csv -o $@
