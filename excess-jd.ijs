@@ -2,9 +2,9 @@ load'jd'
 jdadminx'corona'
 CSVFOLDER =:'/development/j/coronavirus'
 
-NB. jd'csvprobe /replace excess.csv'
-NB. jd'csvcdefs /replace /h 1 /v 11 excess.csv'
-NB. jd'csvscan excess.csv'
+jd'csvprobe /replace excess.csv'
+jd'csvcdefs /replace /h 1 /v 11 excess.csv'
+jd'csvscan excess.csv'
 jd'csvrd excess.csv excess'
 
 jd'csvrd excess-age.csv excessAge'
@@ -23,9 +23,15 @@ deaths_state =: dyad define
 
 load'states.ijs'
 load'state-population.ijs'
-NB. deaths_vect =: (deaths_state&'2021-02-06'@>) states
-NB. nyc_excess =: ('New York City'deaths_state'2021-04-24')%nyc_pop
-NB. pop_vect =: pop_state@> states
-NB. |: states,:<"0 deaths_vect%pop_vect
+
+deaths_vect =: 3 : '(deaths_state&y@>) states'
+nyc_excess =: monad define
+    ('New York City'deaths_state y)%nyc_pop
+)
+pop_vect =: pop_state@> states
+deaths_present =: monad define
+    key =. (deaths_vect y)%pop_vect
+    (\: key) { |: states,:<"0 key
+)
 NB.
 NB. ((deaths_state&'2021-02-06'%pop_state)@>) states
