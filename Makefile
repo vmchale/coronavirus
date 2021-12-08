@@ -50,7 +50,7 @@ janssen.csv:
 
 excess.csv:
 	curl -L https://data.cdc.gov/api/views/xkkf-xrst/rows.csv -o $@
-	sed -i 's/ //g' $@
+	sed -i -e 's/ //g' $@
 
 excess-age.csv:
 	curl -L https://data.cdc.gov/api/views/y5bj-9g5w/rows.csv -o $@
