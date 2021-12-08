@@ -14,11 +14,11 @@ NB. jd'reads "Week Ending Date","Observed Number","Average Expected Count" from 
 decolumnize =: ,@:>@{:
 
 inspect =: monad define
-    jd'reads "Week Ending Date","Observed Number","Average Expected Count" from excess where State="',y,'" and "Week Ending Date" >= "2020-02-29" and Type="Unweighted" and Outcome="All causes"'
+    jd'reads "WeekEndingDate","ObservedNumber","AverageExpectedCount" from excess where State="',y,'" and "WeekEndingDate" >= "2020-02-29" and Type="Unweighted" and Outcome="Allcauses"'
 )
 
 deaths_state =: dyad define
-    -/,> {: jd'reads sum "Observed Number",sum "Average Expected Count" from excess where State="',x,'" and "Week Ending Date" >= "2020-02-29" and "Week Ending Date" <= "',y,'" and Type="Unweighted" and Outcome="All causes"'
+    -/,> {: jd'reads sum "ObservedNumber",sum "AverageExpectedCount" from excess where State="',x,'" and "WeekEndingDate" >= "2020-02-29" and "WeekEndingDate" <= "',y,'" and Type="Unweighted" and Outcome="Allcauses"'
 )
 
 load'states.ijs'

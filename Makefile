@@ -50,6 +50,7 @@ janssen.csv:
 
 excess.csv:
 	curl -L https://data.cdc.gov/api/views/xkkf-xrst/rows.csv -o $@
+	sed -i 's/ //g' $@
 
 excess-age.csv:
 	curl -L https://data.cdc.gov/api/views/y5bj-9g5w/rows.csv -o $@
@@ -75,4 +76,4 @@ chicago-hospitalized.csv:
 	curl -L https://data.cityofchicago.org/resource/f3he-c6sv.csv -o $@
 
 clean:
-	rm -rf time_series_*.csv ilgen.csv us-states.csv nst-est2019-alldata.csv WPP2019_TotalPopulationBySex.csv chicago-tested.c* chicago-hospitalized.c* chicago-cases.c* excess.csv jdclass excess-age.csv moderna.csv pfizer.csv cdc.csv all.csv test.csv hosp.csv janssen.csv variants.csv .shake
+	rm -rf time_series_*.csv ilgen.csv us-states.csv nst-est2019-alldata.csv WPP2019_TotalPopulationBySex.csv chicago-tested.c* chicago-hospitalized.c* chicago-cases.c* excess.csv jdclass excess-age.csv moderna.csv pfizer.csv cdc.csv all.csv test.csv hosp.csv janssen.csv variants.csv .shake data sources-csv.zip sources.schema.json
