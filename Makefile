@@ -36,6 +36,9 @@ cdc.csv:
 nst-est2019-alldata.csv:
 	curl -L https://www2.census.gov/programs-surveys/popest/datasets/2010-2019/national/totals/nst-est2019-alldata.csv -o $@
 
+pop.csv: nst-est2019-alldata.csv
+	sed 's/ //g' $< > $@
+
 moderna.csv:
 	curl -L https://data.cdc.gov/api/views/b7pe-5nws/rows.csv -o $@
 	perl -i -pe 's/(\d+)\/(\d+)\/(\d+)/\3-\1-\2/' $@
