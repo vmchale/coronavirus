@@ -1,7 +1,5 @@
-excess:`:excess.csv
-excessTable:("DSI  I    SS   "; enlist ",") 0: excess
-pop:`:pop.csv
-popTable:("    S           I";enlist",") 0:pop
+excessTable:("DSI  I    SS   "; enlist ",") 0: `:excess.csv
+popTable:("    S           I";enlist",") 0:`:pop.csv
 popTable:`State xkey `State xcol popTable
 / states:(select distinct State from excessTable)[`State]
 inspect:{`WeekEndingDate xdesc select WeekEndingDate,State,ObservedNumber-AverageExpectedCount from excessTable where Type=`Unweighted, WeekEndingDate > 2020.03.13, Outcome=`Allcauses, State=x}
