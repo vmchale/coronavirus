@@ -5,7 +5,7 @@
 all: time_series_2019-ncov-Confirmed.csv time_series_2019-ncov-Deaths.csv nst-est2019-alldata.csv chicago-tested.csv chicago-cases.csv chicago-hospitalized.csv excess.csv excess-age.csv moderna.csv pfizer.csv cdc.csv janssen.csv variants.csv test.csv hosp.csv
 
 sources-csv.zip:
-	curl https://www.covid19.admin.ch/api/data/20211206-n9ipa928/downloads/sources-csv.zip -o $@
+	curl $$(curl https://www.covid19.admin.ch/api/data/context -s | jq -r '.sources.zip.csv') -o $@
 
 
 data/COVID19Cases_geoRegion.csv data/COVID19Hosp_geoRegion.csv &: sources-csv.zip
@@ -77,8 +77,11 @@ chicago-cases.csv:
 	curl -L https://data.cityofchicago.org/resource/naz8-j4nc.csv -o $@
 	xsv sort $@ -o $@
 
+chicagoCases.csv:
+	curl -L https://data.cityofchicago.org/resource/naz8-j4nc.csv -o $@
+
 chicago-hospitalized.csv:
 	curl -L https://data.cityofchicago.org/resource/f3he-c6sv.csv -o $@
 
 clean:
-	rm -rf time_series_*.csv ilgen.csv us-states.csv nst-est2019-alldata.csv WPP2019_TotalPopulationBySex.csv chicago-tested.c* chicago-hospitalized.c* chicago-cases.c* excess.csv jdclass excess-age.csv moderna.csv pfizer.csv cdc.csv all.csv test.csv hosp.csv janssen.csv variants.csv .shake data sources-csv.zip sources.schema.json excess-j.csv pop.csv
+	rm -rf time_series_*.csv ilgen.csv us-states.csv nst-est2019-alldata.csv WPP2019_TotalPopulationBySex.csv chicago-tested.c* chicago-hospitalized.c* chicago-cases.c* excess.csv jdclass excess-age.csv moderna.csv pfizer.csv cdc.csv all.csv test.csv hosp.csv janssen.csv variants.csv .shake data sources-csv.zip sources.schema.json excess-j.csv pop.csv chicagoCases.csv
