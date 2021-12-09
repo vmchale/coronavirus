@@ -2,10 +2,10 @@ load'jd'
 jdadminx'corona'
 CSVFOLDER =:'/development/j/coronavirus'
 
-jd'csvprobe /replace excess.csv'
-jd'csvcdefs /replace /h 1 /v 11 excess.csv'
-jd'csvscan excess.csv'
-jd'csvrd excess.csv excess'
+jd'csvprobe /replace excess-j.csv'
+jd'csvcdefs /replace /h 1 /v 11 excess-j.csv'
+jd'csvscan excess-j.csv'
+jd'csvrd excess-j.csv excess'
 
 jd'csvrd excess-age.csv excessAge'
 
@@ -14,11 +14,11 @@ NB. jd'reads "Week Ending Date","Observed Number","Average Expected Count" from 
 decolumnize =: ,@:>@{:
 
 inspect =: monad define
-    jd'reads "WeekEndingDate","ObservedNumber","AverageExpectedCount" from excess where State="',y,'" and "WeekEndingDate" >= "2020-02-29" and Type="Unweighted" and Outcome="Allcauses"'
+    jd'reads "Week Ending Date","Observed Number","Average Expected Count" from excess where State="',y,'" and "Week Ending Date" >= "2020-02-29" and Type="Unweighted" and Outcome="All causes"'
 )
 
 deaths_state =: dyad define
-    -/,> {: jd'reads sum "ObservedNumber",sum "AverageExpectedCount" from excess where State="',x,'" and "WeekEndingDate" >= "2020-02-29" and "WeekEndingDate" <= "',y,'" and Type="Unweighted" and Outcome="Allcauses"'
+    -/,> {: jd'reads sum "Observed Number",sum "Average Expected Count" from excess where State="',x,'" and "Week Ending Date" >= "2020-02-29" and "Week Ending Date" <= "',y,'" and Type="Unweighted" and Outcome="All causes"'
 )
 
 load'states.ijs'
