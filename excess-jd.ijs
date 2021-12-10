@@ -7,31 +7,23 @@ jd'csvcdefs /replace /h 1 /v 11 excess-j.csv'
 jd'csvscan excess-j.csv'
 jd'csvrd excess-j.csv excess'
 
-jd'csvrd excess-age.csv excessAge'
+jd'csvprobe /replace nst-est2019-alldata.csv'
+jd'csvcdefs /replace /h 1 /v 20 nst-est2019-alldata.csv'
+jd'csvscan nst-est2019-alldata.csv'
+jd'csvrd nst-est2019-alldata.csv statePop'
 
-NB. jd'reads "Week Ending Date","Observed Number","Average Expected Count" from excess where State="United States" and "Week Ending Date" >= "2020-02-29" and Type="Predicted (weighted)" and Outcome="All causes"'
+NB. jd'csvrd excess-age.csv excessAge'
 
-decolumnize =: ,@:>@{:
+jd'reads /table calculated sum "Observed Number", sum "Average Expected Count" by State from excess where "Week Ending Date"> "2020-03-13" and "Week Ending Date" < "2021-11-13" and Type="Unweighted" and Outcome="All causes"'
+NB. createdcol?
+excess_col =: -/ ,"2 > {: jd'reads "Observed Number", "Average Expected Count" from calculated'
+jd'createcol calculated excess int';excess_col
+
+jd'ref calculated State statePop NAME'
+excess_pp =: %/,"2 > {: jd'reads excess,statePop.POPESTIMATE2019 from calculated,calculated.statePop'
+jd'createcol calculated excessPp float';excess_pp
+jd'reads State,excessPp from calculated order by excessPp desc'
 
 inspect =: monad define
     jd'reads "Week Ending Date","Observed Number","Average Expected Count" from excess where State="',y,'" and "Week Ending Date" >= "2020-02-29" and Type="Unweighted" and Outcome="All causes"'
 )
-
-deaths_state =: dyad define
-    -/,> {: jd'reads sum "Observed Number",sum "Average Expected Count" from excess where State="',x,'" and "Week Ending Date" >= "2020-02-29" and "Week Ending Date" <= "',y,'" and Type="Unweighted" and Outcome="All causes"'
-)
-
-load'states.ijs'
-load'state-population.ijs'
-
-deaths_vect =: 3 : '(deaths_state&y@>) states'
-nyc_excess =: monad define
-    ('New York City'deaths_state y)%nyc_pop
-)
-pop_vect =: pop_state@> states
-deaths_present =: monad define
-    key =. (deaths_vect y)%pop_vect
-    (\: key) { |: states,:<"0 key
-)
-NB.
-NB. ((deaths_state&'2021-02-06'%pop_state)@>) states
