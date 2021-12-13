@@ -10,7 +10,7 @@ benchmark("r" = {
             data$Excess <- data$ObservedNumber - data$AverageExpectedCount
             data$WeekEndingDate <- as.Date(data$WeekEndingDate, format="%Y-%m-%d")
 
-            excessTable <- data |> filter(Type=='Unweighted' & Outcome=='Allcauses' & WeekEndingDate < "2021-11-13" & WeekEndingDate > '2020-03-13') |> group_by(State) |> summarise(Excess = sum(Excess))
+            excessTable <- data |> filter(Type=='Unweighted' & Outcome=='Allcauses' & WeekEndingDate < '2021-11-13' & WeekEndingDate > '2020-03-13') |> group_by(State) |> summarise(Excess = sum(Excess))
 
             joined <- merge(x = excessTable, y = popTable, by.x = 'State', by.y = 'NAME')
 

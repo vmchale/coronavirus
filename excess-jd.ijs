@@ -7,6 +7,10 @@ jd'csvcdefs /replace /h 1 /v 11 excess-j.csv'
 jd'csvscan excess-j.csv'
 jd'csvrd excess-j.csv excess'
 
+setup =: monad define
+    jd'csvrd excess-j.csv excess'
+)
+
 jd'csvprobe /replace nst-est2019-alldata.csv'
 jd'csvcdefs /replace /h 1 /v 20 nst-est2019-alldata.csv'
 jd'csvscan nst-est2019-alldata.csv'
