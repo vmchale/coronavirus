@@ -2,7 +2,7 @@
 
 .DELETE_ON_ERROR:
 
-all: time_series_2019-ncov-Confirmed.csv time_series_2019-ncov-Deaths.csv nst-est2019-alldata.csv chicago-tested.csv chicago-cases.csv chicago-hospitalized.csv excess.csv excess-age.csv moderna.csv pfizer.csv cdc.csv janssen.csv variants.csv test.csv hosp.csv
+all: time_series_2019-ncov-Confirmed.csv time_series_2019-ncov-Deaths.csv nst-est2019-alldata.csv chicago-tested.csv chicago-cases.csv chicago-hospitalized.csv excess.csv excess-age.csv moderna.csv pfizer.csv cdc.csv janssen.csv variants.csv test.csv hosp.csv pop.csv
 
 sources-csv.zip:
 	curl $$(curl https://www.covid19.admin.ch/api/data/context -s | jq -r '.sources.zip.csv') -o $@
